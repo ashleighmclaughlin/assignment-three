@@ -1,6 +1,6 @@
 <template>
   <div>
-      <p>Ashleigh</p>
+      <p>Ash is the best</p>
   </div>
 </template>
 
