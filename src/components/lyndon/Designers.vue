@@ -1,20 +1,20 @@
 <template>
   <div>
     <Header />
-
-    <h1>Eagle Eye</h1>
+    <h1>Designers</h1>
   </div>
 </template>
-
 <script>
-// import Designers from "./Designers";
 import Header from "./layout/Header";
 export default {
-  name: "Lyndon",
+  //   name: Designers
   components: {
     Header
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
+
+

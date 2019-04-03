@@ -8,6 +8,7 @@ import Ash from "./components/ash/Ashleigh.vue";
 import Tj from "./components/tj/Tj.vue";
 import Matt from "./components/matt/Matt.vue";
 import Lyndon from "./components/lyndon/Lyndon.vue";
+import Designers from "./components/lyndon/Designers.vue";
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -17,7 +18,8 @@ const routes = [
   { path: "/ash", component: Ash },
   { path: "/tj", component: Tj },
   { path: "/matt", component: Matt },
-  { path: "/lyndon", component: Lyndon }
+  { path: "/lyndon", component: Lyndon },
+  { path: "/Designers", component: Designers }
 ];
 
 const router = new VueRouter({
