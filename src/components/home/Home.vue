@@ -7,21 +7,9 @@
         <div class="col matt"><router-link v-bind:to="'/matt'">Matt</router-link></div>
         <div class="col lyndon"><router-link v-bind:to="'/lyndon'">Lyndon</router-link></div>
       </div>
-
       <MyFooter />
     </div>
 
-  <!-- <div>
-    <h1>Hello</h1>
-    <ul>
-        <li><router-link v-bind:to="'/ash'">Ash</router-link></li>
-        <li><router-link v-bind:to="'/tj'">Tj</router-link></li>
-        <li><router-link v-bind:to="'/matt'">Matt</router-link></li>
-        <li><router-link v-bind:to="'/lyndon'">Lyndon</router-link></li>
-    </ul>
-          
-    <MyFooter />
-  </div> -->
 </template>
 
 <script>
