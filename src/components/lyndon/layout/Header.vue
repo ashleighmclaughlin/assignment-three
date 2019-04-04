@@ -1,9 +1,11 @@
 <template>
+<div>
   <header class="header">
-    <h1>The Header</h1>
-    <router-link to="/lyndon">Home</router-link>|
-    <router-link to="/Designers">Designers</router-link>|
+    <!-- <img src='./img/header.jpg'> -->
+    <router-link class="my-links" to="/lyndon">Home</router-link>|
+    <router-link class="my-links" to="/Designers">Designers</router-link>|
   </header>
+  </div>
 </template>
 
 <script>
@@ -11,18 +13,23 @@ export default {
   name: "Header"
 };
 </script>
+import image from "./img"
 <style scoped>
-.header {
-  background: #333;
-  color: #fff;
+header {
   text-align: center;
-  padding: 10px;
+padding-top: 30px;
+  padding-bottom: 700px
 }
-.header a {
+.my-links {
   color: rgb(158, 40, 40);
-  padding-right: 5px;
+ margin-top: 150px;
   text-decoration: none;
-  padding: 0 50px;
+  padding: 0 25px 0 25px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  
+
+
 }
 </style>
 

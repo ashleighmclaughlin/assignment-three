@@ -1,8 +1,13 @@
 <template>
   <div>
-    <Header />
-
-    <h1>Eagle Eye</h1>
+    <Header class="main-image" />
+<div>
+    <h1>Our Designers</h1>
+    <div>
+      <img src="layout/img/allef.jpg">
+    </div>
+    <h3>hehehe</h3>
+    </div>
   </div>
 </template>
 
@@ -17,4 +22,17 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.main-image {
+ 
+  background-image: url(layout/img/header.jpg);
+  background-repeat: no-repeat, repeat;
+   background-size: cover;
+  
+  
+} 
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+</style>
