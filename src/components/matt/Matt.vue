@@ -1,27 +1,33 @@
 <template>
-    <div class="container">
-      <div class="hero">
-        <header>
-          <nav>
-            <img class="logo" src="./images/TTAMLogo.png">
-            <ul>
-              <li>Home</li>
-              <li>|</li>
-              <li>Our Designers</li>
-            </ul>
-          </nav>
-          <h1 class="headerText">TTAM Designs</h1>
-        </header>
-      </div>
+  <div class="container">
+    <div class="hero">
+      <header>
+        <nav>
+          <img class="logo" src="./images/TTAMLogo.png">
+          <ul>
+            <li>Home</li>
+            <li>|</li>
+            <li>Our Designers</li>
+          </ul>
+        </nav>
+        <h1 class="headerText">TTAM Designs</h1>
+      </header>
+    </div>
 
+      <div class="row">
+        <div class="col">
+          <img src="./images/MaciejDrabik-priject1.jpg">
+        </div>
+        <div class="col">
+          <img src="./images/MaciejDrabik-priject1.jpg">
+        </div>
+        <div class="col">
+        <img src="./images/MaciejDrabik-priject1.jpg">
+        </div>
+      </div>
       
- <h1>Featured Designers</h1>
-    <div class="imageRow1">
-      <img src="./images/MaciejDrabik-priject1.jpg">
-      <img src="./images/MaciejDrabik-priject1.jpg">
-      <img src="./images/MaciejDrabik-priject1.jpg">
-    </div>
-    </div>
+</div>
+  
 
     
 </template>
@@ -36,14 +42,16 @@ export default {
 </script>
 
 <style scoped>
-.container {
+
+
+.container, template {
   margin: 0;
   padding: 0;
 }
 
 #app {
-  margin: 0;
   padding: 0;
+  margin-top: 0;
 }
 
 .hero{
@@ -95,11 +103,27 @@ h1 {
   justify-content: space-between;
 }
 
-.imageRow1 img {
+section {
+  justify-content: center;
+  margin: 0 auto
+}
+
+section img {
   height: 300px;
-  width: auto;
+  width: auto; 
   
 }
 
+.col img {
+  height: 350px;
+  width: 350px
+}
+
+.row {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
 
 </style>
