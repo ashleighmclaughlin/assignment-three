@@ -16,7 +16,7 @@
                 <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white"><span><router-link v-bind:to="'/designers'">Our Designers</router-link></span></a>
+                <a class="nav-link text-white"><router-link v-bind:to="'/designers'">Our Designers</router-link></a>
               </li>
             </ul>
           </div>
@@ -58,7 +58,7 @@
     mounted() {
       setInterval(() => {
         this.currentImg = this.currentImg + 1;
-      }, 40000);
+      }, 6000);
     },
     components: {
       // Designers
