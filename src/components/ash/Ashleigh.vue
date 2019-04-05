@@ -8,6 +8,12 @@
             We showcase beautiful designers in the Canterbury region.
         </p>
     </div>
+
+    <div @click="getUserId" v-for="user in users" v-bind:key="user.id" v-bind:value="user.id" >
+      <router-link to="/designer">
+      <img class="user-image" v-bind:src="user.images[138]" />
+      <h4 class="user-name"> {{ user.first_name }} <span>{{ user.last_name }}</span> </h4></router-link>
+    </div>
     <AshFooter />
   </div>
 </template>
@@ -21,12 +27,40 @@ export default {
   components: {
       MyHeader,
       AshFooter
+  }, 
+  data: function() {
+    return {
+      users: []
+    };
+  },
+  created: function() {
+    this.$http
+      .get("https://behance-mock-api.glitch.me/api/users")
+      .then(function(data) {
+        this.users = data.body.users;
+      });
+  },
+  methods: {
+    getUserId: function(evt) {
+      this.$router.push({name: "designer", params: {userId: evt.target.value} });
+  }
   }
 };
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat');
+
+.user-name{
+  text-transform: uppercase;
+  font-weight: light;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.user-name span{
+  color: #5b736a;
+}
 
 .nifty-orange{
   color: #feb954;
@@ -42,6 +76,6 @@ export default {
 .home-title p{
   width: 50%;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 </style>
