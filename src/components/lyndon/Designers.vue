@@ -16,14 +16,17 @@
         >{{designer.speciality}}</h3>
       </li>
     </ul>
+      <Footer />
   </div>
 </template>
 <script>
 import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 export default {
   //   name: Designers
   components: {
-    Header
+    Header,
+    Footer
   },
   data() {
     return {
