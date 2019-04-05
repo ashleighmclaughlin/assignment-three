@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
-    <div class="hero">
-      <header>
+  <div>
+      <header class="hero">
         <nav>
           <img class="logo" src="./images/TTAMLogo.png">
           <ul>
@@ -12,20 +11,7 @@
         </nav>
         <h1 class="headerText">TTAM Designs</h1>
       </header>
-    </div>
-
-      <div class="row">
-        <div class="col">
-          <img src="./images/MaciejDrabik-priject1.jpg">
-        </div>
-        <div class="col">
-          <img src="./images/MaciejDrabik-priject1.jpg">
-        </div>
-        <div class="col">
-        <img src="./images/MaciejDrabik-priject1.jpg">
-        </div>
-      </div>
-      
+      <FeaturedDesigners /> 
 </div>
   
 
@@ -33,33 +19,30 @@
 </template>
 
 <script>
+import FeaturedDesigners from "./FeaturedDesigners"
 
 export default {
   name: "Matt",
   components: {
+    FeaturedDesigners
   }
 };
+
 </script>
 
 <style scoped>
 
-
-.container, template {
-  margin: 0;
-  padding: 0;
-}
-
-#app {
-  padding: 0;
-  margin-top: 0;
-}
-
 .hero{
   background-image: url(./images/heroImage.jpg);
-  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
+}
+
+.container {
+  margin: 0 auto;
+  overflow: hidden;
+
 }
 
 nav {
@@ -75,7 +58,6 @@ nav, ul {
 li {
   list-style: none;
   padding: 25px 5px;
-  /* content: top-align; */
 }
 
 .logo {
@@ -98,32 +80,40 @@ h1 {
   text-align: center;
 }
 
-.imageRow1 {
-  display: flex;
-  justify-content: space-between;
+.col-sm {
+    padding: 0 20px;
+    font-size: 30px;
+    text-align: left;
 }
 
-section {
-  justify-content: center;
-  margin: 0 auto
+.featuredDesigners img {
+ height: 380px;
+ width: 100%
+} 
+
+.title {
+  margin-top: 100px;
+  margin-bottom: 35px;
+  font-size: 60px;
 }
 
-section img {
-  height: 300px;
-  width: auto; 
-  
+.line {
+  display: block;
+    width: 80px;
+    height: 3px;
+    background: #f1cd8f;
+    margin: 10px auto;
+    text-align: center;
 }
 
-.col img {
-  height: 350px;
-  width: 350px
+.featuredDesigners h3 {
+  text-align: left;
+  border-bottom: 5px;
 }
 
 .row {
-  margin: 0 auto;
-  text-align: center;
-  justify-content: center;
-  align-content: center;
+  margin: 0;
+  padding: 70px;
 }
 
 </style>
