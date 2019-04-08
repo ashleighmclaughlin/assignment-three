@@ -3,11 +3,11 @@
     <div class="nav">
       <router-link
         class="my-links"
-        to="/lyndon"
+        v-bind:to="'/lyndon'"
       >Home</router-link>|
       <router-link
         class="my-links"
-        to="/Designers"
+        v-bind:to="'/Designers'"
       >Designers</router-link>|
     </div>
     <header>
@@ -17,6 +17,14 @@
           class="logo"
           alt="logo"
           src='./img/Eage-logo-4.png'
+        >
+
+      </div>
+         <div class="logo-box">
+        <img
+          class="logo-2"
+          alt="logo-2"
+          src='./img/Eage-logo-white.png'
         >
 
       </div>
@@ -89,6 +97,9 @@ p {
 .p-text {
   font-size: 1.1em;
 }
+.logo-2 {
+  display: none;
+}
 @media only screen and (max-width: 1280px) {
   .logo {
     width: 120px;
@@ -97,6 +108,130 @@ p {
     left: 50%;
     transform: translate(-5%, -50%);
   }
+  .logo-2 {
+  display: none;
+}
+.heading-secondary {
+  font-size: 1.8em;
+   padding: 0 0 15px 130px;
+}
+}
+@media only screen and (max-width: 1000px) {
+  .logo {
+    width: 100px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+  }
+  .my-links {
+  color: rgb(254, 195, 58);
+  margin-top: 15px;
+  text-decoration: none;
+  padding: 0 10px 0 25px;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.text-box {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+  transform: translate(-35%, -70%);
+
+}
+.heading-secondary {
+  font-size: 1.5em;
+   padding: 0 0 15px 90px;
+}
+.p-text {
+  font-size: .8em;
+}
+.logo-2 {
+  display: none;
+}
+}
+@media only screen and (max-width: 750px) {
+  .logo {
+    width: 100px;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    transform: translate(-25%, -60%);
+  }
+  .my-links {
+  color: rgb(254, 195, 58);
+  margin-top: 15px;
+  text-decoration: none;
+  padding: 0 0 0 25px;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.text-box {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+  transform: translate(-35%, -70%);
+
+}
+.heading-secondary {
+  font-size: 1.2em;
+   padding: 0 0 10px 80px;
+}
+.p-text {
+  font-size: .8em;
+}
+.logo-2 {
+  display: none;
+}
+}
+@media only screen and (max-width: 650px) {
+  .logo {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 0 0px;
+  }
+  .my-links {
+  color: rgb(254, 195, 58);
+  margin-top: 15px;
+  text-decoration: none;
+  padding: 0 0 0 25px;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.text-box {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+  transform: translate(-70%, -70%);
+
+}
+.heading-secondary {
+  display: none;
+}
+.p-text {
+  font-size: .8em;
+}
+.logo {
+  display: none;
+}
+.p-text {
+  display: none;
+}
+.logo-2 {
+  display: block;
+  width: 120px;
+    position: absolute;
+    top: 100px;
+    
+  
+}
+.my-links {
+  text-align: center;
+  margin: 0 auto;
+}
 }
 </style>
 

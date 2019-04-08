@@ -156,8 +156,68 @@ button {
   width: 700px;
 }
 @media only screen and (max-width: 1280px) {
+  .main-image {
+    width: 100%
+  }
   img {
     width: 80%;
+  }
+  button {
+     width: 180px;
+  margin: 10px;
+ padding: 7px 15px;
+  }
+  h4 {
+     font-size: 1.3em;
+  }
+  .hey {
+     width: 500px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .main-image {
+    width: 100%
+  }
+  img {
+    width: 80%;
+  }
+  button {
+     width: 180px;
+  margin: 10px;
+ padding: 7px 15px;
+  }
+  h4 {
+     font-size: 1.3em;
+  }
+  .hey {
+     width: 500px;
+  }
+  
+}
+@media only screen and (max-width: 750px) {
+  .main-image {
+    width: 100%
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-image {
+    width: 100%
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-image {
+    width: 100%
+  }
+     .hey {
+     width: 350px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .main-image {
+    width: 100%
+  }
+   .hey {
+     width: 300px;
   }
 }
 </style>
