@@ -1,9 +1,12 @@
 <template>
   <div>
-    <footer class="footer">
+    <footer>
       <div class="container">
-          <div class="ear">
-        <img class="eagle-footer" src="./img/eagle-logo-1.png">
+        <div class="ear">
+          <img
+            class="eagle-footer"
+            src="./img/Eage-logo-yellow.png"
+          >
         </div>
         <p class="footer-pr">Contact : 534 5678</p>
         <p class="footer-pr">
@@ -31,7 +34,7 @@ footer {
   margin-top: 100px;
 }
 .eagle-footer {
-  width: 300px;
+  /* width: 300px; */
   text-align: center;
   margin: 0 auto;
 }
@@ -43,8 +46,10 @@ p {
 }
 .footer-pr {
   text-align: center;
+  padding: 0 20px 0 20px;
 }
 .ear {
-    text-align: center;
+  text-align: center;
+  padding: 160px 0 10px 0;
 }
 </style>

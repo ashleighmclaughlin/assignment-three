@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="bd-div">
 
-    <Header class="main-image-2" />
-    <h1>Designers</h1>
+    <app-header class="main-image-2" />
+    <h1 class="our-designer">Designers</h1>
     <ul>
       <li
         :key="designer"
@@ -16,7 +16,7 @@
         >{{designer.speciality}}</h3>
       </li>
     </ul>
-      <Footer />
+    <app-footer />
   </div>
 </template>
 <script>
@@ -25,8 +25,8 @@ import Footer from "./layout/Footer";
 export default {
   //   name: Designers
   components: {
-    Header,
-    Footer
+    "app-header": Header,
+    "app-footer": Footer
   },
   data() {
     return {
@@ -42,6 +42,7 @@ export default {
 
 <style scoped>
 .main-image-2 {
+  height: 95vh;
   background-image: url(layout/img/header-2.jpg);
   background-repeat: no-repeat, repeat;
   background-size: cover;
@@ -49,6 +50,9 @@ export default {
 h1 {
   text-align: center;
   font-size: 3em;
+}
+.bd-div {
+  background-color: rgb(255, 241, 216);
 }
 #designers {
   width: 100%;
