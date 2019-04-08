@@ -13,7 +13,7 @@
                 <div id="mySidenav" class="sidenav" v-bind:class="{ isOpen: isOpen }">
                     <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
                     <!-- Should be like this but need to get it to go to ash page without nav open -->
-                    <router-link class="back" to="/">home</router-link>
+                    <router-link class="back" to="/ash">home</router-link>
                     <a href="#">about</a>
                     <a href="#">contact</a>
                 </div>

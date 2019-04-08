@@ -1,46 +1,64 @@
 <template>
   <div>
-    <!-- <MyHeader /> -->
-        <h1>Hello</h1>
-    <!-- <AshFooter /> -->
-    <!-- <h1>{{ userdata.first_name }}</h1> -->
+    <MyHeader />
+        <div class="user-info">
+            <h1>{{userdata.user.display_name}}</h1>
+            <h3>{{userdata.user.occupation}}</h3>
+            <h3>{{userdata.user.website}}</h3>
+            <h3>{{userdata.user.city}}, {{userdata.user.country}}</h3>
+            <Projects v-bind:userdata="contentdata" />
+        </div>
+    <AshFooter />
   </div>
 </template>
 
 <script>
-// import MyHeader from "./MyHeader";
-// import AshFooter from "./AshFooter";
+import MyHeader from "./MyHeader";
+import AshFooter from "./AshFooter";
+import Projects from "./Projects"
 
 export default {
   name: "Designer",
   components: {
-    //   MyHeader,
-    //   AshFooter
+      MyHeader,
+      AshFooter,
+      Projects
+  }, 
+  data: function() {
+    return {
+      userdata: {},
+      userId: ""
+    };
   },
-  data: function(){
-      return {
-          userdata: {},
-         
-      }
-  },
-  created: function(){
-      this.getId()
-      this.$http
-      .get("https://behance-mock-api.glitch.me/api/users/" + this.user.id)
-      .then(function(data) {
-        this.user = data.body.user;
-        
+  created: function() {
+      if (this.$route.params.userId) {
+        this.userId = this.$route.params.userId;
+        this.$http
+        .get("https://behance-mock-api.glitch.me/api/users/" + this.userId)
+        .then(function(userdata) {
+        this.userdata = userdata.body;
+        // console.log(user)
       });
-  },
-  methods: {
-    getId: function(){
-        this.userData = this.$route.params.userId
-        // console.log(this.userData)
-  }
+    }
 }
 };
+</script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat');
+
+.user-info h1{
+    font-family: 'Libre Baskerville', serif;
+    color: #5b736a;
+    font-size: 36px;
+    margin-top: 40px;
+   
+}
+
+.user-info h3{
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-top: 15px;
+}
 </style>
-
-

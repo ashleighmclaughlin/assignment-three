@@ -9,10 +9,10 @@
         </p>
     </div>
 
-    <div @click="getUserId" v-for="user in users" v-bind:key="user.id" v-bind:value="user.id" >
+    <div  v-for="user in users" :key="user.id" >
       <router-link to="/designer">
-      <img class="user-image" v-bind:src="user.images[138]" />
-      <h4 class="user-name"> {{ user.first_name }} <span>{{ user.last_name }}</span> </h4></router-link>
+      <img @click="navigateToDesigner(user.id)" class="user-image" v-bind:src="user.images[138]"/>
+      <h4 @click="navigateToDesigner(user.id)" class="user-name"> {{ user.first_name }} <span>{{ user.last_name }}</span> </h4></router-link>
     </div>
     <AshFooter />
   </div>
@@ -41,8 +41,8 @@ export default {
       });
   },
   methods: {
-    getUserId: function(evt) {
-      this.$router.push({name: "designer", params: {userId: evt.target.value} });
+    navigateToDesigner: function(userId) {
+      this.$router.push({name: "designer", params: {userId: userId} });
   }
   }
 };
