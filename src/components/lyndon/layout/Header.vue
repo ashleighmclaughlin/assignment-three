@@ -224,9 +224,7 @@ p {
   display: block;
   width: 120px;
     position: absolute;
-    top: 100px;
-    
-  
+    top: 50px; 
 }
 .my-links {
   text-align: center;

@@ -103,14 +103,19 @@ export default {
 <style scoped>
 .main-image {
   height: 95vh;
+  width: 100vw;
+  height: 1000px;
   background-image: url(layout/img/header.jpg);
-  background-repeat: no-repeat, repeat;
+  position: relative;
+  background-repeat: no-repeat;
   background-size: cover;
+  
 }
 h1 {
   text-align: center;
   font-size: 3em;
 }
+
 .our-designer {
   padding: 50px 0 20px 0;
 }
@@ -155,9 +160,28 @@ button {
 .hey {
   width: 700px;
 }
+@media only screen and (max-width: 1980px) {
+  .main-image {
+    width: 100%;
+    height: 900px;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .main-image {
+    width: 100%;
+    height: 800px;
+  }
+}
+@media only screen and (max-width: 1480px) {
+  .main-image {
+    width: 100%;
+    height: 680px;
+  }
+}
 @media only screen and (max-width: 1280px) {
   .main-image {
-    width: 100%
+    width: 100%;
+    height: 600px;
   }
   img {
     width: 80%;
@@ -174,9 +198,16 @@ button {
      width: 500px;
   }
 }
+@media only screen and (max-width: 1100px) {
+  .main-image {
+    width: 100%;
+    height: 540px;
+  }
+}
 @media only screen and (max-width: 1000px) {
   .main-image {
-    width: 100%
+    width: 120%;
+     height: 500px;
   }
   img {
     width: 80%;
@@ -194,6 +225,12 @@ button {
   }
   
 }
+@media only screen and (max-width: 900px) {
+  .main-image {
+    width: 120%;
+    height: 500px;
+  }
+}
 @media only screen and (max-width: 750px) {
   .main-image {
     width: 100%
@@ -209,7 +246,7 @@ button {
     width: 100%
   }
      .hey {
-     width: 350px;
+     width: 400px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -217,7 +254,7 @@ button {
     width: 100%
   }
    .hey {
-     width: 300px;
+     width: 350px;
   }
 }
 </style>
