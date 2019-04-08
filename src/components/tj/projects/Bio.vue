@@ -1,0 +1,130 @@
+<template>
+    <div>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
+                    <img :src="user.images['138']" :alt="designer">
+                </div> -->
+                <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
+                    <img :src="userdata.images['138']" :alt="designer">
+                </div>
+            </div>
+            <img class="user-icon" :src="userdata.user.images['115']" :alt="designer_icon">
+            <h1>{{ userdata.user.display_name }}</h1>
+            <p>{{ userdata.user.occupation }}</p>
+            <a href="">
+            <p class="website">{{ userdata.user.website }}</p>
+            </a>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{{ userdata.user.city }}</span>
+                <span>{{ userdata.user.country }}</span>
+            </div>
+
+            <div class="row stats">
+                <div class="col-sm">
+                    <p>Followers</p>
+                    <h5>{{ userdata.user.stats.followers }}</h5>
+                </div>
+                <div class="col-sm">
+                    <p>Following</p>
+                    <h5>{{ userdata.user.stats.following }}</h5>
+                </div>
+                <div class="col-sm">
+                    <p>Views</p>
+                    <h5>{{ userdata.user.stats.views }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    // import MyHeader from "../designers/MyHeader";
+    // import ProjectList from "./ProjectList";
+    
+    export default {
+        name: "Bio",
+        data: function() {
+            return {
+                // users: [],
+                // contentdata: {},
+                // userId: ""
+            };
+        },
+        components: {
+            // MyHeader
+            // ProjectList
+        },
+        props: ["projectdata", "userdata"]
+        
+        // created: function() {
+        //     if (this.$route.params.userId) {
+        //         // console.log(this.$route.params);
+        //         this.userId = this.$route.params.userId;
+        //         this.$http
+        //             .get("https://behance-mock-api.glitch.me/api/users/" + this.userId)
+        //             .then(function(contentdata) {
+        //                 this.contentdata = contentdata.body;
+        //                 // console.log(this.contentdata)
+        //             });
+        //     }
+        // }
+    };
+</script>
+
+<style scoped>
+    .router-link-active {
+        font-weight: 400;
+    }
+    
+    .container {
+        margin-top: 70px;
+    }
+    
+    .user-icon {
+        border-radius: 100px;
+    }
+    
+    .img-border img {
+        border-radius: 10px;
+    }
+    
+    .website {
+        text-decoration: underline;
+    }
+    
+    .stats div {
+        padding: 0;
+    }
+
+    .stats p {
+        margin-bottom: 0;
+    }
+    
+    /*
+          * https://imgur.com/a/5nDMmmB  Link to Image
+          */
+    
+    .landing {
+        background-image: url("https://imgur.com/clOcGTs.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 25vh;
+    }
+    
+    .logo-img {
+        height: 60px;
+    }
+    
+    .navbar {
+        background-color: transparent !important;
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 2;
+    }
+</style>

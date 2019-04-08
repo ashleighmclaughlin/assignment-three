@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
           <!-- {{ user.images['50'] }} -->
+          <div class="projects" to="/projects" @click="navigateTo(user.id);">
           <img :src="user.images['138']" :alt="designer">
+          {{ user.first_name }}
+          </div>
         </div>
       </div>
     </div>
@@ -16,16 +19,23 @@
     name: "DesignerList",
     data: function() {
       return {
-        users: []
+        users: [],
+        designer: {}
       };
     },
     created: function() {
       this.$http
-        .get("https://behance-mock-api.glitch.me/api/users")
+        .get("https://behance-mock-api.glitch.me/api/users/")
         .then(function(data) {
           this.users = data.body.users;
         });
+    },
+    methods: { 
+    navigateTo: function(userId) {
+      // console.log("path",path)
+    this.$router.push({ name: "projects", params: { userId: userId } });
     }
+  }
   };
 </script>
 

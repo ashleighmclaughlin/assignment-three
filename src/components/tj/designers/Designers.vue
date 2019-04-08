@@ -1,15 +1,15 @@
 <template>
     <div>
-      <Header />
+      <MyHeader />
       <DesignerList />
-      <!-- <footer /> -->
+      <MyFooter />
     </div>
 </template>
 
 <script>
-import Header from "./Header";
+import MyHeader from "./MyHeader";
 import DesignerList from "./DesignerList";
-// import Footer from "./Footer"; 
+import MyFooter from "./MyFooter"; 
 
 export default {
   name: "Designers",
@@ -19,9 +19,9 @@ export default {
     };
   },
   components: {
-      Header,
-      DesignerList
-      // Footer
+      MyHeader,
+      DesignerList,
+      MyFooter
   },
   methods: {
     sourceChanged: function(source) {

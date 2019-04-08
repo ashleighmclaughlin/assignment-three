@@ -13,7 +13,7 @@
   
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link text-white">
                 <router-link v-bind:to="'/tj'">Home</router-link>
               </a>
@@ -35,7 +35,7 @@
 
 <script>
   export default {
-    name: "Header",
+    name: "MyHeader",
     data: function() {
       return {
         source: ""
@@ -51,9 +51,6 @@
 </script>
 
 <style scoped>
-  /* .router-link-active {
-    font-weight: 400;
-  } */
 
 /* https://imgur.com/a/WjEIC3Y  Image Source*/
   .landing {
