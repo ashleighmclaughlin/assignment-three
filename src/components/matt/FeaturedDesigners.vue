@@ -40,22 +40,18 @@ export default {
 
 <style scoped>
 
-.container {
-  margin: 0 auto;
-  overflow: hidden;
 
-}
 
 .col-sm {
-    padding: 0 20px;
-    font-size: 30px;
-    text-align: left;
+     font-size: 30px;
+  
 }
 
 .featuredDesigners img {
- height: 380px;
- width: 100%
-} 
+ height: 500px;
+ width: 80%;
+ padding-bottom: 10px;
+}
 
 .title {
   margin-top: 100px;
@@ -73,13 +69,13 @@ export default {
 }
 
 .featuredDesigners h3 {
-  text-align: left;
   border-bottom: 5px;
 }
 
 .row {
   margin: 0;
   padding: 70px;
+  align-content: center
 }
 
 </style>
