@@ -53,16 +53,13 @@ nav, ul {
 li {
   list-style: none;
   padding: 25px 5px;
+  color: white;
+  font-size: 30px;
 }
 
 .logo {
   height: 80px;
   width: 55px;
-}
-
-li {
-  color: white;
-  font-size: 30px;
 }
 
 .headerText {
