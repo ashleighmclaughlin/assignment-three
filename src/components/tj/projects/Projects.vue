@@ -41,8 +41,10 @@
       </nav>
     </header>
 
-    <Bio :userdata="userdata" :contentdata="projectdata"/>
-    <ProjectList :userdata="userdata" :contentdata="projectdata"/>
+    <Bio :userdata="userdata"/>
+    <ProjectList :projectdata="projectdata" :userdata="userdata"/>
+
+    <!-- <MyFooter /> -->
   </div>
 </template>
 
@@ -50,6 +52,7 @@
 // import MyHeader from "../designers/MyHeader";
 import ProjectList from "./ProjectList";
 import Bio from "./Bio";
+// import MyFooter from "../designers/MyFooter";
 
 export default {
   name: "Projects",
@@ -64,23 +67,26 @@ export default {
   components: {
     // MyHeader
     ProjectList,
-    Bio
+    Bio,
+    // MyFooter
   },
-  created: function() {
-    if (this.$route.params.userId) {
-      // console.log(this.$route.params);
-      this.userId = this.$route.params.userId;
-      this.$http
-        .get(
-          "https://behance-mock-api.glitch.me/api/users/" +
-            this.userId +
-            "/projects"
-        )
-        .then(function(contentdata) {
-          this.contentdata = contentdata.body;
-          // console.log(this.contentdata)
-        });
-    }
+    created: function() {
+    this.getProjectData();
+    this.getUserData();
+    // if (this.$route.params.userId) {
+    //   // console.log(this.$route.params);
+    //   this.userId = this.$route.params.userId;
+    //   this.$http
+    //     .get(
+    //       "https://behance-mock-api.glitch.me/api/users/" +
+    //         this.userId +
+    //         "/projects"
+    //     )
+    //     .then(function(contentdata) {
+    //       this.contentdata = contentdata.body;
+    //       // console.log(this.contentdata)
+    //     });
+    // }
   },
   methods: {
     getProjectData() {
@@ -95,7 +101,8 @@ export default {
           )
           .then(function(data) {
             this.projectdata = data.body;
-            // console.log(this.contentdata)
+            // console.log("projectdata", this.projectdata)
+            // console.log("data", data.body)
           });
       }
     },

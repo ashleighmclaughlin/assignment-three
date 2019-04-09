@@ -3,10 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
-          <!-- {{ user.images['50'] }} -->
           <div class="projects" to="/projects" @click="navigateTo(user.id);">
-          <img :src="user.images['138']" :alt="designer">
-          {{ user.first_name }}
+          <h3>{{ user.first_name }}</h3>
+          <img v-if="user.images[138]" :src="user.images[138]" :alt="designer">
           </div>
         </div>
       </div>

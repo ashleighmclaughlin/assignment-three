@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="container">
-            <div class="row">
+            <!-- <div class="row"> -->
                 <!-- <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
                     <img :src="user.images['138']" :alt="designer">
                 </div> -->
-                <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
-                    <img :src="userdata.images['138']" :alt="designer">
-                </div>
-            </div>
-            <img class="user-icon" :src="userdata.user.images['115']" :alt="designer_icon">
+                <!-- <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
+                    <img v-if="userdata.images" :src="userdata.images['138']" :alt="designer">
+                </div> -->
+            <!-- </div> -->
+                <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
             <h1>{{ userdata.user.display_name }}</h1>
             <p>{{ userdata.user.occupation }}</p>
             <a href="">
@@ -56,7 +56,7 @@
             // MyHeader
             // ProjectList
         },
-        props: ["projectdata", "userdata"]
+        props: ["userdata"]
         
         // created: function() {
         //     if (this.$route.params.userId) {
