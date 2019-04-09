@@ -4,9 +4,9 @@
         <nav>
           <img class="logo" src="./images/TTAMLogo.png">
           <ul>
-            <li><router-link to="/Matt">Home</router-link></li>
+            <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
-            <li><router-link to="/OurDesigners">Our Designers</router-link></li>
+            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
           </ul>
         </nav>
         <h1 class="headerText">TTAM Designs</h1>

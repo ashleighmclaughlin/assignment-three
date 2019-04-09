@@ -14,14 +14,13 @@ export default {
 </script>
 
 <style scoped>
-footer {
-    background-color: black;
-}
+
 footer {
   padding:20px;
   background:black;
   color:white;
   font-size:18px;
+  background-color: black;
 }
   
 </style>
