@@ -15,6 +15,8 @@
       <h4 @click="navigateToDesigner(user.id)" class="user-name"> {{ user.first_name }} <span>{{ user.last_name }}</span> </h4></router-link>
     </div>
     <AshFooter />
+
+
   </div>
 </template>
 
@@ -56,10 +58,12 @@ export default {
   font-weight: light;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
+  color: #222;
 }
 
 .user-name span{
   color: #5b736a;
+  font-weight: bold;
 }
 
 .nifty-orange{

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <router-link class="back" to="/"><i class="fas fa-chevron-left"></i></router-link>
+                <i class="fas fa-chevron-left" @click="$router.go(-1)"></i>
             </div>
             <div class="col-8">
             <router-link class="back" to="/ash"><img class="nav-logo" src="../../assets/ash/nifty-logo.png" alt="Logo"></router-link>

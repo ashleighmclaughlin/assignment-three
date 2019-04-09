@@ -1,10 +1,8 @@
 <template>
   <div>
         <div v-for="project in projects" :key="project.id" class="project-list">
-             <router-link to="/modal">
             <h3 @click="navigateToProject(project.id)">{{project.name}}</h3>
-            <img @click="navigateToProject(project.id)" class="project-image" v-bind:src="project.covers[230]"/>
-             </router-link>
+            <img @click="navigateToProject(project.id)" class="project-image" v-bind:src="project.covers[404]"/>
         </div>
   </div>
 </template>
@@ -41,5 +39,7 @@ export default {
 </script>
 
 <style scoped>
-
+.row{
+  margin: 0 auto;
+}
 </style>

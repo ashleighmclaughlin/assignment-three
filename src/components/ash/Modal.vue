@@ -1,23 +1,35 @@
 <template>
   <div>
-      <h1>{{projectdata.project.name}}</h1>
-      <h2>Views | {{projectdata.project.stats.views}}</h2>
-      <h2>Appreciations | {{projectdata.project.stats.appreciations}}</h2>
-      <h2>Comments | {{projectdata.project.stats.comments}}</h2>
+    <MyHeader />
+        <h1>{{projectdata.project.name}}</h1>
 
+        <div class="row">
+        <div class="project-img col-sm">
+        <img v-for="image in images" :key="image" v-bind:src="image">
+        </div>
+        </div>
 
-      <img v-for="image in images" v-bind:src="image">
-
+        <div class="row project-stats">
+             <div class="col-sm">
+                <h2><i class="fas fa-eye"></i> {{projectdata.project.stats.views}}</h2>
+            </div>
+            <div class="col-sm">
+                <h2><i class="fas fa-thumbs-up"></i> {{projectdata.project.stats.appreciations}}</h2>
+            </div>
+            <div class="col-sm">
+                <h2><i class="fas fa-comment-alt"></i> {{projectdata.project.stats.comments}}</h2>
+            </div>
+        </div>
   </div>
 </template>
 
 <script>
-
+import MyHeader from "./MyHeader";
 
 export default {
   name: "Modal",
   components: {
-
+      MyHeader
   }, 
   data: function() {
     return {
@@ -67,4 +79,18 @@ export default {
     font-size: 18px;
     margin-top: 15px;
 }
+.project-stats h2{
+    font-size: 20px;
+    color: #222;
+}
+.row{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.project-stats i{
+    margin-right: 10px;
+}
+
+
 </style>

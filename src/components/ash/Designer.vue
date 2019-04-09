@@ -6,6 +6,8 @@
             <h3>{{userdata.user.occupation}}</h3>
             <h3>{{userdata.user.website}}</h3>
             <h3>{{userdata.user.city}}, {{userdata.user.country}}</h3>
+
+            
             <Projects v-bind:userdata="contentdata" />
         </div>
     <AshFooter />
