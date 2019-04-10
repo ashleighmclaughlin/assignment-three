@@ -3,23 +3,41 @@
         
 <MyHeader />
     <div>
-      <h1 class="title">Designers</h1>
-      <h1 class="line"></h1>
+      
 
       <div class="designers">
+        <h1 class="title">Designers</h1>
+        <h1 class="line"></h1>
         <div class="row">
           <div class="col-sm">
-            <div v-for="user in users" v-bind:key="user.id">
-              <img v-bind:src="user.images['115']" @click="navigateTo('/Designers');"/>
+            <div class="designer" v-for="user in users" v-bind:key="user.id">
+              <router-link to="./Profile"><img v-bind:src="user.images['115']"></router-link>
               <h3>{{ user.first_name + " " + user.last_name}}</h3>
-              <h3> {{user.occupation}}</h3>
+              <h5> {{user.occupation}}</h5>
             </div>
           </div>
+          <div class="row">
+         <div class="col-sm">
+          <img src="./images/MaciejDrabik-priject1.jpg">
+          <h3>Maciej Drabik</h3>
+          <h5>concept art / Illustration </h5>
         </div>
-      </div>  
-    </div>  
-<MyFooter /> 
-</div>   
+        <div class="col-sm">
+          <img src="./images/MaciejDrabik-priject1.jpg">
+          <h3>Jan Urschel</h3>
+          <h5>Freelance Concept Designer</h5>
+        </div>
+        <div class="col-sm">
+          <img src="./images/MaciejDrabik-priject1.jpg">
+          <h3>Wojtek Fus</h3>
+          <h5>Concept Designer</h5>
+        </div>
+      </div>
+    </div>
+        </div>
+        <MyFooter />
+      </div>
+     
 
 </template>
 
@@ -60,20 +78,28 @@ export default {
 <style scoped>
 .col-sm {
      font-size: 30px;
-  
+     display: flex;  
+     margin: 0 auto;
 }
 
 .designers img {
- height: 150px;
- width: 10%;
+ height: 200px;
+ width: 50%;
  padding-bottom: 10px;
  border-radius: 5%
+}
+
+.designer {
+  padding: 0 20px;
+  justify-content: center;
+  margin: 0 auto
 }
 
 .title {
   margin-top: 100px;
   margin-bottom: 35px;
   font-size: 60px;
+  text-align: center;
 }
 
 .line {
@@ -92,7 +118,7 @@ export default {
 .row {
   margin: 0;
   padding: 70px;
-  align-content: center
+  justify-content: center;
   
 }
 
