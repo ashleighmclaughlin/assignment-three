@@ -12,11 +12,11 @@
   
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link"><router-link-active v-bind:to="'/tj'">Home</router-link-active></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white"><router-link v-bind:to="'/designers'">Our Designers</router-link></a>
+                <a class="nav-link"><router-link v-bind:to="'/designers'">Our Designers</router-link></a>
               </li>
             </ul>
           </div>
@@ -67,6 +67,9 @@
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+
+
   .hero-text {
     color: #ffffff;
     height: 100px;
@@ -78,7 +81,7 @@
   
   i {
     color: #ffffff;
-    font-size: 25px;
+    font-size: 30px;
   }
   
   .logo {
@@ -95,20 +98,32 @@
    font-size: 70px;
  }
 
- .navbar-light .navbar-toggler {
+ /* .navbar-light .navbar-toggler {
    color: #fff;
    border-color: rgba(0, 0, 0, 0);
- }
+ } */
 
   /* Override bootstrap styles */
   .navbar {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     background-color: transparent !important;
-    color: #ffffff;
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 2;
+  }
+
+  .nav-item a {
+    color: #fff;
+    font-weight: 300;
+  }
+
+  router-link-active {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #fff;
   }
 
   /*

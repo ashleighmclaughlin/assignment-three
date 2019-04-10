@@ -4,8 +4,10 @@
       <div class="row">
         <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
           <div class="projects" to="/projects" @click="navigateTo(user.id);">
-          <h3>{{ user.first_name }}</h3>
-          <img v-if="user.images[138]" :src="user.images[138]" :alt="designer">
+            <h3>{{ user.first_name }}</h3>
+            <img v-if="user.images[138]" :src="user.images[138]" :alt="designer">
+  
+            
           </div>
         </div>
       </div>
@@ -16,10 +18,12 @@
 <script>
   export default {
     name: "DesignerList",
+    el: "#demo",
     data: function() {
       return {
         users: [],
-        designer: {}
+        designer: {},
+        active: false,
       };
     },
     created: function() {
@@ -29,12 +33,20 @@
           this.users = data.body.users;
         });
     },
-    methods: { 
-    navigateTo: function(userId) {
-      // console.log("path",path)
-    this.$router.push({ name: "projects", params: { userId: userId } });
+    methods: {
+      navigateTo: function(userId) {
+        // console.log("path",path)
+        this.$router.push({
+          name: "projects",
+          params: {
+            userId: userId
+          }
+        });
+      },
+      mouseOver: function() {
+        this.active = !this.active;
+      }
     }
-  }
   };
 </script>
 
@@ -46,10 +58,13 @@
   .container {
     margin-top: 70px;
   }
-
+  
   .img-border img {
     border-radius: 10px;
   }
-
-
+  
+  .projects img {
+    width: 200px;
+    height: 200px;
+  }
 </style>

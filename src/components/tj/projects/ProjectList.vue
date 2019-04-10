@@ -12,10 +12,16 @@
           <div class="container">
             <div class="row">
               <div class="col-sm img-border" v-for="project in projectdata.projects" v-bind:key="project.id">
-                <!-- <h1>{{ projectdata.projects.name }}</h1> -->
-                <!-- <h1>{{ projectdata.projects.name }}</h1> -->
-                <h3>{{ project.name }}</h3>
-                <img :src="project.covers['230']" :alt="project.name">
+                <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> -->
+                  <div class="hovereffect">
+                    <img class="img-responsive" :src="project.covers['230']" :alt="project.name">
+                    <div class="overlay">
+                        <h5><a href="#">{{ project.name }}</a></h5>
+                    </div>
+                  </div>
+                <!-- </div> -->
+                <!-- <h3>{{ project.name }}</h3> -->
+                <!-- <img :src="project.covers['230']" :alt="project.name"> -->
               </div>
             </div>
             <!-- project.covers[200] -->
@@ -25,22 +31,22 @@
         <div v-if="activetab === 2" class="tabcontent">
           <h4>About</h4>
           <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
-          <p>{{ userdata.user.first_name }}</p>
-          <p>{{ userdata.user.last_name }}</p>
-          <!-- <p>{{ userdata.user. }}</p> -->
+          <p>{{ userdata.user.display_name }}</p>
           <h4>Fields</h4>
-          <p>{{ userdata.user.fields }}</p>
-          
-          <!-- <p>{{ user.user.stats.following }}</p>
-          <p>{{ user.user.stats.followers }}</p>
-          <p>{{ user.user.stats.appreciations }}</p> -->
-        
           <h4>Socials</h4>
-          
+  
+          <!-- <div v-for="user in userdata.users" v-bind:key="user.id" v-if="userdata.user.social_links[1] && "> -->
+          <p>{{ userdata.user.social_links }}</p>
+          <!-- </div> -->
+  
+          <!-- <a v-bind:href="userdata.user.socialinks">
+                <i class="fab fa-instagram"></i></a> -->
+  
         </div>
       </div>
   
     </div>
+  
   
   </div>
 </template>
@@ -60,6 +66,11 @@
         // projects: []
       }, {
         activetab: 1
+      }
+    },
+    methods: {
+      mouseOver: function() {
+        this.active = !this.active;
       }
     },
     components: {
@@ -83,13 +94,18 @@
   };
 </script>
 
+
 <style scoped>
+
+
+
   .router-link-active {
     font-weight: 400;
   }
   
   .container {
     margin-top: 70px;
+
   }
   
   .user-icon {
@@ -114,8 +130,8 @@
   
   
   /*
-            * https://imgur.com/a/5nDMmmB  Link to Image
-            */
+                  * https://imgur.com/a/5nDMmmB  Link to Image
+                  */
   
   .landing {
     background-image: url("https://imgur.com/clOcGTs.jpg");
@@ -144,10 +160,10 @@
   
   
   /* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  } */
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        } */
   
   .container {
     max-width: 620px;
@@ -211,9 +227,102 @@
   
   
   /* .tabcontent {
-      padding: 30px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    box-shadow: 3px 3px 6px #e1e1e1
-  } */
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+          box-shadow: 3px 3px 6px #e1e1e1
+        } */
+  
+  .hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background: #333;
+  }
+  
+  .hovereffect .overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding: 50px 20px;
+  }
+  
+  .hovereffect img {
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    max-width: none;
+    width: calc(100% + 20px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .hovereffect:hover img {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .hovereffect h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    overflow: hidden;
+    padding: 0.5em 0;
+    background-color: transparent;
+  }
+  
+  .hovereffect h2:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    content: '';
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  
+  .hovereffect:hover h2:after {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .hovereffect a,
+  .hovereffect p {
+    color: #FFF;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  
+  .hovereffect:hover a,
+  .hovereffect:hover p {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 </style>

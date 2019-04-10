@@ -14,13 +14,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link text-white">
-                <router-link v-bind:to="'/tj'">Home</router-link>
-              </a>
+              <a class="nav-link"><router-link v-bind:to="'/tj'">Home</router-link></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white">
-                <router-link v-bind:to="'/designers'">Our Designers</router-link>
+              <a class="nav-link">
+                <router-link-active v-bind:to="'/designers'">Our Designers</router-link-active>
               </a>
             </li>
           </ul>
@@ -51,7 +49,7 @@
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
 /* https://imgur.com/a/WjEIC3Y  Image Source*/
   .landing {
     background-image: url("https://imgur.com/p33fpEW.jpg");
@@ -73,16 +71,29 @@
   }
 
   .logo-img {
-    height: 60px;
+    height: 50px;
   }
 
   .navbar {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     background-color: transparent !important;
-    color: #ffffff;
+    color: #fff;
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 2;
   }
+
+  a {
+    color: #fff;
+  } 
+
+ router-link-active {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #fff;
+  }
+
 </style>

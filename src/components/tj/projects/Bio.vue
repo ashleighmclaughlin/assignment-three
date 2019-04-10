@@ -12,7 +12,7 @@
                 <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
             <h1>{{ userdata.user.display_name }}</h1>
             <p>{{ userdata.user.occupation }}</p>
-            <a href="">
+            <a v-bind:href="userdata.user.website">
             <p class="website">{{ userdata.user.website }}</p>
             </a>
             <div class="location">
@@ -20,6 +20,8 @@
                 <span>{{ userdata.user.city }}</span>
                 <span>{{ userdata.user.country }}</span>
             </div>
+
+            <ProjectModal />
 
             <div class="row stats">
                 <div class="col-sm">
@@ -36,12 +38,14 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </template>
 
 <script>
     // import MyHeader from "../designers/MyHeader";
     // import ProjectList from "./ProjectList";
+    import ProjectModal from "./ProjectModal";
     
     export default {
         name: "Bio",
@@ -55,6 +59,7 @@
         components: {
             // MyHeader
             // ProjectList
+            ProjectModal
         },
         props: ["userdata"]
         
@@ -127,4 +132,5 @@
         width: 100vw;
         z-index: 2;
     }
+    
 </style>

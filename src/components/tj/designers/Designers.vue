@@ -2,14 +2,14 @@
     <div>
       <MyHeader />
       <DesignerList />
-      <MyFooter />
+      <!-- <MyFooter /> -->
     </div>
 </template>
 
 <script>
 import MyHeader from "./MyHeader";
 import DesignerList from "./DesignerList";
-import MyFooter from "./MyFooter"; 
+// import MyFooter from "./MyFooter"; 
 
 export default {
   name: "Designers",
@@ -21,7 +21,7 @@ export default {
   components: {
       MyHeader,
       DesignerList,
-      MyFooter
+      // MyFooter
   },
   methods: {
     sourceChanged: function(source) {
@@ -35,4 +35,5 @@ export default {
 .router-link-active {
   font-weight: 400;
 }
+
 </style>
