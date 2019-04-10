@@ -9,9 +9,11 @@
         </p>
     </div>
 
-    <div  v-for="user in users" :key="user.id" >
+    <div v-for="user in users" :key="user.id" >
       <router-link to="/designer">
+      <div class="image-box">
       <img @click="navigateToDesigner(user.id)" class="user-image" v-bind:src="user.images[138]"/>
+      </div>
       <h4 @click="navigateToDesigner(user.id)" class="user-name"> {{ user.first_name }} <span>{{ user.last_name }}</span> </h4></router-link>
     </div>
     <AshFooter />
@@ -57,8 +59,16 @@ export default {
   text-transform: uppercase;
   font-weight: light;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   color: #222;
+  text-align: right;
+  width: 90%;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.user-name:hover{
+  text-decoration: none;
 }
 
 .user-name span{
@@ -81,5 +91,16 @@ export default {
   width: 50%;
   font-family: 'Montserrat', sans-serif;
   margin-top: 16px;
+  margin-bottom: 70px;
+}
+.image-box{
+  width: 80%;
+  height: 300px;
+  box-shadow: 4px 4px 7px lightgrey;
+  margin: 0 auto;
+  background-color: #fdfdfd;
+}
+.user-image{
+  height: 300px;
 }
 </style>
