@@ -1,18 +1,7 @@
 <template>
     <div>
-        <h1 class="title">Designers</h1>
-        <h1 class="line"></h1>
-
-        <div class="designers">
-          <div class="row">
-            <div class="col-sm">
-              <div v-for="user in users" v-bind:key="user.id">
-                <img v-bind:src="user.images" />
-                <h3>{{ user.first_name + " " + user.last_name}}</h3>
-              </div>
-            </div>
-          </div>
-        </div>  
+      <MyHeader />
+      <MyFooter />
     </div>     
 </template>
 
@@ -21,9 +10,13 @@
 
 export default {
   name: "Matt",
-  props: ["users"]
-};
-
+  props: ["users"],
+  watch: {
+    users: function(val) {
+      this.users=val;
+    }
+  }
+}
 </script>
 
 <style scoped>

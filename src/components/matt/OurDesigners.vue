@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-sm">
             <div v-for="user in users" v-bind:key="user.id">
-              <img v-bind:src="user.images" @click="navigateTo('./Designers');"/>
+              <img v-bind:src="user.images['115']" @click="navigateTo('/Designers');"/>
               <h3>{{ user.first_name + " " + user.last_name}}</h3>
               <h3> {{user.occupation}}</h3>
             </div>
@@ -18,7 +18,7 @@
         </div>
       </div>  
     </div>  
-    <MyFooter /> 
+<MyFooter /> 
 </div>   
 
 </template>
@@ -49,7 +49,7 @@ export default {
     },
     methods: { 
     navigateTo: function(path) {
-      this.$router.push({ name: "detail", params: { searchQuery: path } });
+      this.$router.push({ name: "designers", params: { searchQuery: path } });
       }
     }
 }
@@ -64,9 +64,10 @@ export default {
 }
 
 .designers img {
- height: 500px;
- width: 80%;
+ height: 150px;
+ width: 10%;
  padding-bottom: 10px;
+ border-radius: 5%
 }
 
 .title {
