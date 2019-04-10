@@ -4,6 +4,11 @@
     <app-header class="main-image-2" />
     <h1 class="our-designer">Designers</h1>
     <div class="container">
+                 <div class="media" v-for="project in projects" v-bind:key="project.id">
+ <h2>{{project.name}}</h2>
+
+ <img :src="project.covers['115']">
+           </div>
   <div class="row">
     <div class="col-md">
     <h3>Aldo Crusher</h3>
@@ -40,9 +45,18 @@ export default {
   },
   data() {
     return {
-   
+     projects: []
     };
-  }
+  },
+    created: function(){
+    this.$http
+      .get("https://behance-mock-api.glitch.me/api/projects")
+      .then(function(data) {
+        console.log(data);
+        this.projects = data.body.projects;
+        
+      });
+  } 
 };
 </script>
 

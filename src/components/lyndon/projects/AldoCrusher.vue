@@ -1,13 +1,14 @@
 <template>
     <div>
-           <div class="media" v-for="project in projects" v-bind:key="project.id">
+      <p>hi</p>
+           <!-- <div class="media" v-for="project in projects" v-bind:key="project.id">
  <h2>{{project.name}}</h2>
 
  <img :src="project.covers['115']">
            </div>
     
        <h2>{{projects.body}}</h2>
-       <article class="show-blogs">{{projects.covers}}</article>
+       <article class="show-blogs">{{projects.covers}}</article> -->
     </div>
 </template>
  
@@ -19,15 +20,15 @@
     };
   },
   methods: {},
-  created: function(){
-    this.$http
-      .get("https://behance-mock-api.glitch.me/api/projects")
-      .then(function(data) {
-        console.log(data);
-        this.projects = data.body.projects;
+  // created: function(){
+  //   this.$http
+  //     .get("https://behance-mock-api.glitch.me/api/projects")
+  //     .then(function(data) {
+  //       console.log(data);
+  //       this.projects = data.body.projects;
         
-      });
-  } 
+  //     });
+  // } 
  }
  </script>
 

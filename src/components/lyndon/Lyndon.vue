@@ -5,7 +5,7 @@
       <h1 class="our-designer">Our Designers</h1>
       <div class="designers row">
         <div class="col-md">
-          <img
+          <img @click="navigateTo('users.id')"
             class="bg-color"
             src="./layout/img/allef.jpg"
             width="300"
@@ -15,7 +15,7 @@
           </button>
         </div>
         <div class="col-md">
-          <img
+          <img @click="navigateTo('users.id')"
             class="bg-color"
             src="./layout/img/blake.jpg"
             width="300"
@@ -25,7 +25,7 @@
           </button>
         </div>
         <div class="col-md">
-          <img
+          <img @click="navigateTo('usersid')"
             class="bg-color"
             src="./layout/img/caleb.jpg"
             width="300"
@@ -84,17 +84,21 @@ import Footer from "./layout/Footer";
 export default {
   name: "Lyndon",
   components: {
-    "app-header": Header,
+   "app-header": Header,
     "app-footer": Footer
   },
   data: function() {
     return {
-      currentTab: 1
+      currentTab: 1,
+       projects: [],
     };
   },
   methods: {
     selectTab(selectedTab) {
       this.currentTab = selectedTab;
+    },
+      navigateTo: function(userId) {
+      this.$router.push({ name: "projects", params: { 'userId': userId } });
     }
   }
 };
