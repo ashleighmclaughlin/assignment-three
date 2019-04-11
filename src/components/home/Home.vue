@@ -7,13 +7,39 @@
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum corporis ipsum animi magni dolore assumenda amet quos, architecto impedit inventore consequatur</p>
       </div>
       <div class="row">
-        <div class="col ash"><router-link v-bind:to="'/ash'"><img class="home-icons" src="../../assets/ash-image.jpg"></router-link>
-        <h2>Ashleigh McLaughlin</h2>
+        <div class="col ash">
+          <router-link v-bind:to="'/ash'">
+            <img class="home-icons" src="../../assets/ash-image.jpg">
+            <h2>Ashleigh McLaughlin</h2>
+          </router-link>
         </div>
-        <div class="col tj"><router-link v-bind:to="'/tj'">Tj</router-link></div>
+<div class="col tj">
+          <router-link v-bind:to="'/tj'">
+            <img class="home-icons" src="https://placeimg.com/400/400/any">
+            <h2>Tj Lee</h2>
+          </router-link>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col matt">
+          <router-link v-bind:to="'/matt'">
+            <img class="home-icons" src="https://placeimg.com/400/400/any">
+            <h2>Matt</h2>
+          </router-link>
+        </div>
+        <div class="col lyndon">
+          <router-link v-bind:to="'/lyndon'">
+            <img class="home-icons" src="https://placeimg.com/400/400/any">
+            <h2>Lyndon Fox</h2>
+          </router-link>
+        </div>
+
+
+
+        <!-- <div class="col tj"><router-link v-bind:to="'/tj'">Tj</router-link></div>
         <div class="w-100"></div>
         <div class="col matt"><router-link v-bind:to="'/matt'">Matt</router-link></div>
-        <div class="col lyndon"><router-link v-bind:to="'/lyndon'">Lyndon</router-link></div>
+        <div class="col lyndon"><router-link v-bind:to="'/lyndon'">Lyndon</router-link></div> -->
       </div>
     </div>
     <!-- <img class="splatter" src="../../assets/home-background.png"> -->
@@ -34,38 +60,26 @@ export default {
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans+Condensed:300');
-  .splatter{
-    /* position: relative; */
-    max-width: 1200px;
-  }
   .col{
     min-height: 100px;
+    margin-bottom: 40px;
   }
-  /* .ash{
-    background-color: pink;
-  } */
+  .col h2{
+    color: white;
+  }
   .home-icons{
     max-width: 300px;
     border-radius: 50%;
+    padding: 20px;
   }
-  .tj{
-    background-color: lightgoldenrodyellow;
-  }
-  .matt{
-    background-color: lightblue;
-  }
-  .lyndon{
-    background-color: lightsalmon;
-  }
-  /* .home-page{
-    background-image: url("../../assets/home-background.png");
-  } */
   .heading{
-    width: 50%;
+    width: 80%;
+    margin: 0 auto;
+    /* margin-top: 60px; */
+    margin-bottom: 60px;
   }
   .heading h1, .heading p{
-    text-align: center;
-    color: grey;
+    color: white;
   }
   .heading h1{
     font-family: 'Open Sans Condensed', sans-serif;
@@ -74,5 +88,11 @@ export default {
   }
   .heading p{
     font-family: 'Lora', serif;
+  }
+  .home-page{
+    background-image: url("../../assets/stardust.png");
+  }
+  a:-webkit-any-link{
+    text-decoration: none;
   }
 </style>

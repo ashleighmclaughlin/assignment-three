@@ -10,7 +10,6 @@ import Matt from "./components/matt/Matt.vue";
 import Lyndon from "./components/lyndon/Lyndon.vue";
 
 import Designer from "./components/ash/Designer.vue";
-import Modal from "./components/ash/Modal.vue";
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -21,8 +20,7 @@ const routes = [
   { path: "/tj", component: Tj },
   { path: "/matt", component: Matt },
   { path: "/lyndon", component: Lyndon },
-  { path: "/designer", component: Designer, name: "designer", props: true },
-  { path: "/modal", component: Modal, name: "modal", props: true },
+  { path: "/designer", component: Designer, name: "designer", props: true }
 ];
 
 const router = new VueRouter({
