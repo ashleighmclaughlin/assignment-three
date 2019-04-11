@@ -1,49 +1,27 @@
 <template>
 <div> 
-        
-<MyHeader />
-    <div>
-      
+  <header class="hero">
+        <nav>
+          <img class="logo" src="./images/TTAMLogo.png">
+          <ul>
+            <li><router-link to="./Matt">Home</router-link></li>
+            <li>|</li>
+            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
+          </ul>
+        </nav>
+      </header>  
+  <Designers v-bind:users="users"/>   
+  <MyFooter />
+</div>
+  
 
-      <div class="designers">
-        <h1 class="title">Designers</h1>
-        <h1 class="line"></h1>
-        <div class="row">
-          <div class="col-sm">
-            <div class="designer" v-for="user in users" v-bind:key="user.id">
-              <router-link to="./Profile"><img v-bind:src="user.images['115']"></router-link>
-              <h3>{{ user.first_name + " " + user.last_name}}</h3>
-              <h5> {{user.occupation}}</h5>
-            </div>
-          </div>
-          <div class="row">
-         <div class="col-sm">
-          <img src="./images/MaciejDrabik-priject1.jpg">
-          <h3>Maciej Drabik</h3>
-          <h5>concept art / Illustration </h5>
-        </div>
-        <div class="col-sm">
-          <img src="./images/MaciejDrabik-priject1.jpg">
-          <h3>Jan Urschel</h3>
-          <h5>Freelance Concept Designer</h5>
-        </div>
-        <div class="col-sm">
-          <img src="./images/MaciejDrabik-priject1.jpg">
-          <h3>Wojtek Fus</h3>
-          <h5>Concept Designer</h5>
-        </div>
-      </div>
-    </div>
-        </div>
-        <MyFooter />
-      </div>
-     
 
 </template>
 
 <script>
 import MyHeader from "./MyHeader"
 import MyFooter from "./MyFooter"
+import Designers from "./Designers"
 
 
 
@@ -51,7 +29,8 @@ export default {
   name: "OurDesigners",
   components: {
     MyHeader,
-    MyFooter
+    MyFooter,
+    Designers
   },
   data: function() {
     return {
@@ -59,15 +38,15 @@ export default {
     }
   },
     created: function() { 
-    this.$http
+        this.$http
         .get("https://behance-mock-api.glitch.me/api/users") 
         .then(function(data) {
           this.users = data.body.users;
         });
     },
     methods: { 
-    navigateTo: function(path) {
-      this.$router.push({ name: "designers", params: { searchQuery: path } });
+    navigateTo: function(userId) {
+      this.$router.push({ name: "Profile", params: { userId: userId } });
       }
     }
 }
@@ -92,7 +71,7 @@ export default {
 .designer {
   padding: 0 20px;
   justify-content: center;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .title {
@@ -122,5 +101,46 @@ export default {
   
 }
 
+
+.hero{
+  background-image: url(./images/ProjectImage2.jpg);
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  margin: 0 auto;
+  overflow: hidden;
+
+}
+
+nav {
+  padding: 10px 50px
+}
+
+nav, ul {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+li {
+  list-style: none;
+  padding: 25px 5px;
+  color: white;
+  font-size: 30px;
+}
+
+.logo {
+  height: 80px;
+  width: 55px;
+}
+
+.headerText {
+  Padding: 300px;
+  font-size: 100px;
+  color: white
+}
 
 </style>

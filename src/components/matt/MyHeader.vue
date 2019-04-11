@@ -68,44 +68,5 @@ li {
   color: white
 }
 
-h1 { 
-  text-align: center;
-}
-
-.col-sm {
-    padding: 0 20px;
-    font-size: 30px;
-    text-align: left;
-}
-
-.featuredDesigners img {
- height: 380px;
- width: 100%
-} 
-
-.title {
-  margin-top: 100px;
-  margin-bottom: 35px;
-  font-size: 60px;
-}
-
-.line {
-  display: block;
-    width: 80px;
-    height: 3px;
-    background: #f1cd8f;
-    margin: 10px auto;
-    text-align: center;
-}
-
-.featuredDesigners h3 {
-  text-align: left;
-  border-bottom: 5px;
-}
-
-.row {
-  margin: 0;
-  padding: 70px;
-}
 
 </style>

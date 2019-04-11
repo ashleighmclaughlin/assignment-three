@@ -20,7 +20,7 @@ const routes = [
   { path: "/", component: Home },
   { path: "/ash", component: Ash },
   { path: "/tj", component: Tj },
-  { path: "/matt", component: Matt },
+  { path: "/matt", component: Matt, name: "matt", props: true},
   { path: "/lyndon", component: Lyndon },
   { path: "/designer", component: Designer, name: "designer", props: true },
   { path: "/OurDesigners", component: OurDesigners, name: "OurDesigners", props: true},

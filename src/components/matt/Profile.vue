@@ -1,6 +1,8 @@
 <template>
     <div>
       <MyHeader />
+      <h3>{{ user.first_name + " " + user.last_name}}</h3>
+      <h5> {{user.occupation}}</h5>
       <MyFooter />
     </div>  
 </template>
@@ -15,8 +17,14 @@ export default {
   components: {
     MyHeader,
     MyFooter
-  }
-};
+  },
+  props: ["users"],
+    watch: {
+      users: function(val) {
+        this.users=val;
+      }
+    }
+}
 
 </script>
 
