@@ -1,9 +1,10 @@
 <template>
     <div class="container">
-                        <div class="media" v-for="project in projects" v-bind:key="project.id">
- <h2>{{project.name}}</h2>
+                        <div class="media" v-for="user in users" v-bind:key="user.id">
+ <h2>{{user.first_name}}</h2>
+  <h2>{{user.last_name}}</h2>
 
- <img :src="project.covers['115']">
+ <img :src="user.images['115']">
            </div>
              <div class="row">
     <div class="col-sm">
@@ -20,10 +21,11 @@
 </template>
 
 <script>
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
+import Header from "./layout/Header.vue";
+import Footer from "./layout/Footer.vue";
+import Content from "./Content.vue";
 export default {
-  name: "projects",
+  name: "Projects",
   props: [""],
       components: {
     "app-header": Header,
@@ -32,19 +34,38 @@ export default {
   },
   data() {
     return {
-     projects: [],
+    users: [],
+     users: {},
+      userId: "",
+        users: { msg: "" }
     
     };
   },
-    created: function(){
-    this.$http
-      .get("https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects")
-      .then(function(data) {
-        console.log(data);
-        this.projects = data.body.projects;
+  //   created: function(){
+  //   this.$http
+  //     .get("https://behance-mock-api.glitch.me/api/users")
+  //     .then(function(data) {
+  //       console.log(data);
+  //       this.users = data.body.users;
         
-      });
-  } 
+  //     });
+  // } 
+
+    created: function() {
+        console.log(this.$route.params);
+    if (this.$route.params.userId) {
+    
+      this.userId = this.$route.params.userId;
+       console.log("https://behance-mock-api.glitch.me/api/users")
+        this.$http.get("https://behance-mock-api.glitch.me/api/users")
+        
+        .then(function( users) {
+          this. users =  users.body.users;
+          console.log('users',this.users)
+         
+        });
+    }
+  }
 }
 </script>
 

@@ -5,7 +5,7 @@
       <h1 class="our-designer">Our Designers</h1>
       <div class="designers row">
         <div class="col-md">
-          <img @click="navigateTo('users.id')"
+          <img @click="navigateTo('a4d57bd1-a9b9-4c6c-af55-767537bab564')"
             class="bg-color"
             src="./layout/img/allef.jpg"
             width="300"
@@ -15,7 +15,7 @@
           </button>
         </div>
         <div class="col-md">
-          <img @click="navigateTo('users.id')"
+          <img @click="navigateTo('075ca436-36ce-4af4-bff7-5ba04f2be682')"
             class="bg-color"
             src="./layout/img/blake.jpg"
             width="300"
@@ -25,7 +25,7 @@
           </button>
         </div>
         <div class="col-md">
-          <img @click="navigateTo('usersid')"
+          <img @click="navigateTo('55c5d1bf-2d0f-49b6-9415-f7221bed2df5')"
             class="bg-color"
             src="./layout/img/caleb.jpg"
             width="300"
