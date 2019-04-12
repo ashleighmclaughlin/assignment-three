@@ -1,15 +1,7 @@
 <template>
     <div>
-        <div class="container">
-            <!-- <div class="row"> -->
-                <!-- <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
-                    <img :src="user.images['138']" :alt="designer">
-                </div> -->
-                <!-- <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
-                    <img v-if="userdata.images" :src="userdata.images['138']" :alt="designer">
-                </div> -->
-            <!-- </div> -->
-                <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
+        <div class="container" v-if="userdata.user">
+                <img class="user-icon" :src="userdata.user.images['115']">
             <h1>{{ userdata.user.display_name }}</h1>
             <p>{{ userdata.user.occupation }}</p>
             <a v-bind:href="userdata.user.website">
@@ -43,38 +35,14 @@
 </template>
 
 <script>
-    // import MyHeader from "../designers/MyHeader";
-    // import ProjectList from "./ProjectList";
     import ProjectModal from "./ProjectModal";
     
     export default {
         name: "Bio",
-        data: function() {
-            return {
-                // users: [],
-                // contentdata: {},
-                // userId: ""
-            };
-        },
         components: {
-            // MyHeader
-            // ProjectList
             ProjectModal
         },
         props: ["userdata"]
-        
-        // created: function() {
-        //     if (this.$route.params.userId) {
-        //         // console.log(this.$route.params);
-        //         this.userId = this.$route.params.userId;
-        //         this.$http
-        //             .get("https://behance-mock-api.glitch.me/api/users/" + this.userId)
-        //             .then(function(contentdata) {
-        //                 this.contentdata = contentdata.body;
-        //                 // console.log(this.contentdata)
-        //             });
-        //     }
-        // }
     };
 </script>
 

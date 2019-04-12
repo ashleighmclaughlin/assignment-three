@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <MyHeader /> -->
     <header class="landing">
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <router-link class="back" to="/tj">
@@ -31,55 +30,33 @@
   
     <Bio :userdata="userdata" />
     <ProjectList :projectdata="projectdata" :userdata="userdata" />
-  
-    <!-- <MyFooter /> -->
   </div>
 </template>
 
 <script>
-  // import MyHeader from "../designers/MyHeader";
   import ProjectList from "./ProjectList";
   import Bio from "./Bio";
-  // import MyFooter from "../designers/MyFooter";
   
   export default {
     name: "Projects",
     data: function() {
       return {
-        // users: [],
         projectdata: {},
         userdata: {},
         userId: ""
       };
     },
     components: {
-      // MyHeader
       ProjectList,
       Bio,
-      // MyFooter
     },
     created: function() {
       this.getProjectData();
       this.getUserData();
-      // if (this.$route.params.userId) {
-      //   // console.log(this.$route.params);
-      //   this.userId = this.$route.params.userId;
-      //   this.$http
-      //     .get(
-      //       "https://behance-mock-api.glitch.me/api/users/" +
-      //         this.userId +
-      //         "/projects"
-      //     )
-      //     .then(function(contentdata) {
-      //       this.contentdata = contentdata.body;
-      //       // console.log(this.contentdata)
-      //     });
-      // }
     },
     methods: {
       getProjectData() {
         if (this.$route.params.userId) {
-          // console.log(this.$route.params);
           this.userId = this.$route.params.userId;
           this.$http
             .get(
@@ -89,14 +66,11 @@
             )
             .then(function(data) {
               this.projectdata = data.body;
-              // console.log("projectdata", this.projectdata)
-              // console.log("data", data.body)
             });
         }
       },
       getUserData() {
         if (this.$route.params.userId) {
-          // console.log(this.$route.params);
           this.userId = this.$route.params.userId;
           this.$http
             .get(
@@ -105,11 +79,10 @@
             )
             .then(function(data) {
               this.userdata = data.body;
-              // console.log(this.contentdata)
             });
         }
       },
-  
+
     }
   };
 </script>

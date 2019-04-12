@@ -18,7 +18,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link">
-                <router-link-active v-bind:to="'/designers'">Our Designers</router-link-active>
+                <router-link v-bind:to="'/designers'">Our Designers</router-link>
               </a>
             </li>
           </ul>
@@ -90,7 +90,7 @@
     color: #fff;
   } 
 
- router-link-active {
+ .router-link-active {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #fff;

@@ -18,7 +18,7 @@
 <script>
   export default {
     name: "DesignerList",
-    el: "#demo",
+    // el: "#demo",
     data: function() {
       return {
         users: [],
@@ -35,7 +35,6 @@
     },
     methods: {
       navigateTo: function(userId) {
-        // console.log("path",path)
         this.$router.push({
           name: "projects",
           params: {

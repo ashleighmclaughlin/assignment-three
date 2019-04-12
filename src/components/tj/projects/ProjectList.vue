@@ -13,99 +13,72 @@
             <div class="row">
               <div class="col-sm img-border" v-for="project in projectdata.projects" v-bind:key="project.id">
                 <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> -->
-                  <div class="hovereffect">
-                    <img class="img-responsive" :src="project.covers['230']" :alt="project.name">
-                    <div class="overlay">
-                        <h5><a href="#">{{ project.name }}</a></h5>
-                    </div>
+                <div data-toggle="modal" data-target="#exampleModal" class="hovereffect">
+                  <img class="img-responsive" :src="project.covers['230']" :alt="project.name">
+                  <div data-toggle="modal" data-target="#exampleModal" class="overlay" v-on:click="projectIdChanged(project.id)">
+                    <h5>{{ project.name }}</h5>
                   </div>
-                <!-- </div> -->
-                <!-- <h3>{{ project.name }}</h3> -->
-                <!-- <img :src="project.covers['230']" :alt="project.name"> -->
+                </div>
               </div>
             </div>
-            <!-- project.covers[200] -->
-            <!-- <p>Hello</p> -->
           </div>
         </div>
         <div v-if="activetab === 2" class="tabcontent">
           <h4>About</h4>
           <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
           <p>{{ userdata.user.display_name }}</p>
+  
           <h4>Fields</h4>
           <h4>Socials</h4>
-  
-          <!-- <div v-for="user in userdata.users" v-bind:key="user.id" v-if="userdata.user.social_links[1] && "> -->
+
           <p>{{ userdata.user.social_links }}</p>
-          <!-- </div> -->
-  
-          <!-- <a v-bind:href="userdata.user.socialinks">
-                <i class="fab fa-instagram"></i></a> -->
   
         </div>
       </div>
   
     </div>
   
+    <ProjectModal :projectId="projectId" :userdata="userdata"/>
   
   </div>
 </template>
 
 <script>
-  // import MyHeader from "../designers/MyHeader";
-  // import ProjectList from "./ProjectList";
+  import ProjectModal from "./ProjectModal";
   
   export default {
     name: "ProjectList",
-    el: "#tabs",
+    // el: "#tabs",
     data: function() {
       return {
-        // users: [],
-        // contentdata: {},
-        // userId: ""
-        // projects: []
-      }, {
+         projectId: "",
         activetab: 1
       }
     },
     methods: {
       mouseOver: function() {
         this.active = !this.active;
+      },
+       projectIdChanged: function(projectId) {
+        //  console.log("Change")
+        this.projectId = projectId;
       }
     },
     components: {
-      // MyHeader
-      // ProjectList
+      ProjectModal
     },
-    props: ["projectdata", "userdata"]
-  
-    // created: function() {
-    //     if (this.$route.params.userId) {
-    //         // console.log(this.$route.params);
-    //         this.userId = this.$route.params.userId;
-    //         this.$http
-    //             .get("https://behance-mock-api.glitch.me/api/users/" + this.userId)
-    //             .then(function(contentdata) {
-    //                 this.contentdata = contentdata.body;
-    //                 // console.log(this.contentdata)
-    //             });
-    //     }
-    // }
+    props: ["projectdata", "userdata"],
   };
 </script>
 
 
 <style scoped>
-
-
-
   .router-link-active {
     font-weight: 400;
   }
   
   .container {
     margin-top: 70px;
-
   }
   
   .user-icon {
@@ -130,8 +103,8 @@
   
   
   /*
-                  * https://imgur.com/a/5nDMmmB  Link to Image
-                  */
+                    * https://imgur.com/a/5nDMmmB  Link to Image
+                    */
   
   .landing {
     background-image: url("https://imgur.com/clOcGTs.jpg");
@@ -160,10 +133,10 @@
   
   
   /* * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        } */
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          } */
   
   .container {
     max-width: 620px;
@@ -227,11 +200,11 @@
   
   
   /* .tabcontent {
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-          box-shadow: 3px 3px 6px #e1e1e1
-        } */
+              padding: 30px;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+            box-shadow: 3px 3px 6px #e1e1e1
+          } */
   
   .hovereffect {
     width: 100%;

@@ -1,123 +1,78 @@
 <template>
-<script type="text/x-template" id="modal-template">
-  <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-
+  <div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
           <div class="modal-header">
-            <slot name="header">
-              default header
-            </slot>
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
           </div>
-
           <div class="modal-body">
-            <slot name="body">
-              default body
-            </slot>
+            <img class="user-icon" :src="userdata.user.images['115']">
+            <h1>{{ userdata.user.display_name }}</h1>
+            <h1 class="modal-title">{{ projectdata.project.name }}</h1>
+            <div class="lrg-images">
+              <img v-for="image in images" :key="image" v-bind:src="image" class="modal-image">
+            </div>
           </div>
-
           <div class="modal-footer">
-            <slot name="footer">
-              default footer
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
-            </slot>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-  </transition>
-
-  <div id="app">
-  <button id="show-modal" @click="showModal = true">Show Modal</button>
-  <!-- use the modal component, pass in the prop -->
-  <modal v-if="showModal" @close="showModal = false">
-    <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-    <h3 slot="header">custom header</h3>
-  </modal>
-</div>
-</script>
+  </div>
 </template>
 
 <script>
-export default {
+  import $ from "jquery";
+  
+  export default {
     name: "ProjectModal",
+    props: ['projectId', 'userdata'],
     data: function() {
-        return 
-    showModal: false
+      return {
+        projectdata: {},
+        // getImages: {}
+      }
+    },
+    methods: {
+      getProject: function(projectId) {
+        if (projectId) {
+          this.$http
+            .get("https://behance-mock-api.glitch.me/api/projects/" + projectId)
+            .then(function(projectdata) {
+              this.projectdata = projectdata.body;
+              this.getImages();
+              this.getFields();
+              // console.log("projectId", projectdata);
+            });
         }
-  }
+      },
+      getImages: function() {
+        let that = this;
+        let test = this.projectdata.project.modules;
+        that.images = [];
+        $.each(test, function(i, image) {
+          that.images.push(image.src);
+        });
+      },
+    },
+    watch: {
+      projectId: function(val) {
+        this.getProject(val);
+      }
+    }
+  };
 </script>
 
 <style scoped>
 
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
+.lrg-images img {
+  max-width: 400px;
+  padding-bottom: 30px;
 }
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
-.modal-default-button {
-  float: right;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
+  
 </style>
