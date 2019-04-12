@@ -5,7 +5,8 @@
       <h1 class="our-designer">Our Designers</h1>
       <div class="designers row">
         <div class="col-md">
-          <img @click="navigateTo('a4d57bd1-a9b9-4c6c-af55-767537bab564')"
+          <img
+            @click="navigateTo('d23dbc6b-7f30-4364-b6e4-16f00ce80d08')"
             class="bg-color"
             src="./layout/img/allef.jpg"
             width="300"
@@ -15,7 +16,8 @@
           </button>
         </div>
         <div class="col-md">
-          <img @click="navigateTo('075ca436-36ce-4af4-bff7-5ba04f2be682')"
+          <img
+            @click="navigateTo('e030cd57-d01d-456f-b5a7-97ead4374c38')"
             class="bg-color"
             src="./layout/img/blake.jpg"
             width="300"
@@ -25,7 +27,8 @@
           </button>
         </div>
         <div class="col-md">
-          <img @click="navigateTo('55c5d1bf-2d0f-49b6-9415-f7221bed2df5')"
+          <img
+            @click="navigateTo('19ca2aae-df99-453c-86e9-86a8eb7b948d')"
             class="bg-color"
             src="./layout/img/caleb.jpg"
             width="300"
@@ -84,21 +87,21 @@ import Footer from "./layout/Footer";
 export default {
   name: "Lyndon",
   components: {
-   "app-header": Header,
+    "app-header": Header,
     "app-footer": Footer
   },
   data: function() {
     return {
       currentTab: 1,
-       projects: [],
+      projects: []
     };
   },
   methods: {
     selectTab(selectedTab) {
       this.currentTab = selectedTab;
     },
-      navigateTo: function(userId) {
-      this.$router.push({ name: "projects", params: { 'userId': userId } });
+    navigateTo: function(userId) {
+      this.$router.push({ name: "projects", params: { userId: userId } });
     }
   }
 };
@@ -113,7 +116,6 @@ export default {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 h1 {
   text-align: center;
@@ -191,15 +193,15 @@ button {
     width: 80%;
   }
   button {
-     width: 180px;
-  margin: 10px;
- padding: 7px 15px;
+    width: 180px;
+    margin: 10px;
+    padding: 7px 15px;
   }
   h4 {
-     font-size: 1.3em;
+    font-size: 1.3em;
   }
   .hey {
-     width: 500px;
+    width: 500px;
   }
 }
 @media only screen and (max-width: 1100px) {
@@ -211,23 +213,22 @@ button {
 @media only screen and (max-width: 1000px) {
   .main-image {
     width: 120%;
-     height: 500px;
+    height: 500px;
   }
   img {
     width: 80%;
   }
   button {
-     width: 180px;
-  margin: 10px;
- padding: 7px 15px;
+    width: 180px;
+    margin: 10px;
+    padding: 7px 15px;
   }
   h4 {
-     font-size: 1.3em;
+    font-size: 1.3em;
   }
   .hey {
-     width: 500px;
+    width: 500px;
   }
-  
 }
 @media only screen and (max-width: 900px) {
   .main-image {
@@ -237,28 +238,28 @@ button {
 }
 @media only screen and (max-width: 750px) {
   .main-image {
-    width: 100%
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px) {
   .main-image {
-    width: 100%
+    width: 100%;
   }
 }
 @media only screen and (max-width: 500px) {
   .main-image {
-    width: 100%
+    width: 100%;
   }
-     .hey {
-     width: 400px;
+  .hey {
+    width: 400px;
   }
 }
 @media only screen and (max-width: 400px) {
   .main-image {
-    width: 100%
+    width: 100%;
   }
-   .hey {
-     width: 350px;
+  .hey {
+    width: 350px;
   }
 }
 </style>

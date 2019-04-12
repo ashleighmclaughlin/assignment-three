@@ -1,5 +1,9 @@
 <template>
   <div>
+       <router-link
+      class="back"
+      to="/"
+    ><i class="fas fa-long-arrow-alt-left"></i></router-link>
     <div class="nav">
       <router-link
         class="my-links"
@@ -99,6 +103,10 @@ p {
 }
 .logo-2 {
   display: none;
+}
+i {
+  color: rgb(254, 195, 58);
+  font-size: 20px;
 }
 @media only screen and (max-width: 1280px) {
   .logo {
