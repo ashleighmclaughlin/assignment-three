@@ -11,6 +11,9 @@ import Lyndon from "./components/lyndon/Lyndon.vue";
 
 import Designer from "./components/ash/Designer.vue";
 
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import 'mdbvue/build/css/mdb.css';
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 

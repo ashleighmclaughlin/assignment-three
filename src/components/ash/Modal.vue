@@ -14,30 +14,32 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h1 class="modal-title">{{projectdata.project.name}}</h1>
-          <ul class="modal-fields" v-for="field in fields" :key="field">
-            <li>{{field}}</li>
-          </ul>
+          <div v-if="projectdata.project">
+            <h1 class="modal-title">{{projectdata.project.name}}</h1>
+            <ul class="modal-fields" v-for="field in fields" :key="field">
+              <li>{{field}}</li>
+            </ul>
 
-          <img v-for="image in images" :key="image" v-bind:src="image" class="modal-image">
-          <div class="row project-stats">
-            <div class="col-sm">
-              <h2>
-                <i class="fas fa-eye"></i>
-                {{projectdata.project.stats.views}}
-              </h2>
-            </div>
-            <div class="col-sm">
-              <h2>
-                <i class="fas fa-thumbs-up"></i>
-                {{projectdata.project.stats.appreciations}}
-              </h2>
-            </div>
-            <div class="col-sm">
-              <h2>
-                <i class="fas fa-comment-alt"></i>
-                {{projectdata.project.stats.comments}}
-              </h2>
+            <img v-for="image in images" :key="image" v-bind:src="image" class="modal-image">
+            <div class="row project-stats">
+              <div class="col-sm">
+                <h2>
+                  <i class="fas fa-eye"></i>
+                  {{projectdata.project.stats.views}}
+                </h2>
+              </div>
+              <div class="col-sm">
+                <h2>
+                  <i class="fas fa-thumbs-up"></i>
+                  {{projectdata.project.stats.appreciations}}
+                </h2>
+              </div>
+              <div class="col-sm">
+                <h2>
+                  <i class="fas fa-comment-alt"></i>
+                  {{projectdata.project.stats.comments}}
+                </h2>
+              </div>
             </div>
           </div>
         </div>
@@ -134,7 +136,7 @@ ul {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-.modal-fields{
+.modal-fields {
   margin-bottom: 40px;
   font-size: 15px;
 }

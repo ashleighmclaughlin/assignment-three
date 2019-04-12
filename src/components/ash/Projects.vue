@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div v-for="project in projects" :key="project.id" class="project-list">
-      <h3
-        v-on:click="projectIdChanged(project.id)"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >{{project.name}}</h3>
-      <img
-        v-on:click="projectIdChanged(project.id)"
-        class="project-image"
-        data-toggle="modal"
-        data-target="#exampleModal"
-        v-bind:src="project.covers[404]"
-      >
+    <div class="row">
+      <div v-for="project in projects" :key="project.id" class="col project-list">
+        <img
+          v-on:click="projectIdChanged(project.id)"
+          class="pointer project-image"
+          data-toggle="modal"
+          data-target="#exampleModal"
+          v-bind:src="project.covers[404]"
+        >
+        <h3
+          class="project-name pointer"
+          v-if="project.name"
+          v-on:click="projectIdChanged(project.id)"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >{{project.name}}</h3>
+      </div>
     </div>
     <Modal v-bind:projectId="projectId"/>
   </div>
@@ -56,10 +60,20 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat");
+
 .row {
   margin: 0 auto;
 }
 .project-list {
   margin-top: 70px;
+}
+.pointer {
+  cursor: pointer;
+}
+.project-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
 }
 </style>

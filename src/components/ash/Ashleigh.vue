@@ -12,19 +12,17 @@
       </p>
     </div>
     <div v-for="user in users" :key="user.id">
-      <router-link to="/designer">
-        <div class="img-container">
-          <img
-            @click="navigateToDesigner(user.id)"
-            class="user-image"
-            v-bind:src="user.images[138]"
-          >
-        </div>
-        <h4 @click="navigateToDesigner(user.id)" class="user-name">
-          {{ user.first_name }}
-          <span>{{ user.last_name }}</span>
-        </h4>
-      </router-link>
+      <div class="img-container">
+        <img
+          @click="navigateToDesigner(user.id)"
+          class="pointer user-image"
+          v-bind:src="user.images[138]"
+        >
+      </div>
+      <h4 @click="navigateToDesigner(user.id)" class="pointer user-name">
+        {{ user.first_name }}
+        <span>{{ user.last_name }}</span>
+      </h4>
     </div>
     <Footer/>
   </div>
@@ -83,7 +81,7 @@ export default {
   text-transform: uppercase;
   font-weight: light;
   font-family: "Montserrat", sans-serif;
-  font-size: 21px;
+  font-size: 20px;
   color: #222;
   text-align: right;
   width: 90%;
@@ -105,5 +103,8 @@ export default {
 }
 a:-webkit-any-link {
   text-decoration: none;
+}
+.pointer {
+  cursor: pointer;
 }
 </style>

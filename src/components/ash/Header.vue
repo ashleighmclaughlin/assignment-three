@@ -67,7 +67,7 @@ i {
   color: #222;
   margin-top: 10px;
 }
-.nav-button{
+.nav-button {
   margin-top: 30px;
 }
 

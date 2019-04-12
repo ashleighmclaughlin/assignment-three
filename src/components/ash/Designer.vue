@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <div class="user-info">
+    <div v-if="userdata.user" class="user-info">
       <h1>{{userdata.user.display_name}}</h1>
       <h3>{{userdata.user.occupation}}</h3>
       <h3>{{userdata.user.website}}</h3>
