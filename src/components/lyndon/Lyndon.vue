@@ -6,7 +6,7 @@
       <div class="designers row">
         <div class="col-md">
           <img
-            @click="navigateTo('d23dbc6b-7f30-4364-b6e4-16f00ce80d08')"
+            @click="navigateTo('a4d57bd1-a9b9-4c6c-af55-767537bab564')" 
             class="bg-color"
             src="./layout/img/allef.jpg"
             width="300"
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md">
           <img
-            @click="navigateTo('e030cd57-d01d-456f-b5a7-97ead4374c38')"
+            @click="navigateTo('075ca436-36ce-4af4-bff7-5ba04f2be682')"
             class="bg-color"
             src="./layout/img/blake.jpg"
             width="300"
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md">
           <img
-            @click="navigateTo('19ca2aae-df99-453c-86e9-86a8eb7b948d')"
+            @click="navigateTo('55c5d1bf-2d0f-49b6-9415-f7221bed2df5')"
             class="bg-color"
             src="./layout/img/caleb.jpg"
             width="300"

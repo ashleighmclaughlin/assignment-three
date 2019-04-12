@@ -6,14 +6,14 @@
     ><i class="fas fa-long-arrow-alt-left"></i></router-link>
     <div
       class="media"
-      v-for="user in users"
-      v-bind:key="user.id"
+      v-for="project in projects"
+      v-bind:key="project.id"
     >
-      <h2>{{users.name}}</h2>
-      <h2>{{userId.name}}</h2>
-        <h2>{{projects.name}}</h2>
-      <h2>{{users.url}}</h2>
-      <img :src="projects.covers['115']">
+      <h2>{{project.name}}</h2>
+    
+      
+      <!-- <p>{{project.url}}</p> -->
+      <img :src="project.covers['115']">
       
     </div>
     <div class="row">
@@ -43,11 +43,7 @@ export default {
   },
   data() {
     return {
-      users: [],
-      users: {},
-      projectId: "",
-      projects: { msg: "" },
-      userId: {}
+     projects: [],
     };
   },
   //   created: function(){
@@ -61,24 +57,25 @@ export default {
   // }
 
   created: function() {
-    console.log(this.$route.params);
+    console.log('params',this.$route.params);
     if (this.$route.params.userId) {
-      this.projectId = this.$route.params.userId;
-      console.log(
-        "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"
-      );
+      console.log("something",
+        "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"); 
       this.$http
         .get(
-          "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"
-        )
+          "https://behance-mock-api.glitch.me/api/users/" + this.$route.params.userId + "/projects") 
 
-        .then(function(data) {
-          this.data = data.body.projects;
-          console.log("data", this.projects);
+        .then( response => {
+          this.projects = response.body.projects;
+          console.log("data", response);
+        },
+        response => {
+            // error callback
         });
     }
-  }
+  },
 };
+
 </script>
 
 <style scoped>
