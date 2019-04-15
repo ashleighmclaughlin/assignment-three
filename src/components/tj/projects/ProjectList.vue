@@ -24,55 +24,84 @@
           </div>
         </div>
         <div v-if="activetab === 2" class="tabcontent">
-          <h4>About</h4>
-          <img class="user-icon" v-if="userdata.user.images['115']" :src="userdata.user.images['115']">
-          <p>{{ userdata.user.display_name }}</p>
+          <div class="row about-me">
+            <div class="col-8">
+              <img class="user-icon" v-if="userdata.user.images['138']" :src="userdata.user.images['138']">
+            </div>
+            <div class="col-4">
+              <h4>About</h4>
+              <p>{{ userdata.user.display_name }}</p>
   
-          <h4>Fields</h4>
-          <h4>Socials</h4>
-
-          <p>{{ userdata.user.social_links }}</p>
+              <h4>Fields</h4>
+              <p>
+              <span>{{ userdata.user.fields['0'] }}, </span>
+              <span>{{ userdata.user.fields['1'] }}, </span>
+              <span>{{ userdata.user.fields['2'] }} </span>
+              <span>{{ userdata.user.fields['3'] }} </span>
+              </p>
+  
+              <h4>Socials</h4>
+              <!-- <p>{{ userdata.user.social_links }}</p> -->
+              <!-- <p>{{ userdata.user.social_links.url['0'] }}</p> -->
+            </div>
+          </div>
   
         </div>
       </div>
   
     </div>
   
-    <ProjectModal :projectId="projectId" :userdata="userdata"/>
+    <ProjectModal :projectId="projectId" :userdata="userdata" />
   
   </div>
 </template>
 
 <script>
   import ProjectModal from "./ProjectModal";
+  import $ from "jquery";
   
   export default {
     name: "ProjectList",
     // el: "#tabs",
+    props: ["projectdata", "userdata"],
     data: function() {
       return {
-         projectId: "",
+        projectId: "",
         activetab: 1
       }
     },
     methods: {
       mouseOver: function() {
         this.active = !this.active;
+        this.getFields();
       },
-       projectIdChanged: function(projectId) {
+      projectIdChanged: function(projectId) {
         //  console.log("Change")
         this.projectId = projectId;
+      },
+      getFields: function() {
+        let that = this;
+        let test = this.projectdata.project.modules;
+        that.images = [];
+        $.each(test, function(i, image) {
+          that.images.push(image.src);
+        });
       }
     },
     components: {
       ProjectModal
     },
-    props: ["projectdata", "userdata"],
+    watch: {
+      projectId: function(val) {
+        this.getProject(val);
+      }
+    }
   };
 </script>
 
 
 <style scoped>
+  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
   .router-link-active {
     font-weight: 400;
   }
@@ -82,7 +111,8 @@
   }
   
   .user-icon {
-    border-radius: 100px;
+    border-radius: 10px;
+    width: 200px;
   }
   
   .img-border img {
@@ -101,19 +131,26 @@
     margin-bottom: 0;
   }
   
+  .about-me {
+    padding-top: 50px;
+  }
+  
+  .col-4 {
+    text-align: left;
+  }
   
   /*
-                    * https://imgur.com/a/5nDMmmB  Link to Image
-                    */
+                              * https://imgur.com/a/5nDMmmB  Link to Image
+                              */
   
-  .landing {
+  /* .landing {
     background-image: url("https://imgur.com/clOcGTs.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 25vh;
   }
-  
+   */
   .logo-img {
     height: 60px;
   }
@@ -133,16 +170,15 @@
   
   
   /* * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-          } */
+                      box-sizing: border-box;
+                      margin: 0;
+                      padding: 0;
+                    } */
   
   .container {
     max-width: 620px;
     min-width: 420px;
     margin: 40px auto;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     color: #888;
   }
@@ -173,9 +209,10 @@
     font-weight: bold;
   }
   
-  .tabs a:last-child {
-    border-right: 1px solid #ccc;
-  }
+  
+  /* .tabs a:last-child {
+              border-right: 1px solid #ccc;
+            } */
   
   
   /* Change background color of tabs on hover */
@@ -200,11 +237,11 @@
   
   
   /* .tabcontent {
-              padding: 30px;
-              border: 1px solid #ccc;
-              border-radius: 10px;
-            box-shadow: 3px 3px 6px #e1e1e1
-          } */
+                        padding: 30px;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                      box-shadow: 3px 3px 6px #e1e1e1
+                    } */
   
   .hovereffect {
     width: 100%;
@@ -227,6 +264,13 @@
     top: 0;
     left: 0;
     padding: 50px 20px;
+    cursor: pointer;
+  }
+  
+  .overlay h5 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
   }
   
   .hovereffect img {

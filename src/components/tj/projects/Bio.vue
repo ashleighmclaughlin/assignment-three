@@ -8,8 +8,8 @@
             <p class="website">{{ userdata.user.website }}</p>
             </a>
             <div class="location">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>{{ userdata.user.city }}</span>
+                <i class="icon fas fa-map-marker-alt"></i>
+                <span>{{ userdata.user.city }}, </span>
                 <span>{{ userdata.user.country }}</span>
             </div>
 
@@ -80,7 +80,8 @@
           */
     
     .landing {
-        background-image: url("https://imgur.com/clOcGTs.jpg");
+        /* background-image: url("https://imgur.com/clOcGTs.jpg"); */
+        background-image: url("/../../../assets/tj_img/apple-business-click-392018");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -100,5 +101,8 @@
         width: 100vw;
         z-index: 2;
     }
-    
+    .icon {
+        padding-right: 5px;
+    }
+
 </style>

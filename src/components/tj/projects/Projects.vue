@@ -110,7 +110,8 @@
     */
   
   .landing {
-    background-image: url("https://imgur.com/clOcGTs.jpg");
+    /* background-image: url("https://imgur.com/clOcGTs.jpg"); */
+    background-image: url("../../../assets/tj_img/tossware_behance.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
