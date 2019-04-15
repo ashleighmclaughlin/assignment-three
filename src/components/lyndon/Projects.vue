@@ -2,6 +2,7 @@
   <div class="bd-div">
     <app-header class="main-image-2" />
     <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
+  
     <div class="container">
       <div class="logo-box">
         <img
@@ -24,7 +25,9 @@
             <p>Created on: {{project.created_on | moment}}</p>
             <p>Published on: {{project.published_on | moment}}</p>
 
+  <router-link :to="'./ModalPage'">Modal
             <div class="img-box"> <img :src="project.covers['404']"></div>
+</router-link>
 
             <div class="flex-container">
               <div>
@@ -73,16 +76,10 @@ export default {
       );
       this.$http
         .get(
-<<<<<<< HEAD
-          // https://behance-mock-api.glitch.me/api/users/e030cd57-d01d-456f-b5a7-97ead4374c38/projects
-          // https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects
-          "https://behance-mock-api.glitch.me/api/users/" + this.$route.params.userId + "/projects") 
-=======
           "https://behance-mock-api.glitch.me/api/users/" +
             this.$route.params.userId +
             "/projects"
         )
->>>>>>> 05fb2d930d73b12c197970130f1ca1d81389882f
 
         .then(
           response => {
@@ -105,7 +102,7 @@ export default {
   },
   methods: {
     navigateTo: function(userId) {
-      this.$router.push({ name: "ModalPage", params: { userId: userId } });
+      this.$router.push({ name: "ModalPage", params: { projectId: projectId } });
     }
   }
 };

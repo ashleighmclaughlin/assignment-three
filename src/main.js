@@ -23,9 +23,9 @@ const routes = [
   { path: "/tj", component: Tj },
   { path: "/matt", component: Matt },
   { path: "/lyndon", component: Lyndon },
-  { path: "/Designers", component: Designers },
+  { path: "/designers", component: Designers },
   { path: "/projects", component: Projects, name: "projects", props: true },
-  { path: "/ModalPage", component: ModalPage, name: "ModalPage", props: true }
+  { path: "/modalPage", component: ModalPage, name: "ModalPage", props: true }
 ];
 
 const router = new VueRouter({

@@ -2,24 +2,28 @@
   <div class="bd-div">
     <app-header class="main-image" />
     <h1>Hello</h1>
-    <div
+    <!-- <div
       class="media"
       v-for="project in projects"
       v-bind:key="project.id"
-    ></div>
+    ></div> -->
+    <Project />
   </div>
 </template>
 
 <script>
 import Header from "./layout/Header";
-import ModalPage from "./ModalPage";
+import Projects from "./Projects";
+
 export default {
   name: "ModalPage",
   components: {
-    "app-header": Header
+    "app-header": Header,
+    "Projects": Projects
   },
-  data() {
+   data: function() {
     return;
+     projects: []
   },
   created: function() {
     console.log("params", this.$route.params);
