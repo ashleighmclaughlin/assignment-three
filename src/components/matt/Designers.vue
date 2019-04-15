@@ -6,11 +6,11 @@
         <h1 class="title">Designers</h1>
         <h1 class="line"></h1>
         <div class="row">
-            <div @click="navigateTo('Profile');" v-for="user in users" v-bind:key="user.id" class="col-sm">
+                <router-link v-bind:to="'./Profile'"> <div v-for="user in users" v-bind:key="user.id" class="col-sm"> 
                 <img v-bind:src="user.images['115']">
                 <h3>{{ user.first_name + " " + user.last_name}}</h3>
                 <h5> {{user.occupation}}</h5>
-            </div>
+            </div></router-link>
         </div>  
     <div class="row">
       <div class="col-sm">
@@ -29,20 +29,22 @@
         <h5>Concept Designer</h5>
       </div>
     </div>
-  </div> 
-    </div>  
+  </div>
+  
+</div>  
+
 </template>
 
 
 <script>
 
-export default {
-  name: "Matt",
-  components: {
-  },
-  props: ['users']
-};
 
+
+export default {
+  name: "Designers",
+  components: {},
+  props: ["users"]
+}
 </script>
 
 <style scoped>

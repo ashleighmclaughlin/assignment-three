@@ -2,7 +2,7 @@
 <div> 
   <header class="hero">
         <nav>
-          <img class="logo" src="./images/TTAMLogo.png">
+          <router-link v-bind:to="'./'"><img class="logo" src="./images/TTAMLogo.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
