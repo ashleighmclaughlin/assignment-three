@@ -2,11 +2,20 @@
   <div class="bd-div">
     <app-header class="main-image" />
     <div class="container">
+      <div class="logo-box">
+        <img
+          class="logo"
+          alt="logo"
+          src='./layout/img/Eage-logo-5.png'
+        >
+      </div>
+      <h5 class="eagle">Your Premier Design Agency</h5>
+      <p class="art-p">Our skill in design is your dream come true</p>
       <h1 class="our-designer">Our Designers</h1>
       <div class="designers row">
         <div class="col-md">
           <img
-            @click="navigateTo('a4d57bd1-a9b9-4c6c-af55-767537bab564')" 
+            @click="navigateTo('55c5d1bf-2d0f-49b6-9415-f7221bed2df5')"
             class="bg-color"
             src="./layout/img/allef.jpg"
             width="300"
@@ -17,7 +26,7 @@
         </div>
         <div class="col-md">
           <img
-            @click="navigateTo('075ca436-36ce-4af4-bff7-5ba04f2be682')"
+            @click="navigateTo('a4d57bd1-a9b9-4c6c-af55-767537bab564')"
             class="bg-color"
             src="./layout/img/blake.jpg"
             width="300"
@@ -28,7 +37,7 @@
         </div>
         <div class="col-md">
           <img
-            @click="navigateTo('55c5d1bf-2d0f-49b6-9415-f7221bed2df5')"
+            @click="navigateTo('075ca436-36ce-4af4-bff7-5ba04f2be682')"
             class="bg-color"
             src="./layout/img/caleb.jpg"
             width="300"
@@ -76,6 +85,9 @@
         </div>
       </div>
     </div>
+    <div>
+      <h4 class="Preview">Preview</h4>
+    </div>
     <app-footer />
   </div>
 </template>
@@ -108,6 +120,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
 .main-image {
   height: 95vh;
   width: 100vw;
@@ -121,9 +135,25 @@ h1 {
   text-align: center;
   font-size: 3em;
 }
-
+.eagle {
+  font-family: "Marck Script", cursive;
+  font-size: 2.5em;
+  padding-top: 15px;
+  text-align: center;
+  color: black;
+}
+.logo {
+  border: none;
+  width: 45%;
+}
+.logo-box {
+  text-align: center;
+}
 .our-designer {
   padding: 50px 0 20px 0;
+  color: rgb(0, 0, 0);
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
 }
 .designers {
   /* width: 1200px; */
@@ -131,11 +161,20 @@ h1 {
   padding-top: 20px;
   margin: 0 auto;
 }
+.art-p {
+  font-family: "Marck Script", cursive;
+  text-align: center;
+  font-size: 1.2em;
+  color: black;
+}
 img {
   margin: 0 20px;
   text-align: center;
   padding: 30px;
-  border: 1px solid #222;
+  /* border: 1px solid  #222; */
+  border-style: outset;
+  border-color: rgb(176, 155, 118);
+  border-width: 2px;
   margin: 10px;
 }
 .desiger-box {
@@ -165,6 +204,10 @@ button {
 }
 .hey {
   width: 700px;
+}
+.Preview {
+  text-align: center;
+  padding-top: 30px;
 }
 @media only screen and (max-width: 1980px) {
   .main-image {

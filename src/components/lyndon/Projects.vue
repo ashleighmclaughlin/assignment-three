@@ -1,32 +1,49 @@
 <template>
-  <div class="container">
-    <router-link
-      class="back"
-      to="/lyndon"
-    ><i class="fas fa-long-arrow-alt-left"></i></router-link>
-    <div
-      class="media"
-      v-for="project in projects"
-      v-bind:key="project.id"
-    >
-      <h2>{{project.name}}</h2>
-    
-      
-      <!-- <p>{{project.url}}</p> -->
-      <img :src="project.covers['115']">
-      
+  <div class="bd-div">
+    <app-header class="main-image-2" />
+    <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
+    <div class="container">
+      <div class="logo-box">
+        <img
+          class="logo"
+          alt="logo"
+          src='./layout/img/Eage-logo-5.png'
+        >
+      </div>
+      <h1 class="our-designer">Our Designs</h1>
+      <div
+        class="media"
+        v-for="project in projects"
+        v-bind:key="project.id"
+      >
+        <!-- <p>{{project.url}}</p> -->
+
+        <div class="row text-box">
+          <div class="col-md text-title">
+            <h2>{{project.name}}</h2>
+            <p>Created on: {{project.created_on | moment}}</p>
+            <p>Published on: {{project.published_on | moment}}</p>
+
+            <div class="img-box"> <img :src="project.covers['404']"></div>
+
+            <div class="flex-container">
+              <div>
+                <p>Views: {{project.stats.views}}</p>
+              </div>
+              <div>
+                <p> Appreciations: {{project.stats.appreciations}}</p>
+              </div>
+              <div>
+                <p> Comments: {{project.stats.comments}}</p>
+              </div>
+
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-    </div>
+    <app-footer />
   </div>
 </template>
 
@@ -34,6 +51,7 @@
 import Header from "./layout/Header.vue";
 import Footer from "./layout/Footer.vue";
 import Content from "./Content.vue";
+import moment from "moment";
 export default {
   name: "Projects",
   props: [""],
@@ -43,48 +61,175 @@ export default {
   },
   data() {
     return {
-     projects: [],
+      projects: []
     };
   },
-  //   created: function(){
-  //   this.$http
-  //     .get("https://behance-mock-api.glitch.me/api/projects")
-  //     .then(function(data) {
-  //       console.log(data);
-  //       this.projects = data.body.projects;
-
-  //     });
-  // }
-
   created: function() {
-    console.log('params',this.$route.params);
+    console.log("params", this.$route.params);
     if (this.$route.params.userId) {
-      console.log("something",
-        "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"); 
+      console.log(
+        "something",
+        "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"
+      );
       this.$http
         .get(
-          "https://behance-mock-api.glitch.me/api/users/" + this.$route.params.userId + "/projects") 
+          "https://behance-mock-api.glitch.me/api/users/" +
+            this.$route.params.userId +
+            "/projects"
+        )
 
-        .then( response => {
-          this.projects = response.body.projects;
-          console.log("data", response);
-        },
-        response => {
-            // error callback
-        });
+        .then(
+          response => {
+            this.projects = response.body.projects;
+            console.log("data", response);
+          },
+          response => {
+            console.log("error callback");
+          }
+        );
     }
   },
+  filters: {
+    moment: function(timestamp) {
+      //timestamp is returned from the mock API as a string, whereas it should be
+      //an integer, so we need to change it to an integer before giving it to moment.js
+      timestamp = parseInt(timestamp);
+      return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
+    }
+  },
+  methods: {
+    navigateTo: function(userId) {
+      this.$router.push({ name: "ModalPage", params: { userId: userId } });
+    }
+  }
 };
-
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900");
+.main-image-2 {
+  height: 95vh;
+  width: 100vw;
+  height: 1000px;
+  background-image: url(layout/img/header-2.jpg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
 i {
   color: rgb(254, 195, 58);
   font-size: 40px;
 }
 i:hover {
   text-shadow: 0 0 25px rgb(138, 88, 0), 0 0 5px rgb(28, 24, 20);
+}
+.bd-div {
+  background-color: rgb(255, 241, 216);
+}
+.text-title {
+  text-align: center;
+}
+.our-designer {
+  padding: 50px 0 20px 0;
+  color: rgb(0, 0, 0);
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.text-box {
+  margin: 0 auto;
+  width: 1200px;
+  /* background: rgb(255, 241, 216); */
+}
+h2 {
+  color: rgb(254, 195, 58);
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 45px;
+}
+p {
+  color: rgb(113, 79, 0);
+  font-family: "Arimo", sans-serif;
+  font-weight: lighter;
+  padding: 20px;
+  font-size: 20px;
+}
+.flex-container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#back-btn {
+  background: rgb(213, 188, 142);
+  color: rgb(213, 188, 142);
+  /* padding: 5px 10px; */
+  border: 3px solid rgb(28, 24, 20);
+  border-radius: 100px;
+  width: 150px;
+  margin: 20px;
+  position: absolute;
+  left: 20px;
+}
+img {
+  width: 550px;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
+  padding: 10px;
+  background: rgb(213, 188, 142);
+}
+.logo {
+  border: none;
+  margin-top: 40px;
+  width: 40%;
+  box-shadow: none;
+  background: none;
+}
+.logo-box {
+  text-align: center;
+}
+@media only screen and (max-width: 1980px) {
+  .main-image-2 {
+    width: 100%;
+    height: 900px;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .main-image-2 {
+    width: 100%;
+    height: 800px;
+  }
+}
+@media only screen and (max-width: 1480px) {
+  .main-image-2 {
+    width: 100%;
+    height: 680px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .main-image-2 {
+    width: 100%;
+    height: 600px;
+  }
+  img {
+    width: 80%;
+  }
+  button {
+    width: 180px;
+    margin: 10px;
+    padding: 7px 15px;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+  .hey {
+    width: 500px;
+  }
 }
 </style>
 
