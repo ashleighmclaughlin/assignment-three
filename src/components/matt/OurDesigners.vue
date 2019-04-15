@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import MyHeader from "./MyHeader"
+// import MyHeader from "./MyHeader"
 import MyFooter from "./MyFooter"
 import Designers from "./Designers"
 
@@ -28,7 +28,7 @@ import Designers from "./Designers"
 export default {
   name: "OurDesigners",
   components: {
-    MyHeader,
+    // MyHeader,
     MyFooter,
     Designers
   },
@@ -43,11 +43,6 @@ export default {
         .then(function(data) {
           this.users = data.body.users;
         });
-    },
-    methods: { 
-    navigateTo: function(userId) {
-      this.$router.push({ name: "Profile", params: { userId: userId } });
-      }
     }
 }
 

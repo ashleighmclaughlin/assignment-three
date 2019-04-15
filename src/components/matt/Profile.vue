@@ -1,8 +1,13 @@
 <template>
     <div>
       <MyHeader />
-      <h3>{{ user.first_name + " " + user.last_name}}</h3>
-      <h5> {{user.occupation}}</h5>
+      <div>
+    <b-tabs content-class="mt-3">
+    <b-tab title="first" active><p>I'm the first fading tab</p></b-tab>
+    <b-tab title="second"><p>I'm the second tab content</p></b-tab>
+    <b-tab title="disabled" disabled><p>Disabled tab!</p></b-tab>
+    </b-tabs>
+</div>
       <MyFooter />
     </div>  
 </template>
@@ -22,6 +27,11 @@ export default {
     watch: {
       users: function(val) {
         this.users=val;
+      }
+    },
+    methods: { 
+    navigateTo: function(userId) {
+      this.$router.push({ name: "Profile", params: { userId: userId } });
       }
     }
 }

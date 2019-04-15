@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-sm">
         <img src="./images/MaciejDrabik-DP.jpg">
-        <h3>Maciej Drabik</h3>
+        <h3>Maciej Drabik</h3>  
         <h5>concept art / Illustration </h5>
       </div>
       <div class="col-sm">
@@ -40,30 +40,7 @@ export default {
   name: "Matt",
   components: {
   },
-    props: ['users'],
-    data: function() {
-    return {
-      users: {},
-      userId: ""
-    };
-  },
-  created: function() {
-    if (this.$route.params.userId) {
-      // console.log(this.$route.params);
-      this.userId = this.$route.params.userId;
-        this.$http
-        .get("https://behance-mock-api.glitch.me/api/users" + this.user.id)
-        .then(function(users) {
-          this.users = users.body;
-          // console.log(this.contentdata)
-        });
-    }
-  },
-  methods: { 
-    navigateTo: function(evt) {
-      this.$router.push({ name: "Profile", params: { userId: evt.target.value } });
-      }
-    }
+  props: ['users']
 };
 
 </script>
