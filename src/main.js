@@ -1,3 +1,4 @@
+
 import Vue from "vue";
 import App from "./App.vue";
 import VueResource from "vue-resource";
@@ -8,8 +9,10 @@ import Ash from "./components/ash/Ashleigh.vue";
 import Tj from "./components/tj/Tj.vue";
 import Matt from "./components/matt/Matt.vue";
 import Lyndon from "./components/lyndon/Lyndon.vue";
+
 import Designers from "./components/lyndon/Designers.vue";
 import Projects from "./components/lyndon/Projects.vue";
+import ModalPage from "./components/lyndon/ModalPage.vue"
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -21,7 +24,8 @@ const routes = [
   { path: "/matt", component: Matt },
   { path: "/lyndon", component: Lyndon },
   { path: "/Designers", component: Designers },
-  {name: "projects", path: "/projects", component: Projects, props: true}
+  { path: "/projects", component: Projects, name: "projects", props: true },
+  { path: "/ModalPage", component: ModalPage, name: "ModalPage", props: true }
 ];
 
 const router = new VueRouter({
