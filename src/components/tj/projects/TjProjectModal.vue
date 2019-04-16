@@ -55,7 +55,7 @@
   import $ from "jquery";
   
   export default {
-    name: "ProjectModal",
+    name: "TjProjectModal",
     props: ["projectId", "userdata"],
     data: function() {
       return {

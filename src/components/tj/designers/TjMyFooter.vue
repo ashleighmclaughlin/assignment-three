@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: "MyFooter",
+    name: "TjMyFooter",
     data: function() {
       return {
         source: ""

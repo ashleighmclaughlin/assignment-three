@@ -13,8 +13,8 @@ import AshDesigner from './components/ash/AshDesigner.vue';
 
 //Tj
 import Tj from './components/tj/Tj.vue';
-import Designers from './components/tj/designers/Designers.vue';
-import Projects from './components/tj/projects/Projects.vue';
+import TjDesigners from './components/tj/designers/TjDesigners.vue';
+import TjProjects from './components/tj/projects/TjProjects.vue';
 
 //Matt
 import Matt from './components/matt/Matt.vue';
@@ -34,8 +34,8 @@ const routes = [
   { path: '/ash-designer', component: AshDesigner, name: 'designer', props: true },
   //Tj's Routes
   { path: '/tj', component: Tj },
-  { path: '/designers', component: Designers },
-  { name: 'projects', path: '/projects', component: Projects, props: true  },
+  { path: '/designers', component: TjDesigners },
+  { path: '/projects', component: TjProjects, name: 'projects', props: true  },
   //Matt's Routes
   { path: '/matt', component: Matt, name: 'matt', props: true},
   //Lyndon's Routes

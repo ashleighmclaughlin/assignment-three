@@ -28,17 +28,17 @@
       </nav>
     </header>
   
-    <Bio :userdata="userdata" />
-    <ProjectList :projectdata="projectdata" :userdata="userdata" />
+    <TjBio :userdata="userdata" />
+    <TjProjectList :projectdata="projectdata" :userdata="userdata" />
   </div>
 </template>
 
 <script>
-  import ProjectList from "./ProjectList";
-  import Bio from "./Bio";
+  import TjProjectList from "./TjProjectList";
+  import TjBio from "./TjBio";
   
   export default {
-    name: "Projects",
+    name: "TjProjects",
     data: function() {
       return {
         projectdata: {},
@@ -47,8 +47,8 @@
       };
     },
     components: {
-      ProjectList,
-      Bio,
+      TjProjectList,
+      TjBio
     },
     created: function() {
       this.getProjectData();

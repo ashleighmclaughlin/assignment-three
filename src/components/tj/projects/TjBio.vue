@@ -13,7 +13,7 @@
                 <span>{{ userdata.user.country }}</span>
             </div>
 
-            <ProjectModal />
+            <TjProjectModal />
 
             <div class="row stats">
                 <div class="col-sm">
@@ -35,12 +35,12 @@
 </template>
 
 <script>
-    import ProjectModal from "./ProjectModal";
+    import TjProjectModal from "./TjProjectModal";
     
     export default {
-        name: "Bio",
+        name: "TjBio",
         components: {
-            ProjectModal
+            TjProjectModal
         },
         props: ["userdata"]
     };

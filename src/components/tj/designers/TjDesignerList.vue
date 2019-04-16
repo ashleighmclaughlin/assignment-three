@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name: "DesignerList",
+    name: "TjDesignerList",
     // el: "#demo",
     data: function() {
       return {

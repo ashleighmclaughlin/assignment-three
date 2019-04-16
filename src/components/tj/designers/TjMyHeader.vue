@@ -33,7 +33,7 @@
 
 <script>
   export default {
-    name: "MyHeader",
+    name: "TjMyHeader",
     data: function() {
       return {
         source: ""

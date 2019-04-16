@@ -1,27 +1,27 @@
 <template>
     <div>
-      <MyHeader />
-      <DesignerList />
-      <MyFooter />
+      <TjMyHeader />
+      <TjDesignerList />
+      <TjMyFooter />
     </div>
 </template>
 
 <script>
-import MyHeader from "./MyHeader";
-import DesignerList from "./DesignerList";
-import MyFooter from "./MyFooter";
+import TjMyHeader from "./TjMyHeader";
+import TjDesignerList from "./TjDesignerList";
+import TjMyFooter from "./TjMyFooter";
 
 export default {
-  name: "Designers",
+  name: "TjDesigners",
   data: function() {
     return {
       source: ""
     };
   },
   components: {
-      MyHeader,
-      DesignerList,
-      MyFooter
+      TjMyHeader,
+      TjDesignerList,
+      TjMyFooter
   },
   methods: {
     sourceChanged: function(source) {

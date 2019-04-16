@@ -51,17 +51,17 @@
   
     </div>
   
-    <ProjectModal :projectId="projectId" :userdata="userdata" />
+    <TjProjectModal :projectId="projectId" :userdata="userdata" />
   
   </div>
 </template>
 
 <script>
-  import ProjectModal from "./ProjectModal";
+  import TjProjectModal from "./TjProjectModal";
   import $ from "jquery";
   
   export default {
-    name: "ProjectList",
+    name: "TjProjectList",
     // el: "#tabs",
     props: ["projectdata", "userdata"],
     data: function() {
@@ -89,7 +89,7 @@
       }
     },
     components: {
-      ProjectModal
+      TjProjectModal
     },
     watch: {
       projectId: function(val) {
