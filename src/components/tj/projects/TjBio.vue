@@ -37,13 +37,13 @@
 <script>
     import TjProjectModal from './TjProjectModal';
     
-    export default {
-        name: 'TjBio',
-        components: {
-            TjProjectModal
-        },
-        props: ['userdata']
-    };
+export default {
+    name: 'TjBio',
+    components: {
+        TjProjectModal
+    },
+    props: ['userdata']
+};
 </script>
 
 <style scoped>
@@ -74,10 +74,6 @@
     .stats p {
         margin-bottom: 0;
     }
-    
-    /*
-          * 
-          */
 
 /*
 * https://imgur.com/a/5nDMmmB  Link to Image

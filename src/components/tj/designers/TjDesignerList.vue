@@ -20,11 +20,9 @@
 <script>
   export default {
     name: 'TjDesignerList',
-    // el: '#demo',
     data: function() {
       return {
         users: [],
-        // designer: {},
         active: false,
       };
     },

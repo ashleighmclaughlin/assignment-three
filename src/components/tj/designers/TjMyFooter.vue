@@ -47,7 +47,6 @@
   }
   
   footer div p {
-    /* line-height: 20px; */
     padding-top: 30px;
   }
   

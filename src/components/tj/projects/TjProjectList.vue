@@ -45,10 +45,8 @@
               <!-- <p>{{ userdata.user.social_links.url['0'] }}</p> -->
             </div>
           </div>
-  
         </div>
       </div>
-  
     </div>
   
     <TjProjectModal :projectId='projectId' :userdata='userdata' />
@@ -62,14 +60,17 @@
   
   export default {
     name: 'TjProjectList',
-    // el: '#tabs',
-    props: ['projectdata', 'userdata'],
+ 
     data: function() {
       return {
         projectId: '',
         activetab: 1
       }
     },
+    components: {
+      TjProjectModal
+    },   
+    props: ['projectdata', 'userdata'],
     methods: {
       mouseOver: function() {
         this.active = !this.active;
@@ -87,9 +88,6 @@
           that.images.push(image.src);
         });
       }
-    },
-    components: {
-      TjProjectModal
     },
     watch: {
       projectId: function(val) {

@@ -56,12 +56,12 @@
   
   export default {
     name: 'TjProjectModal',
-    props: ['projectId', 'userdata'],
     data: function() {
       return {
         projectdata: {}
       };
     },
+    props: ['projectId', 'userdata'],
     methods: {
       getProject: function(projectId) {
         if (projectId) {
@@ -76,8 +76,8 @@
         }
       },
       getImages: function() {
-        let that = this;
-        let test = this.projectdata.project.modules;
+        const that = this;
+        const test = this.projectdata.project.modules;
         that.images = [];
         $.each(test, function(i, image) {
           that.images.push(image.src);
