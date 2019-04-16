@@ -24,7 +24,7 @@
     data: function() {
       return {
         users: [],
-        designer: {},
+        // designer: {},
         active: false,
       };
     },
