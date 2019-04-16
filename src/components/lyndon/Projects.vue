@@ -2,7 +2,7 @@
   <div class="bd-div">
     <app-header class="main-image-2" />
     <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
-
+   <!-- <router-link :to="'./ModalPage'"></router-link> -->
     <div class="container">
       <div class="logo-box">
         <img
@@ -24,9 +24,13 @@
             <p>Created on: {{project.created_on | moment}}</p>
             <p>Published on: {{project.published_on | moment}}</p>
 
-            <router-link :to="'./ModalPage'">
-              <div> <img :src="project.covers['230']"></div>
-            </router-link>
+         
+              <div> <img @click="navigateTo(project.id)"
+               :src="project.covers['230']">
+              
+              </div>
+              
+          
 
             <div class="flex-container">
               <div>
@@ -64,7 +68,9 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      projectId: [],
+      project: {}
     };
   },
   created: function() {
@@ -100,12 +106,10 @@ export default {
       return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
     }
   },
-  methods: {
-    navigateTo: function(userId) {
-      this.$router.push({
-        name: "ModalPage",
-        params: { projectId: projectId }
-      });
+    methods: {
+    navigateTo: function(projectId) {
+      this.$router.push({ name: "ModalPage", params: { projectId: projectId } });
+       console.log(project.id)
     }
   }
 };

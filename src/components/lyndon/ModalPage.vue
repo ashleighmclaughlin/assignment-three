@@ -23,7 +23,7 @@
 
             <h2>
               {{ project.name }}</h2>
-            <p> Created on: {{project.created_on | moment}}</p>
+            <p>Created on: {{project.created_on | moment}}</p>
             <p>Published on: {{ project.published_on | moment}}</p>
             <p>Modified on: {{project.modified_on | moment}}</p>
             <p>Skills: {{ project.fields}}</p>
