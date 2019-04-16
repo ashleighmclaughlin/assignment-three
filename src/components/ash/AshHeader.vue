@@ -1,24 +1,23 @@
 <template>
-  <div class="navigation">
-    <div class="container">
-      <div class="row">
-        <div class="col nav-button">
-          <i class="fas fa-chevron-left" @click="$router.go(-1)"></i>
+  <div class='navigation'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col nav-button'>
+          <i class='fas fa-chevron-left' @click='$router.go(-1)'></i>
         </div>
-        <div class="col-8">
-          <router-link class="back" to="/ash">
-            <img class="nav-logo" src="../../assets/ash/nifty-logo.png" alt="Logo">
+        <div class='col-8'>
+          <router-link class='back' to='/ash'>
+            <img class='nav-logo' src='../../assets/ash/nifty-logo.png' alt='Logo'>
           </router-link>
         </div>
-        <div class="col nav-button">
-          <!-- Side Nav -->
-          <span style="font-size:30px;cursor:pointer" v-on:click="openNav">&#9776;</span>
-          <div id="mySidenav" class="sidenav" v-bind:class="{ isOpen: isOpen }">
-            <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
-            <!-- Should be like this but need to get it to go to ash page without nav open -->
-            <router-link class="back" to="/ash">home</router-link>
-            <a href="#">about</a>
-            <a href="#">contact</a>
+        <div class='col nav-button'>
+          <!-- Side Nav https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_full-->
+          <span style='font-size:30px;cursor:pointer' v-on:click='openNav'>&#9776;</span>
+          <div id='mySidenav' class='sidenav' v-bind:class='{ isOpen: isOpen }'>
+            <a href='javascript:void(0)' class='closebtn' v-on:click='closeNav'>&times;</a>
+            <router-link class='back' to='/ash'>home</router-link>
+            <a href='#'>about</a>
+            <a href='#'>contact</a>
           </div>
         </div>
       </div>
@@ -28,7 +27,7 @@
 
 <script>
 export default {
-  name: "AshHeader",
+  name: 'AshHeader',
   data() {
     return {
       isOpen: false
@@ -54,22 +53,26 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat');
 
+.container {
+  min-width: 90%;
+}
 .navigation {
   margin-top: 30px;
 }
 .nav-logo {
   max-width: 130px;
 }
-i {
+.nav-button {
+  margin-top: 30px;
+}
+.nav-button i {
   font-size: 25px;
   color: #222;
   margin-top: 10px;
 }
-.nav-button {
-  margin-top: 30px;
-}
+
 
 /* Side nav styling */
 .sidenav {
@@ -92,7 +95,7 @@ i {
   color: #5b736a;
   display: block;
   transition: 0.3s;
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Libre Baskerville', serif;
 }
 .sidenav a:hover {
   color: #222;
@@ -115,7 +118,5 @@ i {
 .isOpen {
   width: 100%;
 }
-.container {
-  min-width: 90%;
-}
+
 </style>

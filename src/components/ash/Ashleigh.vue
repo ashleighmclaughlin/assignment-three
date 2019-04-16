@@ -1,25 +1,25 @@
 <template>
-  <div class="home">
+  <div class='home'>
     <AshHeader/>
-    <div class="home-title">
+    <div class='home-title'>
       <h1>
         welcome to
-        <span class="nifty-orange">nifty</span>
+        <span class='nifty-orange'>nifty</span>
       </h1>
-      <p class="text-center mx-auto">
+      <p class='text-center mx-auto'>
         We are an independent Design Studio based in Christchurch, New Zealand.
         We showcase beautiful designers in the Canterbury region.
       </p>
     </div>
-    <div v-for="user in users" :key="user.id">
-      <div class="img-container">
+    <div v-for='user in users' :key='user.id'>
+      <div class='img-container'>
         <img
-          @click="navigateToDesigner(user.id)"
-          class="pointer user-image"
-          v-bind:src="user.images[138]"
+          @click='navigateToDesigner(user.id)'
+          class='pointer user-image'
+          v-bind:src='user.images[138]'
         >
       </div>
-      <h4 @click="navigateToDesigner(user.id)" class="pointer user-name">
+      <h4 @click='navigateToDesigner(user.id)' class='pointer user-name'>
         {{ user.first_name }}
         <span>{{ user.last_name }}</span>
       </h4>
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import AshHeader from "./AshHeader";
-import AshFooter from "./AshFooter";
+import AshHeader from './AshHeader';
+import AshFooter from './AshFooter';
 
 export default {
-  name: "Ashleigh",
+  name: 'Ashleigh',
   components: {
     AshHeader,
     AshFooter
@@ -45,24 +45,24 @@ export default {
   },
   created: function() {
     this.$http
-      .get("https://behance-mock-api.glitch.me/api/users")
+      .get('https://behance-mock-api.glitch.me/api/users')
       .then(function(data) {
         this.users = data.body.users;
       });
   },
   methods: {
     navigateToDesigner: function(userId) {
-      this.$router.push({ name: "designer", params: { userId: userId } });
+      this.$router.push({ name: 'designer', params: { userId: userId } });
     }
   }
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat');
 
 .home-title h1 {
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: bold;
   font-size: 35px;
   color: #222;
@@ -70,7 +70,7 @@ export default {
 }
 .home-title p {
   width: 50%;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 16px;
   margin-bottom: 70px;
 }
@@ -80,7 +80,7 @@ export default {
 .user-name {
   text-transform: uppercase;
   font-weight: light;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: #222;
   text-align: right;

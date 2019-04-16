@@ -1,35 +1,33 @@
 <template>
-  <div class="home-page">
-    <div class="container">
-      <div class="heading">
+  <div class='home-page'>
+    <div class='container'>
+      <div class='heading'>
           <h1>THE BLOCKHEADS</h1>
-          <!-- <hr>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum corporis ipsum animi magni dolore assumenda amet quos, architecto impedit inventore consequatur</p> -->
       </div>
-      <div class="row">
-        <div class="col ash">
+      <div class='row'>
+        <div class='col ash'>
           <router-link v-bind:to="'/ash'">
-            <img class="home-icons" src="../../assets/ash-icon.png">
+            <img class='home-icons' src='../../assets/ash-icon.png'>
             <h2>Ashleigh McLaughlin</h2>
           </router-link>
         </div>
-<div class="col tj">
+<div class='col tj'>
           <router-link v-bind:to="'/tj'">
-            <img class="home-icons" src="../../assets/tj-icon.png">
+            <img class='home-icons' src='../../assets/tj-icon.png'>
             <h2>Tj Lee</h2>
           </router-link>
         </div>
       </div>
-      <div class="row">
-        <div class="col matt">
+      <div class='row'>
+        <div class='col matt'>
           <router-link v-bind:to="'/matt'">
-            <img class="home-icons" src="../../assets/matt-icon.png">
+            <img class='home-icons' src='../../assets/matt-icon.png'>
             <h2>Matt Kennett-Ny</h2>
           </router-link>
         </div>
-        <div class="col lyndon">
+        <div class='col lyndon'>
           <router-link v-bind:to="'/lyndon'">
-            <img class="home-icons" src="../../assets/lyndon-icon.png">
+            <img class='home-icons' src='../../assets/lyndon-icon.png'>
             <h2>Lyndon Fox</h2>
           </router-link>
         </div>
@@ -42,10 +40,10 @@
 </template>
 
 <script>
-import MyFooter from "./MyFooter";
+import MyFooter from './MyFooter';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
       MyFooter
   }
@@ -82,8 +80,9 @@ export default {
   }
   .home-page{
     background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/inflicted.png");
+    background-image: url('https://www.transparenttextures.com/patterns/inflicted.png');
     margin-bottom: 0px;
+
   }
   a:-webkit-any-link{
     text-decoration: none;
