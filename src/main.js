@@ -24,9 +24,6 @@ import Profile from "./components/matt/Profile.vue"
 //Lyndon
 import Lyndon from "./components/lyndon/Lyndon.vue";
 
-
-
-
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
