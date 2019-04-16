@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header/>
+    <AshHeader/>
     <div class="home-title">
       <h1>
         welcome to
@@ -24,19 +24,19 @@
         <span>{{ user.last_name }}</span>
       </h4>
     </div>
-    <Footer/>
+    <AshFooter/>
   </div>
 </template>
 
 <script>
-import Header from "./Header";
-import Footer from "./Footer";
+import AshHeader from "./AshHeader";
+import AshFooter from "./AshFooter";
 
 export default {
   name: "Ashleigh",
   components: {
-    Header,
-    Footer
+    AshHeader,
+    AshFooter
   },
   data: function() {
     return {

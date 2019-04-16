@@ -1,28 +1,28 @@
 <template>
   <div>
-    <Header/>
+    <AshHeader/>
     <div v-if="userdata.user" class="user-info">
       <h1>{{userdata.user.display_name}}</h1>
       <h3>{{userdata.user.occupation}}</h3>
       <h3>{{userdata.user.website}}</h3>
       <h3>{{userdata.user.city}}, {{userdata.user.country}}</h3>
-      <Projects/>
+      <AshProjects/>
     </div>
-    <Footer/>
+    <AshFooter/>
   </div>
 </template>
 
 <script>
-import Header from "./Header";
-import Footer from "./Footer";
-import Projects from "./Projects";
+import AshHeader from "./AshHeader";
+import AshFooter from "./AshFooter";
+import AshProjects from "./AshProjects";
 
 export default {
-  name: "Designer",
+  name: "AshDesigner",
   components: {
-    Header,
-    Footer,
-    Projects
+    AshHeader,
+    AshFooter,
+    AshProjects
   },
   data: function() {
     return {

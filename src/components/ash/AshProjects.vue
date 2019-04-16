@@ -18,17 +18,17 @@
         >{{project.name}}</h3>
       </div>
     </div>
-    <Modal v-bind:projectId="projectId"/>
+    <AshModal v-bind:projectId="projectId"/>
   </div>
 </template>
 
 <script>
-import Modal from "./Modal";
+import AshModal from "./AshModal";
 
 export default {
-  name: "Designer",
+  name: "AshDesigner",
   components: {
-    Modal
+    AshModal
   },
   data: function() {
     return {

@@ -53,7 +53,7 @@
 import $ from "jquery";
 
 export default {
-  name: "Modal",
+  name: "AshModal",
   props: ["projectId"],
   data() {
     return {

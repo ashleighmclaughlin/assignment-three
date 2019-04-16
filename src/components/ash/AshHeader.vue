@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "AshHeader",
   data() {
     return {
       isOpen: false
