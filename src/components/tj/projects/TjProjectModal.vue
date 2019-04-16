@@ -82,15 +82,7 @@
         $.each(test, function(i, image) {
           that.images.push(image.src);
         });
-      },
-      // getTags: function() {
-      //   let that = this;
-      //   let test = this.projectdata.porject.tags;
-      //   that.tags = [];
-      //   $.each(test, function(i, tag) {
-      //     that.tags.push(tag.src);
-      //   });
-      // }
+      }
     },
     watch: {
       projectId: function(val) {

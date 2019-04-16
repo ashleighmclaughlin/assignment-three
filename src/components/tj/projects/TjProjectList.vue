@@ -139,18 +139,6 @@
     text-align: left;
   }
   
-  /*
-                              * https://imgur.com/a/5nDMmmB  Link to Image
-                              */
-  
-  /* .landing {
-    background-image: url('https://imgur.com/clOcGTs.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 25vh;
-  }
-   */
   .logo-img {
     height: 60px;
   }
@@ -165,15 +153,13 @@
     z-index: 2;
   }
   
+
+  /*
+  * https://codepen.io/mburridge/pen/WgXrvG  Link to tabs
+  */
   
   /* RESET */
-  
-  
-  /* * {
-                      box-sizing: border-box;
-                      margin: 0;
-                      padding: 0;
-                    } */
+
   
   .container {
     max-width: 620px;

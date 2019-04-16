@@ -39,7 +39,6 @@
 </template>
 
 <script>
-// import Designers from "./designers/Designers";
 
   export default {
     name: "Tj",
@@ -50,7 +49,7 @@
           'https://imgur.com/ZU5pfcV.jpg',
           'https://imgur.com/97bvcV8.jpg',
           'https://imgur.com/EpQwIod.jpg'
-          // https://imgur.com/a/qKrQK1G
+          // image source https://imgur.com/a/qKrQK1G
         ],
         currentImg: 0
       }
@@ -95,11 +94,6 @@
  .hero-text h1 {
    font-size: 70px;
  }
-
- /* .navbar-light .navbar-toggler {
-   color: #fff;
-   border-color: rgba(0, 0, 0, 0);
- } */
 
   /* Override bootstrap styles */
   .navbar {

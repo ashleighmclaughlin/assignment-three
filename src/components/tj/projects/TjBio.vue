@@ -76,11 +76,15 @@
     }
     
     /*
-          * https://imgur.com/a/5nDMmmB  Link to Image
+          * 
           */
+
+/*
+* https://imgur.com/a/5nDMmmB  Link to Image
+* 
+*/
     
     .landing {
-        /* background-image: url('https://imgur.com/clOcGTs.jpg'); */
         background-image: url('/../../../assets/tj_img/apple-business-click-392018');
         background-repeat: no-repeat;
         background-position: center;

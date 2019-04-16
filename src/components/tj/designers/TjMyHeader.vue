@@ -50,7 +50,11 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
-/* https://imgur.com/a/WjEIC3Y  Image Source*/
+
+/*
+* https://imgur.com/a/WjEIC3Y Landing Image Source
+*/
+
   .landing {
     background-image: url('https://imgur.com/p33fpEW.jpg');
     background-repeat: no-repeat;
