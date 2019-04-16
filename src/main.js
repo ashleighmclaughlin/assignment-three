@@ -13,6 +13,8 @@ import Designer from "./components/ash/Designer.vue";
 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbvue/build/css/mdb.css';
+import Designers from "./components/tj/designers/Designers.vue";
+import Projects from "./components/tj/projects/Projects.vue";
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -23,7 +25,9 @@ const routes = [
   { path: "/tj", component: Tj },
   { path: "/matt", component: Matt },
   { path: "/lyndon", component: Lyndon },
-  { path: "/designer", component: Designer, name: "designer", props: true }
+  { path: "/designer", component: Designer, name: "designer", props: true },
+  { path: "/designers", component: Designers },
+  { name: "projects", path: "/projects", component: Projects, props: true  }
 ];
 
 const router = new VueRouter({
