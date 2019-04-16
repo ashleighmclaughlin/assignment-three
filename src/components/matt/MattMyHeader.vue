@@ -2,11 +2,11 @@
     <div>
       <header class="hero">
         <nav>
-          <router-link v-bind:to="'./'"><img class="logo" src="./images/TTAMLogo.png"></router-link>
+          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogo.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
-            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
+            <li><router-link to="./MattOurDesigners">Our Designers</router-link></li>
           </ul>
         </nav>
         <h1 class="headerText">TTAM Designs</h1>
@@ -18,7 +18,7 @@
 <script>
 
 export default {
-  name: "MyHeader",
+  name: "MattMyHeader",
   components: {
   }
 };
@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
 .hero{
-  background-image: url(./images/heroImage.jpg);
+  background-image: url(./MattImages/heroImage.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;

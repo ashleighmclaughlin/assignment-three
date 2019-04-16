@@ -2,16 +2,16 @@
 <div> 
   <header class="hero">
         <nav>
-          <router-link v-bind:to="'./'"><img class="logo" src="./images/TTAMLogo.png"></router-link>
+          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogo.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
-            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
+            <li><router-link to="./MattOurDesigners">Our Designers</router-link></li>
           </ul>
         </nav>
       </header>  
-  <Designers v-bind:users="users"/>   
-  <MyFooter />
+  <MattDesigners v-bind:users="users"/>   
+  <MattMyFooter />
 </div>
   
 
@@ -20,8 +20,8 @@
 
 <script>
 // import MyHeader from "./MyHeader"
-import MyFooter from "./MyFooter"
-import Designers from "./Designers"
+import MattMyFooter from "./MattMyFooter"
+import MattDesigners from "./MattDesigners"
 
 
 
@@ -29,8 +29,8 @@ export default {
   name: "OurDesigners",
   components: {
     // MyHeader,
-    MyFooter,
-    Designers
+    MattMyFooter,
+    MattDesigners
   },
   data: function() {
     return {
@@ -98,7 +98,7 @@ export default {
 
 
 .hero{
-  background-image: url(./images/ProjectImage2.jpg);
+  background-image: url(./MattImages/ProjectImage2.jpg);
   height: 50vh;
   background-size: cover;
   background-position: center;

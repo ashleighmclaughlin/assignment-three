@@ -23,7 +23,7 @@
 <script>
 
 export default {
-  name: "FeaturedDesigners",
+  name: "MattFeaturedDesigners",
   components: {
   },
   props: ['users']
@@ -74,9 +74,10 @@ export default {
 }
 
 .featuredDesigners img {
- height: 500px;
- width: 80%;
+ height: 300px;
+ /* width: 35%; */
  padding-bottom: 10px;
+ border-radius: 50%
 }
 
 .featuredDesigners h3 {

@@ -6,25 +6,25 @@
         <h1 class="title">Designers</h1>
         <h1 class="line"></h1>
         <div class="row">
-                <router-link v-bind:to="'./Profile'"> <div v-for="user in users" v-bind:key="user.id" class="col-sm"> 
-                <img v-bind:src="user.images['115']">
+               <div v-for="user in users" v-bind:key="user.id" class="col-sm"> 
+                <router-link v-bind:to="'./MattProfile'"><img v-bind:src="user.images['115']"></router-link>
                 <h3>{{ user.first_name + " " + user.last_name}}</h3>
                 <h5> {{user.occupation}}</h5>
-            </div></router-link>
+            </div>
         </div>  
     <div class="row">
       <div class="col-sm">
-        <img src="./images/MaciejDrabik-DP.jpg">
+        <img src="./MattImages/MaciejDrabik-DP.jpg">
         <h3>Maciej Drabik</h3>  
         <h5>concept art / Illustration </h5>
       </div>
       <div class="col-sm">
-        <img src="./images/JanUrschel-DP.jpg">
+        <img src="./MattImages/JanUrschel-DP.jpg">
         <h3>Jan Urschel</h3>
         <h5>Freelance Concept Designer</h5>
       </div>
       <div class="col-sm">
-        <img src="./images/WojtekFus-DP.jpg">
+        <img src="./MattImages/WojtekFus-DP.jpg">
         <h3>Wojtek Fus</h3>
         <h5>Concept Designer</h5>
       </div>
