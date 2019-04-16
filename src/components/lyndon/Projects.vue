@@ -2,7 +2,7 @@
   <div class="bd-div">
     <app-header class="main-image-2" />
     <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
-  
+
     <div class="container">
       <div class="logo-box">
         <img
@@ -13,7 +13,6 @@
       </div>
       <h1 class="our-designer">Our Designs</h1>
       <div
-        class="media"
         v-for="project in projects"
         v-bind:key="project.id"
       >
@@ -25,23 +24,23 @@
             <p>Created on: {{project.created_on | moment}}</p>
             <p>Published on: {{project.published_on | moment}}</p>
 
-  <router-link :to="'./ModalPage'">Modal
-            <div class="img-box"> <img :src="project.covers['404']"></div>
-</router-link>
+            <router-link :to="'./ModalPage'">
+              <div> <img :src="project.covers['230']"></div>
+            </router-link>
 
             <div class="flex-container">
               <div>
-                <p>Views: {{project.stats.views}}</p>
+                <p><i class="far fa-eye"></i> Views: {{project.stats.views}}</p>
               </div>
               <div>
-                <p> Appreciations: {{project.stats.appreciations}}</p>
+                <p><i class="far fa-thumbs-up"></i> Appreciations: {{project.stats.appreciations}}</p>
               </div>
               <div>
-                <p> Comments: {{project.stats.comments}}</p>
+                <p><i class="far fa-comment"></i> Comments: {{project.stats.comments}}</p>
               </div>
 
             </div>
-            <hr>
+            <hr class="hr">
           </div>
         </div>
       </div>
@@ -55,6 +54,7 @@ import Header from "./layout/Header.vue";
 import Footer from "./layout/Footer.vue";
 import Content from "./Content.vue";
 import moment from "moment";
+// import ModalPage from "./ModalPage";
 export default {
   name: "Projects",
   props: [""],
@@ -102,7 +102,10 @@ export default {
   },
   methods: {
     navigateTo: function(userId) {
-      this.$router.push({ name: "ModalPage", params: { projectId: projectId } });
+      this.$router.push({
+        name: "ModalPage",
+        params: { projectId: projectId }
+      });
     }
   }
 };
@@ -163,6 +166,9 @@ p {
   padding: 20px;
   font-size: 20px;
 }
+.hr {
+  margin-top: 60px;
+}
 .flex-container {
   height: 60px;
   display: flex;
@@ -185,6 +191,9 @@ img {
   box-shadow: 0 0 8px rgb(0, 0, 0);
   padding: 10px;
   background: rgb(213, 188, 142);
+}
+.far {
+  padding: 20px;
 }
 .logo {
   border: none;
@@ -219,9 +228,9 @@ img {
     width: 100%;
     height: 600px;
   }
-  img {
+  /* img {
     width: 80%;
-  }
+  } */
   button {
     width: 180px;
     margin: 10px;

@@ -1,57 +1,255 @@
 <template>
   <div class="bd-div">
-    <app-header class="main-image" />
-    <h1>Hello</h1>
-    <!-- <div
-      class="media"
-      v-for="project in projects"
-      v-bind:key="project.id"
-    ></div> -->
-    <Project />
+
+    <app-header class="main-image-2" />
+    <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
+    <div class="logo-box">
+      <img
+        class="logo"
+        alt="logo"
+        src='./layout/img/Eage-logo-5.png'
+      >
+    </div>
+    <h1 class="our-designer">Designs</h1>
+    <div class="container">
+      <div
+        class="container"
+        v-for="project in projects"
+        :key="project.id"
+      >
+
+        <div class="row">
+          <div class="col-md">
+
+            <h2>
+              {{ project.name }}</h2>
+            <p> Created on: {{project.created_on | moment}}</p>
+            <p>Published on: {{ project.published_on | moment}}</p>
+            <p>Modified on: {{project.modified_on | moment}}</p>
+            <p>Skills: {{ project.fields}}</p>
+
+            <div> <img
+                class="artist-img"
+                :src="project.covers['230']"
+              ></div>
+
+            <div class="flex-container">
+              <div>
+
+                <p><i class="far fa-eye"> </i>Views: {{ project.stats.views}}</p>
+              </div>
+              <div>
+
+                <p> <i class="far fa-thumbs-up"> </i>Appreciations: {{project.stats.appreciations}}</p>
+              </div>
+              <div>
+
+                <p> <i class="far fa-comment"> </i> Comments: {{project.stats.comments}}</p>
+              </div>
+            </div>
+            <hr class="hr">
+            <!-- <div> <img
+                class="artist-img"
+                :src="project.modules.sizes['1400']"
+              ></div> -->
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <app-footer />
   </div>
 </template>
-
 <script>
 import Header from "./layout/Header";
-import Projects from "./Projects";
-
+import Footer from "./layout/Footer";
+import moment from "moment";
 export default {
-  name: "ModalPage",
+  //   name: Designers
   components: {
     "app-header": Header,
-    "Projects": Projects
+    "app-footer": Footer
   },
-   data: function() {
-    return;
-     projects: []
+  data() {
+    return {
+      projects: []
+    };
   },
   created: function() {
-    console.log("params", this.$route.params);
-    if (this.$route.params.userId) {
-      console.log(
-        "something",
-        "https://behance-mock-api.glitch.me/api/projects"
-      );
-      this.$http
-        .get(
-          "https://behance-mock-api.glitch.me/api/projects" +
-            this.$route.params.userId +
-            "/projects"
-        )
-
-        .then(
-          response => {
-            this.projects = response.body.projects;
-            console.log("data", response);
-          },
-          response => {
-            console.log("error callback");
-          }
-        );
+    this.$http
+      .get("https://behance-mock-api.glitch.me/api/projects")
+      .then(function(data) {
+        this.projects = data.body.projects;
+      });
+  },
+  filters: {
+    moment: function(timestamp) {
+      //timestamp is returned from the mock API as a string, whereas it should be
+      //an integer, so we need to change it to an integer before giving it to moment.js
+      timestamp = parseInt(timestamp);
+      return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
     }
   }
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900");
+.main-image-2 {
+  height: 95vh;
+  width: 100vw;
+  height: 1000px;
+  background-image: url(layout/img/header-2.jpg);
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+.bd-div {
+  background-color: rgb(255, 241, 216);
+}
+.our-designer {
+  padding: 50px 0 20px 0;
+  color: rgb(0, 0, 0);
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.logo {
+  border: none;
+  margin-top: 30px;
+  width: 30%;
+  box-shadow: none;
+  background: none;
+}
+.logo-box {
+  text-align: center;
+}
+h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Arimo", sans-serif;
+  color: rgb(254, 195, 58);
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+p {
+  color: rgb(55, 38, 0);
+  text-align: center;
+}
+.artist-img {
+  margin: 0 auto;
+  text-align: center;
+}
+img {
+  width: 50%;
+  height: 50%;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
+  padding: 10px;
+  background: rgb(213, 188, 142);
+}
+.far {
+  padding: 20px;
+}
+.hr {
+  margin-top: 50px;
+}
+.flex-container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#back-btn {
+  background: rgb(213, 188, 142);
+  color: rgb(213, 188, 142);
+  /* padding: 5px 10px; */
+  border: 3px solid rgb(28, 24, 20);
+  border-radius: 100px;
+  width: 150px;
+  margin: 20px;
+  position: absolute;
+  left: 20px;
+}
+i {
+  color: rgb(254, 195, 58);
+  font-size: 40px;
+}
+i:hover {
+  text-shadow: 0 0 25px rgb(138, 88, 0), 0 0 5px rgb(28, 24, 20);
+}
+.text-box {
+  margin: 0 auto;
+  width: 1200px;
+  /* background: rgb(255, 241, 216); */
+}
+.text-title {
+  text-align: center;
+}
+@media only screen and (max-width: 1980px) {
+  .main-image-2 {
+    width: 100%;
+    height: 900px;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .main-image-2 {
+    width: 100%;
+    height: 800px;
+  }
+}
+@media only screen and (max-width: 1480px) {
+  .main-image-2 {
+    width: 100%;
+    height: 680px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .main-image-2 {
+    width: 100%;
+    height: 600px;
+  }
+  /* img {
+    width: 80%;
+  } */
+  button {
+    width: 180px;
+    margin: 10px;
+    padding: 7px 15px;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+  .hey {
+    width: 500px;
+  }
+  .artist-img {
+    height: 120%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .main-image {
+    width: 100%;
+    height: 540px;
+  }
+  .artist-img {
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 </style>
+
+
