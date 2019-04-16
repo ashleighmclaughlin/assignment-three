@@ -37,6 +37,7 @@
       </div>
       <MyFooter />
     </div>
+    </div>
 
 </template>
 
