@@ -34,23 +34,10 @@
           </router-link>
         </div>
 
-
-
-        <!-- <div class="col tj"><router-link v-bind:to="'/tj'">Tj</router-link></div>
-        <div class="w-100"></div>
-        <div class="col matt"><router-link v-bind:to="'/matt'">Matt</router-link></div>
-        <div class="col lyndon"><router-link v-bind:to="'/lyndon'">Lyndon</router-link></div> -->
       </div>
-<<<<<<< HEAD
-    </div>
-    <!-- <img class="splatter" src="../../assets/home-background.png"> -->
-      <MyFooter />
-  </div>
-=======
       <MyFooter />
     </div>
 
->>>>>>> a19eb01874524335bcd6f1a2cd21bdb6f0e69ade
 </template>
 
 <script>
