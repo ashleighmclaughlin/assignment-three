@@ -1,26 +1,26 @@
 <template>
   <div>
-    <header class="landing">
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <router-link class="back" to="/tj">
-          <div class="logo">
-            <img class="logo-img" src="https://imgur.com/FIIcw2K.png" alt="Nooble Creative Logo Dark">
+    <header class='landing'>
+      <nav class='navbar navbar-expand-lg navbar-light bg-dark'>
+        <router-link class='back' to='/tj'>
+          <div class='logo'>
+            <img class='logo-img' src='https://imgur.com/FIIcw2K.png' alt='Nooble Creative Logo Dark'>
           </div>
         </router-link>
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
+        <button class='navbar-toggler navbar-dark' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+            <i class='navbar-toggler-icon'></i>
           </button>
   
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link">
-                <router-link v-bind:to="'/tj'">Home</router-link>
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav ml-auto'>
+            <li class='nav-item active'>
+              <a class='nav-link'>
+                <router-link v-bind:to='"/tj"'>Home</router-link>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <router-link v-bind:to="'/designers'">Our Designers</router-link>
+            <li class='nav-item'>
+              <a class='nav-link'>
+                <router-link v-bind:to='"/designers"'>Our Designers</router-link>
               </a>
             </li>
           </ul>
@@ -28,22 +28,22 @@
       </nav>
     </header>
   
-    <TjBio :userdata="userdata" />
-    <TjProjectList :projectdata="projectdata" :userdata="userdata" />
+    <TjBio :userdata='userdata' />
+    <TjProjectList :projectdata='projectdata' :userdata='userdata' />
   </div>
 </template>
 
 <script>
-  import TjProjectList from "./TjProjectList";
-  import TjBio from "./TjBio";
+  import TjProjectList from './TjProjectList';
+  import TjBio from './TjBio';
   
   export default {
-    name: "TjProjects",
+    name: 'TjProjects',
     data: function() {
       return {
         projectdata: {},
         userdata: {},
-        userId: ""
+        userId: ''
       };
     },
     components: {
@@ -60,9 +60,9 @@
           this.userId = this.$route.params.userId;
           this.$http
             .get(
-              "https://behance-mock-api.glitch.me/api/users/" +
+              'https://behance-mock-api.glitch.me/api/users/' +
               this.userId +
-              "/projects"
+              '/projects'
             )
             .then(function(data) {
               this.projectdata = data.body;
@@ -74,7 +74,7 @@
           this.userId = this.$route.params.userId;
           this.$http
             .get(
-              "https://behance-mock-api.glitch.me/api/users/" +
+              'https://behance-mock-api.glitch.me/api/users/' +
               this.userId
             )
             .then(function(data) {
@@ -110,8 +110,8 @@
     */
   
   .landing {
-    /* background-image: url("https://imgur.com/clOcGTs.jpg"); */
-    background-image: url("../../../assets/tj_img/tossware_behance.jpg");
+    /* background-image: url('https://imgur.com/clOcGTs.jpg'); */
+    background-image: url('../../../assets/tj_img/tossware_behance.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import TjMyHeader from "./TjMyHeader";
-import TjDesignerList from "./TjDesignerList";
-import TjMyFooter from "./TjMyFooter";
+import TjMyHeader from './TjMyHeader';
+import TjDesignerList from './TjDesignerList';
+import TjMyFooter from './TjMyFooter';
 
 export default {
-  name: "TjDesigners",
+  name: 'TjDesigners',
   data: function() {
     return {
-      source: ""
+      source: ''
     };
   },
   components: {

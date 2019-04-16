@@ -1,21 +1,21 @@
 <template>
   <div>
-    <div id="tabs" class="container">
+    <div id='tabs' class='container'>
   
-      <div class="tabs">
-        <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Projects</a>
-        <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">About Me</a>
+      <div class='tabs'>
+        <a v-on:click='activetab=1' v-bind:class='[ activetab === 1 ? "active" : "" ]'>Projects</a>
+        <a v-on:click='activetab=2' v-bind:class='[ activetab === 2 ? "active" : "" ]'>About Me</a>
       </div>
   
-      <div class="content">
-        <div v-if="activetab === 1" class="tabcontent">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm img-border" v-for="project in projectdata.projects" v-bind:key="project.id">
-                <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> -->
-                <div data-toggle="modal" data-target="#exampleModal" class="hovereffect">
-                  <img class="img-responsive" :src="project.covers['230']" :alt="project.name">
-                  <div data-toggle="modal" data-target="#exampleModal" class="overlay" v-on:click="projectIdChanged(project.id)">
+      <div class='content'>
+        <div v-if='activetab === 1' class='tabcontent'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-sm img-border' v-for='project in projectdata.projects' v-bind:key='project.id'>
+                <!-- <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> -->
+                <div data-toggle='modal' data-target='#exampleModal' class='hovereffect'>
+                  <img class='img-responsive' :src='project.covers["230"]' :alt='project.name'>
+                  <div data-toggle='modal' data-target='#exampleModal' class='overlay' v-on:click='projectIdChanged(project.id)'>
                     <h5>{{ project.name }}</h5>
                   </div>
                 </div>
@@ -23,12 +23,12 @@
             </div>
           </div>
         </div>
-        <div v-if="activetab === 2" class="tabcontent">
-          <div class="row about-me">
-            <div class="col-8">
-              <img class="user-icon" v-if="userdata.user.images['138']" :src="userdata.user.images['138']">
+        <div v-if='activetab === 2' class='tabcontent'>
+          <div class='row about-me'>
+            <div class='col-8'>
+              <img class='user-icon' v-if='userdata.user.images["138"]' :src='userdata.user.images["138"]'>
             </div>
-            <div class="col-4">
+            <div class='col-4'>
               <h4>About</h4>
               <p>{{ userdata.user.display_name }}</p>
   
@@ -51,22 +51,22 @@
   
     </div>
   
-    <TjProjectModal :projectId="projectId" :userdata="userdata" />
+    <TjProjectModal :projectId='projectId' :userdata='userdata' />
   
   </div>
 </template>
 
 <script>
-  import TjProjectModal from "./TjProjectModal";
-  import $ from "jquery";
+  import TjProjectModal from './TjProjectModal';
+  import $ from 'jquery';
   
   export default {
-    name: "TjProjectList",
-    // el: "#tabs",
-    props: ["projectdata", "userdata"],
+    name: 'TjProjectList',
+    // el: '#tabs',
+    props: ['projectdata', 'userdata'],
     data: function() {
       return {
-        projectId: "",
+        projectId: '',
         activetab: 1
       }
     },
@@ -76,7 +76,7 @@
         this.getFields();
       },
       projectIdChanged: function(projectId) {
-        //  console.log("Change")
+        //  console.log('Change')
         this.projectId = projectId;
       },
       getFields: function() {
@@ -144,7 +144,7 @@
                               */
   
   /* .landing {
-    background-image: url("https://imgur.com/clOcGTs.jpg");
+    background-image: url('https://imgur.com/clOcGTs.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm img-border" v-for="user in users" v-bind:key="user.id">
-          <div class="projects" to="/projects" @click="navigateTo(user.id);">
-            <img v-if="user.images[138]" :src="user.images[138]" :alt="designer">
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm img-border' v-for='user in users' v-bind:key='user.id'>
+          <div class='projects' to='/projects' @click='navigateTo(user.id);'>
+            <img v-if='user.images[138]' :src='user.images[138]' :alt='designer'>
             <h4>{{ user.first_name }}</h4>
           </div>
-           <div class="projects" to="/projects" @click="navigateTo(user.id);">
-            <img v-if="user.images[138]" :src="user.images[138]" :alt="designer">
+           <div class='projects' to='/projects' @click='navigateTo(user.id);'>
+            <img v-if='user.images[138]' :src='user.images[138]' :alt='designer'>
             <h4>{{ user.first_name }}</h4>
           </div>
         </div>
@@ -19,8 +19,8 @@
 
 <script>
   export default {
-    name: "TjDesignerList",
-    // el: "#demo",
+    name: 'TjDesignerList',
+    // el: '#demo',
     data: function() {
       return {
         users: [],
@@ -30,7 +30,7 @@
     },
     created: function() {
       this.$http
-        .get("https://behance-mock-api.glitch.me/api/users/")
+        .get('https://behance-mock-api.glitch.me/api/users/')
         .then(function(data) {
           this.users = data.body.users;
         });
@@ -38,7 +38,7 @@
     methods: {
       navigateTo: function(userId) {
         this.$router.push({
-          name: "projects",
+          name: 'projects',
           params: {
             userId: userId
           }

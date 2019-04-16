@@ -1,18 +1,18 @@
 <template>
   <div>
     <footer v-footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
+      <div class='container'>
+        <div class='row'>
+          <div class='col-sm'>
             <p>©Nooble Creative 2019, All rights reserved. Behance API </p>
           </div>
-          <div class="col-sm">
+          <div class='col-sm'>
             <span>
-         <i class="fab fa-adobe"></i>
-        <i class="fab fa-behance"></i>
+         <i class='fab fa-adobe'></i>
+        <i class='fab fa-behance'></i>
         </span>
           </div>
-          <div class="col-sm">
+          <div class='col-sm'>
             <p>Designed by Nooble Creative Inc.</p>
           </div>
         </div>
@@ -23,10 +23,10 @@
 
 <script>
   export default {
-    name: "TjMyFooter",
+    name: 'TjMyFooter',
     data: function() {
       return {
-        source: ""
+        source: ''
       };
     },
     components: {},
