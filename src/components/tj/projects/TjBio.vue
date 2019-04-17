@@ -69,7 +69,7 @@ export default {
     }
     
     .stats div {
-        padding: 0;
+        padding: 8px;;
     }
 
     .stats p {

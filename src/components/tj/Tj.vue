@@ -5,6 +5,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <router-link class="back" to="/">
             <i class="fas fa-chevron-left"></i>
+            <!-- <div class='logo'> -->
+            <!-- <img class='logo-img' src='https://imgur.com/FIIcw2K.png' alt='Nooble Creative Logo Dark'> -->
+          <!-- </div> -->
           </router-link>
           <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="navbar-toggler-icon"></i>
@@ -80,6 +83,8 @@
   i {
     color: #ffffff;
     font-size: 30px;
+    height: 50px;
+    padding-top: 10px;
   }
   
   .logo {

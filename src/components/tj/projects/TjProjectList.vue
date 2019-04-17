@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id='tabs' class='container'>
-  
       <div class='tabs'>
         <a v-on:click='activetab=1' v-bind:class='[ activetab === 1 ? "active" : "" ]'>Projects</a>
         <a v-on:click='activetab=2' v-bind:class='[ activetab === 2 ? "active" : "" ]'>About Me</a>
@@ -9,12 +8,11 @@
   
       <div class='content'>
         <div v-if='activetab === 1' class='tabcontent'>
-          <div class='container'>
+          <div class='img-container'>
             <div class='row'>
               <div class='col-sm img-border' v-for='project in projectdata.projects' v-bind:key='project.id'>
-                <!-- <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> -->
                 <div data-toggle='modal' data-target='#exampleModal' class='hovereffect'>
-                  <img class='img-responsive' :src='project.covers["230"]' :alt='project.name'>
+                  <img class='img-responsive' :src='project.covers["404"]' :alt='project.name'>
                   <div data-toggle='modal' data-target='#exampleModal' class='overlay' v-on:click='projectIdChanged(project.id)'>
                     <h5>{{ project.name }}</h5>
                   </div>
@@ -25,10 +23,10 @@
         </div>
         <div v-if='activetab === 2' class='tabcontent'>
           <div class='row about-me'>
-            <div class='col-8'>
+            <div class='col col-right'>
               <img class='user-icon' v-if='userdata.user.images["138"]' :src='userdata.user.images["138"]'>
             </div>
-            <div class='col-4'>
+            <div class='col'>
               <h4>About</h4>
               <p>How's it going, my name is <span>{{ userdata.user.first_name }}</span> and I'm a designer
               from <span>{{ userdata.user.city }}. I started working for Nooble Creative 2 years ago and it's
@@ -45,7 +43,15 @@
               </p>
   
               <h4>Socials</h4>
-              <!-- <p>{{ userdata.user.social_links }}</p> -->
+              <p>{{  }}</p>
+              <a v-if='userdata.user.social_links["0"].url' :href='userdata.user.social_links["0"].url'>
+                <i class="fab fa-instagram fa-2x"></i>
+                <!-- loop through array -->
+              </a>
+              <a :href='userdata.user.url'>
+                <i class="fab fa-behance-square fa-2x"></i>
+                <!-- loop through array -->
+              </a>
             </div>
           </div>
         </div>
@@ -61,7 +67,7 @@
 <script>
   import TjProjectModal from './TjProjectModal';
   import TjMyFooter from '../designers/TjMyFooter';
-  import $ from 'jquery';
+  // import $ from 'jquery';
   
   export default {
     name: 'TjProjectList',
@@ -80,20 +86,20 @@
     methods: {
       mouseOver: function() {
         this.active = !this.active;
-        this.getFields();
+        // this.getFields();
       },
       projectIdChanged: function(projectId) {
         //  console.log('Change')
         this.projectId = projectId;
       },
-      getFields: function() {
-        const that = this;
-        const test = this.projectdata.project.modules;
-        that.images = [];
-        $.each(test, function(i, image) {
-          that.images.push(image.src);
-        });
-      }
+      // getFields: function() {
+      //   const that = this;
+      //   const test = this.projectdata.project.modules;
+      //   that.images = [];
+      //   $.each(test, function(i, image) {
+      //     that.images.push(image.src);
+      //   });
+      // }
     },
     watch: {
       projectId: function(val) {
@@ -107,25 +113,25 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
   
-  .router-link-active {
-    font-weight: 400;
+  /* About Me Styles */
+
+.user-icon {
+    border-radius: 10px;
+    width: 200px;
+  }
+
+   /* Project Styles */
+
+   .img-border img {
+    border-radius: 10px;
+  }
+
+  i {
+    width: 40px;
   }
   
   .container {
     margin-top: 70px;
-  }
-  
-  .user-icon {
-    border-radius: 10px;
-    width: 200px;
-  }
-  
-  .img-border img {
-    border-radius: 10px;
-  }
-  
-  .website {
-    text-decoration: underline;
   }
   
   .stats div {
@@ -140,12 +146,16 @@
     padding-top: 50px;
   }
   
-  .col-4 {
+  .col {
     text-align: left;
+  }
+
+  .col-right {
+    text-align: right;
   }
   
   .logo-img {
-    height: 60px;
+    width: 60px;
   }
   
   .navbar {
@@ -167,11 +177,13 @@
 
   
   .container {
-    max-width: 620px;
-    min-width: 420px;
-    margin: 40px auto;
+    margin: 80px auto;
     font-size: 0.9em;
     color: #888;
+  }
+
+  .img-container {
+    margin: 40px auto;
   }
   
   
@@ -260,6 +272,7 @@
   
   .overlay h5 {
     color: #fff;
+    padding-top: 70px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
   }
