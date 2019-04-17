@@ -58,10 +58,9 @@ import LyndonHeader from "./layout/LyndonHeader.vue";
 import LyndonFooter from "./layout/LyndonFooter.vue";
 import Content from "./Content.vue";
 import moment from "moment";
-
 export default {
   name: "Projects",
-  // props: [""],
+  props: [""],
   components: {
     "app-header": LyndonHeader,
     "app-footer": LyndonFooter,
@@ -91,11 +90,11 @@ export default {
         .then(
           response => {
             this.projects = response.body.projects;
-            // console.log("data", response);
+            console.log("data", response);
           },
-          response => {
-            // error callback
-          }
+          // response => {
+          //   console.log("error callback");
+          // }
         );
     }
   },

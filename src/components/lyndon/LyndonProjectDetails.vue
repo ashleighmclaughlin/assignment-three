@@ -22,11 +22,11 @@
           <div class="col-md">
 
             <h2>
-              {{ project.name }}</h2>
-            <p>Created on: {{project.created_on | moment}}</p>
-            <p>Published on: {{ project.published_on | moment}}</p>
-            <p>Modified on: {{project.modified_on | moment}}</p>
-            <p>Skills: {{ project.fields}}</p>
+              {{ projects.name }}</h2>
+            <p>Created on: {{projects.created_on | moment}}</p>
+            <p>Published on: {{ projects.published_on | moment}}</p>
+            <p>Modified on: {{projects.modified_on | moment}}</p>
+            <p>Skills: {{ projects.fields}}</p>
 
             <div> <img
                 class="artist-img"
@@ -85,10 +85,10 @@ export default {
    created: function() {
     console.log("params", this.$route.params);
     if (this.$route.params.userId) {
-      // console.log(
-      //   "something",
-      //   "https://behance-mock-api.glitch.me/api/projects/"
-      // );
+      console.log(
+        "something",
+        "https://behance-mock-api.glitch.me/api/projects/"
+      );
       this.$http
         .get(
           "https://behance-mock-api.glitch.me/api/projects/" +
@@ -99,10 +99,10 @@ export default {
         .then(
           response => {
             this.projects = response.body.projects;
-            // console.log("data", response);
+            console.log("data", response);
           },
           response => {
-            // error callback
+            console.log('error callback')
           }
         );
     }
