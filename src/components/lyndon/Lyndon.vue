@@ -94,13 +94,13 @@
 
 <script>
 // import Designers from "./Designers";
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
+import LyndonHeader from "./layout/LyndonHeader";
+import LyndonFooter from "./layout/LyndonFooter";
 export default {
   name: "Lyndon",
   components: {
-    "app-header": Header,
-    "app-footer": Footer
+    "app-header": LyndonHeader,
+    "app-footer": LyndonFooter
   },
   data: function() {
     return {

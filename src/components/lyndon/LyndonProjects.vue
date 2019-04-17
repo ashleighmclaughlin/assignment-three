@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import Header from "./layout/Header.vue";
-import Footer from "./layout/Footer.vue";
+import LyndonHeader from "./layout/LyndonHeader.vue";
+import LyndonFooter from "./layout/LyndonFooter.vue";
 import Content from "./Content.vue";
 import moment from "moment";
 // import ModalPage from "./ModalPage";
@@ -63,8 +63,9 @@ export default {
   name: "Projects",
   props: [""],
   components: {
-    "app-header": Header,
-    "app-footer": Footer
+    "app-header": LyndonHeader,
+    "app-footer": LyndonFooter,
+   
   },
   data() {
     return {
