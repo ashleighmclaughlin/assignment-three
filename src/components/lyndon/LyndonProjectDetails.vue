@@ -75,15 +75,37 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      projectId: [],
+      project: {}
+     
     };
   },
-  created: function() {
-    this.$http
-      .get("https://behance-mock-api.glitch.me/api/projects")
-      .then(function(data) {
-        this.projects = data.body.projects;
-      });
+
+   created: function() {
+    console.log("params", this.$route.params);
+    if (this.$route.params.userId) {
+      // console.log(
+      //   "something",
+      //   "https://behance-mock-api.glitch.me/api/projects/"
+      // );
+      this.$http
+        .get(
+          "https://behance-mock-api.glitch.me/api/projects/" +
+            this.$route.params.userId +
+            "/projects"
+        )
+
+        .then(
+          response => {
+            this.projects = response.body.projects;
+            // console.log("data", response);
+          },
+          response => {
+            // error callback
+          }
+        );
+    }
   },
   filters: {
     moment: function(timestamp) {
@@ -92,7 +114,8 @@ export default {
       timestamp = parseInt(timestamp);
       return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
     }
-  }
+  },
+  
 };
 </script>
 
