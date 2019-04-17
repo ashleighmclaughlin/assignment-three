@@ -1,57 +1,49 @@
 <template>
-  <div class="home-page">
-    <div class="container">
-      <div class="heading">
-          <h1>SUMMATIVE ASSESSMENT</h1>
-          <hr>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum corporis ipsum animi magni dolore assumenda amet quos, architecto impedit inventore consequatur</p>
+  <div class='home-page'>
+    <div class='container'>
+      <div class='heading'>
+          <h1>THE BLOCKHEADS</h1>
       </div>
-      <div class="row">
-        <div class="col ash">
+      <div class='row'>
+        <div class='col ash'>
           <router-link v-bind:to="'/ash'">
-            <img class="home-icons" src="../../assets/ash-image.jpg">
+            <img class='home-icons' src='../../assets/ash-icon.png'>
             <h2>Ashleigh McLaughlin</h2>
           </router-link>
         </div>
-<div class="col tj">
+<div class='col tj'>
           <router-link v-bind:to="'/tj'">
-            <img class="home-icons" src="https://placeimg.com/400/400/any">
+            <img class='home-icons' src='../../assets/tj-icon.png'>
             <h2>Tj Lee</h2>
           </router-link>
         </div>
       </div>
-      <div class="row">
-        <div class="col matt">
+      <div class='row'>
+        <div class='col matt'>
           <router-link v-bind:to="'/matt'">
-            <img class="home-icons" src="https://placeimg.com/400/400/any">
-            <h2>Matt</h2>
+            <img class='home-icons' src='../../assets/matt-icon.png'>
+            <h2>Matt Kennett-Ny</h2>
           </router-link>
         </div>
-        <div class="col lyndon">
+        <div class='col lyndon'>
           <router-link v-bind:to="'/lyndon'">
-            <img class="home-icons" src="https://placeimg.com/400/400/any">
+            <img class='home-icons' src='../../assets/lyndon-icon.png'>
             <h2>Lyndon Fox</h2>
           </router-link>
         </div>
 
-
-
-        <!-- <div class="col tj"><router-link v-bind:to="'/tj'">Tj</router-link></div>
-        <div class="w-100"></div>
-        <div class="col matt"><router-link v-bind:to="'/matt'">Matt</router-link></div>
-        <div class="col lyndon"><router-link v-bind:to="'/lyndon'">Lyndon</router-link></div> -->
       </div>
-    </div>
-    <!-- <img class="splatter" src="../../assets/home-background.png"> -->
       <MyFooter />
-  </div>
+    </div>
+    </div>
+
 </template>
 
 <script>
-import MyFooter from "./MyFooter";
+import MyFooter from './MyFooter';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
       MyFooter
   }
@@ -65,32 +57,32 @@ export default {
     margin-bottom: 40px;
   }
   .col h2{
-    color: white;
+    color: black;
   }
   .home-icons{
-    max-width: 300px;
+    max-width: 350px;
     border-radius: 50%;
     padding: 20px;
   }
   .heading{
     width: 80%;
     margin: 0 auto;
-    /* margin-top: 60px; */
     margin-bottom: 60px;
-  }
-  .heading h1, .heading p{
-    color: white;
   }
   .heading h1{
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 60px;
+    padding-top: 50px;
   }
   .heading p{
     font-family: 'Lora', serif;
   }
   .home-page{
-    background-image: url("../../assets/stardust.png");
+    background-color: #ffffff;
+    background-image: url('https://www.transparenttextures.com/patterns/inflicted.png');
+    margin-bottom: 0px;
+
   }
   a:-webkit-any-link{
     text-decoration: none;

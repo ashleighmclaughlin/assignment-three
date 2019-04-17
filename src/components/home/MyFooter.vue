@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "MyFooter" 
+  name: 'MyFooter' 
 };
 </script>
 
@@ -16,6 +16,7 @@ export default {
       text-align: right;
       margin-top: 30px;
       font-family: 'Lora', serif;
-      color: grey;
+      color: black;
+      padding-bottom: 30px;
     }
 </style>

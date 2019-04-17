@@ -58,6 +58,8 @@ data: function() {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 .hero{
  background-image: url(./MattImages/ProjectImage2.jpg);
  height: 50vh;
@@ -86,6 +88,7 @@ li {
  padding: 25px 5px;
  color: white;
  font-size: 30px;
+ font-family: 'Lato', sans-serif;
 }
 
 .logo {

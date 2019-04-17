@@ -26,6 +26,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Chivo:700');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 .hero{
   background-image: url(./MattImages/heroImage.jpg);
@@ -55,6 +57,7 @@ li {
   padding: 25px 5px;
   color: white;
   font-size: 30px;
+  font-family: 'Lato', sans-serif;
 }
 
 .logo {
@@ -65,7 +68,8 @@ li {
 .headerText {
   Padding: 300px;
   font-size: 100px;
-  color: white
+  color: lightblue;
+  font-family: 'Chivo', sans-serif;
 }
 
 
