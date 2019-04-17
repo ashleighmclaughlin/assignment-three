@@ -5,21 +5,22 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <router-link class="back" to="/">
             <i class="fas fa-chevron-left"></i>
-            <!-- <div class='logo'> -->
-            <!-- <img class='logo-img' src='https://imgur.com/FIIcw2K.png' alt='Nooble Creative Logo Dark'> -->
-          <!-- </div> -->
           </router-link>
-          <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
+          <button class='navbar-toggler navbar-dark' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+            <i class='navbar-toggler-icon'></i>
           </button>
   
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link"><router-link :to="'/tj'">Home</router-link></a>
+                <a class="nav-link">
+                  <router-link :to="'/tj'">Home</router-link>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"><router-link v-bind:to="'/designers'">Our Designers</router-link></a>
+                <a class="nav-link">
+                  <router-link v-bind:to="'/designers'">Our Designers</router-link>
+                </a>
               </li>
             </ul>
           </div>
@@ -42,7 +43,6 @@
 </template>
 
 <script>
-
   export default {
     name: "Tj",
     data: function() {
@@ -69,7 +69,6 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
 
-
   .hero-text {
     font-family: Futura;
     color: #ffffff;
@@ -81,7 +80,7 @@
   }
   
   i {
-    color: #ffffff;
+    color: #fff;
     font-size: 30px;
     height: 50px;
     padding-top: 10px;
@@ -96,12 +95,12 @@
   .logo-img {
     height: 60px;
   }
-
- .hero-text h1 {
-   font-size: 70px;
- }
-
-  /* Override bootstrap styles */
+  
+  .hero-text h1 {
+    font-size: 70px;
+  }
+  
+  /* !important is to override bootstrap styles */
   .navbar {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -112,20 +111,22 @@
     width: 100vw;
     z-index: 2;
   }
-
+  
   .nav-item a {
     color: #fff;
   }
-
+  
   .router-link-active {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #fff;
   }
-
+  
+  
   /*
   * https://stackoverflow.com/questions/42866098/create-sliding-left-effect-using-vuejs-animation
   */
+  
   .demo {
     overflow: hidden;
   }

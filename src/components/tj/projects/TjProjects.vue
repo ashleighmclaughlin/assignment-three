@@ -8,8 +8,8 @@
           </div>
         </router-link>
         <button class='navbar-toggler navbar-dark' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-            <i class='navbar-toggler-icon'></i>
-          </button>
+    <i class='navbar-toggler-icon'></i>
+  </button>
   
         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul class='navbar-nav ml-auto'>
@@ -82,14 +82,13 @@
             });
         }
       },
-
+  
     }
   };
 </script>
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
-
   a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -104,13 +103,7 @@
     border-radius: 10px;
   }
   
-  
-  /*
-    * https://imgur.com/a/5nDMmmB  Link to Image
-    */
-  
   .landing {
-    /* background-image: url('https://imgur.com/clOcGTs.jpg'); */
     background-image: url('../../../assets/tj_img/tossware_behance.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -131,5 +124,4 @@
     width: 100vw;
     z-index: 2;
   }
-
 </style>

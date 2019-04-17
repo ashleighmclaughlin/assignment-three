@@ -1,6 +1,6 @@
 <template>
   <div>
-    <footer v-footer>
+    <footer>
       <div class='container'>
         <div class='row'>
           <div class='col-sm'>
@@ -8,9 +8,9 @@
           </div>
           <div class='col-sm'>
             <span>
-         <i class='fab fa-adobe'></i>
-        <i class='fab fa-behance'></i>
-        </span>
+  <i class='fab fa-adobe'></i>
+  <i class='fab fa-behance'></i>
+  </span>
           </div>
           <div class='col-sm'>
             <p>Designed by Nooble Creative Inc.</p>
@@ -23,26 +23,15 @@
 
 <script>
   export default {
-    name: 'TjMyFooter',
-    data: function() {
-      return {
-        source: ''
-      };
-    },
-    components: {},
-    methods: {
-      sourceChanged: function(source) {
-        this.source = source;
-      }
-    }
+    name: 'TjMyFooter'
   };
 </script>
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
-  
   footer {
-    width: 100%;
+    font-family: Montserrat;
+    font-size: 13px;
     background-color: #333;
     color: #fff;
   }
@@ -55,7 +44,6 @@
     margin-right: 20px;
     padding-top: 40px;
   }
- 
 </style>
 
 
