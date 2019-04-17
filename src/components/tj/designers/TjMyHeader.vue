@@ -49,7 +49,7 @@
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
 
 /*
 * https://imgur.com/a/WjEIC3Y Landing Image Source

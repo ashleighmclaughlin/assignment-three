@@ -32,8 +32,10 @@ export default {
 </script>
 
 <style scoped>
-.router-link-active {
-  font-weight: 400;
-}
+  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+
+  .router-link-active {
+    font-weight: 400;
+  }
 
 </style>

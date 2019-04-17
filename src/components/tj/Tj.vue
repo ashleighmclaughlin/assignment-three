@@ -64,10 +64,11 @@
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
 
 
   .hero-text {
+    font-family: Futura;
     color: #ffffff;
     height: 100px;
     position: absolute;

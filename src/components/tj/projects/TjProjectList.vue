@@ -30,7 +30,11 @@
             </div>
             <div class='col-4'>
               <h4>About</h4>
-              <p>{{ userdata.user.display_name }}</p>
+              <p>How's it going, my name is <span>{{ userdata.user.first_name }}</span> and I'm a designer
+              from <span>{{ userdata.user.city }}. I started working for Nooble Creative 2 years ago and it's
+                been amazing!! </span>
+              </p>
+              
   
               <h4>Fields</h4>
               <p>
@@ -42,7 +46,6 @@
   
               <h4>Socials</h4>
               <!-- <p>{{ userdata.user.social_links }}</p> -->
-              <!-- <p>{{ userdata.user.social_links.url['0'] }}</p> -->
             </div>
           </div>
         </div>
@@ -50,12 +53,14 @@
     </div>
   
     <TjProjectModal :projectId='projectId' :userdata='userdata' />
+    <TjMyFooter />
   
   </div>
 </template>
 
 <script>
   import TjProjectModal from './TjProjectModal';
+  import TjMyFooter from '../designers/TjMyFooter';
   import $ from 'jquery';
   
   export default {
@@ -68,7 +73,8 @@
       }
     },
     components: {
-      TjProjectModal
+      TjProjectModal,
+      TjMyFooter
     },   
     props: ['projectdata', 'userdata'],
     methods: {
@@ -100,6 +106,7 @@
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+  
   .router-link-active {
     font-weight: 400;
   }

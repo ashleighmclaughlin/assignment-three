@@ -93,6 +93,8 @@
 </script>
 
 <style scoped>
+  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+
   .lrg-images img {
     max-width: 100%;
     padding-bottom: 30px;

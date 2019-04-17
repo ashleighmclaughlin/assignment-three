@@ -7,12 +7,26 @@
             <img v-if='user.images[138]' :src='user.images[138]' :alt='designer'>
             <h4>{{ user.first_name }}</h4>
           </div>
-           <div class='projects' to='/projects' @click='navigateTo(user.id);'>
-            <img v-if='user.images[138]' :src='user.images[138]' :alt='designer'>
-            <h4>{{ user.first_name }}</h4>
-          </div>
+          <!-- <div class='projects' to='/projects' @click='navigateTo(user.id);'>
+              <img v-if='user.images[138]' :src='user.images[138]' :alt='designer'>
+              <h4>{{ user.first_name }}</h4>
+            </div> -->
         </div>
       </div>
+       <div class='row'>
+          <div class='col-sm img-border projects'>
+            <img src='../../../assets/tj_img/static_profiles/MO-STUDIO.jpg'>
+            <h4>MO-STUDIO</h4>
+          </div>
+          <div class='col-sm img-border projects'>
+            <img src='../../../assets/tj_img/static_profiles/Andrea_Rivola.jpg'>
+            <h4>Andrea Rivola</h4>
+          </div>
+          <div class='col-sm img-border projects'>
+            <img src='../../../assets/tj_img/static_profiles/Karol_Banach.png'>
+            <h4>Karol Banach</h4>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -51,6 +65,7 @@
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+  
   .router-link-active {
     font-weight: 400;
   }
@@ -74,9 +89,8 @@
     font-weight: 300;
     padding-top: 5px;
   }
-
+  
   .row {
     padding-bottom: 30px;
   }
-
 </style>

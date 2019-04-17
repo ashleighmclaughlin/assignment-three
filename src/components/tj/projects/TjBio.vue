@@ -4,8 +4,8 @@
                 <img class='user-icon' :src='userdata.user.images["115"]'>
             <h1>{{ userdata.user.display_name }}</h1>
             <p>{{ userdata.user.occupation }}</p>
-            <a v-bind:href='userdata.user.website'>
-            <p class='website'>{{ userdata.user.website }}</p>
+            <a :href='userdata.user.url'>
+                <p class='website'>{{ userdata.user.url }}</p>
             </a>
             <div class='location'>
                 <i class='icon fas fa-map-marker-alt'></i>
@@ -29,8 +29,7 @@
                     <h5>{{ userdata.user.stats.views }}</h5>
                 </div>
             </div>
-        </div>
-        
+        </div> 
     </div>
 </template>
 
@@ -47,6 +46,8 @@ export default {
 </script>
 
 <style scoped>
+    @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
+    
     .router-link-active {
         font-weight: 400;
     }
