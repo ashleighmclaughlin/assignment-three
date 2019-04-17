@@ -7,7 +7,7 @@
       <div class="col-sm">
         <div class="designer" v-for="user in users" v-bind:key="user.id">
           <img v-bind:src="user.images['115']"  @click="navigateTo(user.id);">
-          <h3>{{ user.first_name + " " + user.last_name}}</h3>
+          <h3>{{ user.first_name + " " + user.last_name}}</h3>  
           <h5> {{user.occupation}}</h5>
         </div>
       </div>

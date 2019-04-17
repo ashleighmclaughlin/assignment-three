@@ -2,7 +2,7 @@
     <div>
         <div class="container" v-if="userdata.user">
           <img :src="userdata.user.images['115']">
-          <h1>{{ userdata.user.display_name }}</h1>
+          <h1 class="username">{{ userdata.user.display_name }}</h1>
           <p>{{ userdata.user.occupation }}</p>
         <div>
         <span>{{ userdata.user.city }}, </span>

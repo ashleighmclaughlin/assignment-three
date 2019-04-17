@@ -2,7 +2,7 @@
    <div>
      <header class="hero">
        <nav>
-         <router-link v-bind:to="'./MattOurDesigners'"><img class="logo" src="./MattImages/TTAMLogo.png"></router-link>
+         <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogoWhite.png"></router-link>
          <ul>
            <li><router-link to="./Matt">Home</router-link></li>
            <li>|</li>
@@ -12,6 +12,7 @@
      </header>
 
      <MattBio :userdata="userdata"/>
+     <MattProjects />
      <MattMyFooter />
    </div> 
    </template>
@@ -20,12 +21,14 @@
 <script>
 import MattBio from "./MattBio"
 import MattMyFooter from "./MattMyFooter"
+import MattProjects from "./MattProjects"
 
 export default {
  name: "MattProfile",
  components: {
    MattBio,
-   MattMyFooter
+   MattMyFooter,
+   MattProjects
  },
 
 data: function() {
@@ -50,9 +53,21 @@ data: function() {
           this.userdata = data.body;
         });
       }
-     }
-   },
-  
+     },
+     getProjectData() {
+       if (this.$route.params.userId) {
+       this.userId = this.$route.params.userId;
+       this.$http
+         .get(
+           "https://behance-mock-api.glitch.me/api/users/" +
+            this.userId + "/projects"
+          )
+          .then(function(data) {
+          this.userdata = data.body;
+        });
+      }
+    }
+  }
 }
 
 </script>
@@ -100,6 +115,10 @@ li {
  Padding: 300px;
  font-size: 100px;
  color: white
+}
+
+a {
+  color: black
 }
 </style>
 

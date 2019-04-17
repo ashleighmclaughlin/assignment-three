@@ -2,7 +2,7 @@
 <div> 
   <header class="hero">
         <nav>
-          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogo.png"></router-link>
+          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogoWhite.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
@@ -86,12 +86,17 @@ li {
 .logo {
   height: 80px;
   width: 55px;
+  color: white;
 }
 
 .headerText {
   Padding: 300px;
   font-size: 100px;
   color: white
+}
+
+a {
+  color: black
 }
 
 </style>

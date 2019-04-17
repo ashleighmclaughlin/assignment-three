@@ -26,11 +26,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Chivo:700');
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 .hero{
-  background-image: url(./MattImages/heroImage.jpg);
+  background-image: url(./MattImages/blur-cellphone-close-up-196644.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -66,11 +66,14 @@ li {
 }
 
 .headerText {
-  Padding: 300px;
-  font-size: 100px;
-  color: lightblue;
-  font-family: 'Chivo', sans-serif;
+  Padding: 200px;
+  font-size: 200px;
+  color: black;
+  font-family: 'Just Another Hand', cursive;
+  font-weight: lighter
 }
 
-
+a {
+  color: black
+}
 </style>
