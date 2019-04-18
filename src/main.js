@@ -23,12 +23,15 @@ import MattProfile from './components/matt/MattProfile.vue'
 
 //Lyndon
 import Lyndon from './components/lyndon/Lyndon.vue';
+import LyndonDesigners from "./components/lyndon/LyndonDesigners.vue";
+import LyndonProjects from "./components/lyndon/LyndonProjects.vue";
+import LyndonProjectDetails from "./components/lyndon/LyndonProjectDetails.vue"
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: Home },
+  { path: "/", component: Home },
   //Ash's Routes
   { path: '/ash', component: Ash },
   { path: '/ash-designer', component: AshDesigner, name: 'designer', props: true },
@@ -41,8 +44,10 @@ const routes = [
   { path: '/MattOurDesigners', component: MattOurDesigners, name: 'OurDesigners', props: true},
   { path: '/MattProfile', component: MattProfile, name: 'MattProfile', props: true},
   //Lyndon's Routes
-  { path: '/lyndon', component: Lyndon }
-  
+  { path: '/lyndon', component: Lyndon },
+  { path: "/lyndon-designers", component: LyndonDesigners },
+  { path: "/lyndon-projects", component: LyndonProjects, name: "lyndon-projects", props: true },
+  { path: "/lyndon-project-details", component: LyndonProjectDetails, name: "ProjectDetails", props: true }
 ];
 
 const router = new VueRouter({
