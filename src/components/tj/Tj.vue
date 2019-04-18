@@ -19,7 +19,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link">
-                  <router-link v-bind:to="'/designers'">Our Designers</router-link>
+                  <router-link v-bind:to="'/tj-designers'">Our Designers</router-link>
                 </a>
               </li>
             </ul>

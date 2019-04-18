@@ -37,8 +37,8 @@ const routes = [
   { path: '/ash-designer', component: AshDesigner, name: 'designer', props: true },
   //Tj's Routes
   { path: '/tj', component: Tj },
-  { path: '/designers', component: TjDesigners },
-  { path: '/projects', component: TjProjects, name: 'projects', props: true  },
+  { path: '/tj-designers', component: TjDesigners },
+  { path: '/tj-projects', component: TjProjects, name: 'projects', props: true  },
   //Matt's Routes
   { path: '/matt', component: Matt, name: 'matt', props: true},
   { path: '/MattOurDesigners', component: MattOurDesigners, name: 'OurDesigners', props: true},
