@@ -23,8 +23,8 @@ const routes = [
   { path: "/tj", component: Tj },
   { path: "/matt", component: Matt },
   { path: "/lyndon", component: Lyndon },
-  { path: "/designers", component: LyndonDesigners },
-  { path: "/projects", component: LyndonProjects, name: "projects", props: true },
+  { path: "/lyndon-designers", component: LyndonDesigners },
+  { path: "/lyndon-projects", component: LyndonProjects, name: "projects", props: true },
   { path: "/ProjectDetails", component: LyndonProjectDetails, name: "ProjectDetails", props: true }
 ];
 

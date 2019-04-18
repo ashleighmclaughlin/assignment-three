@@ -2,7 +2,7 @@
   <div class="bd-div">
     <app-header class="main-image-2" />
     <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
-   <!-- <router-link :to="'./ModalPage'"></router-link> -->
+    <!-- <router-link :to="'./ModalPage'"></router-link> -->
     <div class="container">
       <div class="logo-box">
         <img
@@ -24,13 +24,13 @@
             <p>Created on: {{project.created_on | moment}}</p>
             <p>Published on: {{project.published_on | moment}}</p>
 
-         
-              <div> <img @click="navigateTo(project.id)"
-               :src="project.covers['230']">
-              
-              </div>
-              
-          
+            <div> <img
+                @click="navigateTo(project.id)"
+                :src="project.covers['230']"
+                alt="covers"
+              >
+
+            </div>
 
             <div class="flex-container">
               <div>
@@ -56,15 +56,14 @@
 <script>
 import LyndonHeader from "./layout/LyndonHeader.vue";
 import LyndonFooter from "./layout/LyndonFooter.vue";
-import Content from "./Content.vue";
+import LyndonContent from "./LyndonContent.vue";
 import moment from "moment";
 export default {
   name: "Projects",
   props: [""],
   components: {
     "app-header": LyndonHeader,
-    "app-footer": LyndonFooter,
-   
+    "app-footer": LyndonFooter
   },
   data() {
     return {
@@ -91,7 +90,7 @@ export default {
           response => {
             this.projects = response.body.projects;
             console.log("data", response);
-          },
+          }
           // response => {
           //   console.log("error callback");
           // }
@@ -106,9 +105,12 @@ export default {
       return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
     }
   },
-    methods: {
+  methods: {
     navigateTo: function(projectId) {
-      this.$router.push({ name: "ProjectDetails", params: { projectId: projectId } });
+      this.$router.push({
+        name: "ProjectDetails",
+        params: { projectId: projectId }
+      });
       //  console.log(project.id)
     }
   }

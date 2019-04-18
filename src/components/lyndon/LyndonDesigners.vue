@@ -29,6 +29,7 @@
             <div class="box-container"> <img
                 class="artist-img"
                 :src="user.images['138']"
+                alt="artist"
               ></div>
           </div>
         </div>

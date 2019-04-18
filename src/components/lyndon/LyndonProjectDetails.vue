@@ -1,3 +1,4 @@
+
 <template>
   <div class="bd-div">
 
@@ -22,15 +23,16 @@
           <div class="col-md">
 
             <h2>
-              {{ projects.name }}</h2>
-            <p>Created on: {{projects.created_on | moment}}</p>
-            <p>Published on: {{ projects.published_on | moment}}</p>
-            <p>Modified on: {{projects.modified_on | moment}}</p>
-            <p>Skills: {{ projects.fields}}</p>
+              {{ projects.id.name }}</h2>
+            <p>Created on: {{projects.id.created_on | moment}}</p>
+            <p>Published on: {{ projects.id.published_on | moment}}</p>
+            <p>Modified on: {{projects.id.modified_on | moment}}</p>
+            <p>Skills: {{ projects.id.fields}}</p>
 
             <div> <img
                 class="artist-img"
-                :src="project.covers['230']"
+                alt="covers"
+                :src="project.id.covers['230']"
               ></div>
 
             <div class="flex-container">
@@ -78,35 +80,47 @@ export default {
       projects: [],
       projectId: [],
       project: {}
-     
     };
   },
 
-   created: function() {
+  //  created: function() {
+  //   console.log("params", this.$route.params);
+  //   if (this.$route.params.userId) {
+  //     console.log(
+  //       "something",
+  //       "https://behance-mock-api.glitch.me/api/projects/"
+  //     );
+  //     this.$http
+  //       .get(
+  //         "https://behance-mock-api.glitch.me/api/projects/" + projectId)
+
+  //       .then(
+  //         response => {
+  //           this.projects = response.body.projects;
+  //           console.log("data", response);
+  //         },
+  //         response => {
+  //           console.log('error callback')
+  //         }
+  //       );
+  //   }
+  // },
+  created: function() {
+    this.$http;
     console.log("params", this.$route.params);
-    if (this.$route.params.userId) {
-      console.log(
-        "something",
-        "https://behance-mock-api.glitch.me/api/projects/"
-      );
+    if (this.$route.params.projectId) {
       this.$http
         .get(
           "https://behance-mock-api.glitch.me/api/projects/" +
-            this.$route.params.userId +
+            this.$route.params.projectId +
             "/projects"
         )
-
-        .then(
-          response => {
-            this.projects = response.body.projects;
-            console.log("data", response);
-          },
-          response => {
-            console.log('error callback')
-          }
-        );
+        .then(function(data) {
+          this.projectId = data.body.projectId;
+        });
     }
   },
+
   filters: {
     moment: function(timestamp) {
       //timestamp is returned from the mock API as a string, whereas it should be
@@ -114,8 +128,7 @@ export default {
       timestamp = parseInt(timestamp);
       return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
     }
-  },
-  
+  }
 };
 </script>
 
