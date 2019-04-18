@@ -18,17 +18,20 @@ import TjProjects from './components/tj/projects/TjProjects.vue';
 
 //Matt
 import Matt from './components/matt/Matt.vue';
-import OurDesigners from './components/matt/OurDesigners.vue'
-import Profile from './components/matt/Profile.vue'
+import MattOurDesigners from './components/matt/MattOurDesigners.vue'
+import MattProfile from './components/matt/MattProfile.vue'
 
 //Lyndon
 import Lyndon from './components/lyndon/Lyndon.vue';
+import LyndonDesigners from "./components/lyndon/LyndonDesigners.vue";
+import LyndonProjects from "./components/lyndon/LyndonProjects.vue";
+import LyndonProjectDetails from "./components/lyndon/LyndonProjectDetails.vue"
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: Home },
+  { path: "/", component: Home },
   //Ash's Routes
   { path: '/ash', component: Ash },
   { path: '/ash-designer', component: AshDesigner, name: 'designer', props: true },
@@ -38,10 +41,13 @@ const routes = [
   { path: '/projects', component: TjProjects, name: 'projects', props: true  },
   //Matt's Routes
   { path: '/matt', component: Matt, name: 'matt', props: true},
+  { path: '/MattOurDesigners', component: MattOurDesigners, name: 'OurDesigners', props: true},
+  { path: '/MattProfile', component: MattProfile, name: 'MattProfile', props: true},
   //Lyndon's Routes
   { path: '/lyndon', component: Lyndon },
-  { path: '/OurDesigners', component: OurDesigners, name: 'OurDesigners', props: true},
-  { path: '/Profile', component: Profile, name: 'Profile', props: true}
+  { path: "/lyndon-designers", component: LyndonDesigners },
+  { path: "/lyndon-projects", component: LyndonProjects, name: "lyndon-projects", props: true },
+  { path: "/lyndon-project-details", component: LyndonProjectDetails, name: "ProjectDetails", props: true }
 ];
 
 const router = new VueRouter({

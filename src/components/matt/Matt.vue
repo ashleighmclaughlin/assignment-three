@@ -1,23 +1,23 @@
 <template>
     <div>
-      <MyHeader />
-      <FeaturedDesigners v-bind:users="users"/>
-      <MyFooter />
+      <MattMyHeader />
+      <MattFeaturedDesigners v-bind:users="users"/>
+      <MattMyFooter />
     </div>  
 </template>
 
 
 <script>
-import FeaturedDesigners from "./FeaturedDesigners"
-import MyHeader from "./MyHeader"
-import MyFooter from "./MyFooter"
+import MattFeaturedDesigners from "./MattFeaturedDesigners"
+import MattMyHeader from "./MattMyHeader"
+import MattMyFooter from "./MattMyFooter"
 
 export default {
   name: "Matt",
   components: {
-    FeaturedDesigners,
-    MyHeader,
-    MyFooter
+    MattFeaturedDesigners,
+    MattMyHeader,
+    MattMyFooter
   },
     props: ['users'],
     data: function() {

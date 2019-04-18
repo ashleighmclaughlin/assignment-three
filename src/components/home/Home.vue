@@ -31,11 +31,10 @@
             <h2>Lyndon Fox</h2>
           </router-link>
         </div>
-
       </div>
       <MyFooter />
     </div>
-    </div>
+  </div>
 
 </template>
 
@@ -81,6 +80,7 @@ export default {
   .home-page{
     background-color: #ffffff;
     background-image: url('https://www.transparenttextures.com/patterns/inflicted.png');
+    background-attachment: fixed;
     margin-bottom: 0px;
 
   }
