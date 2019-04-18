@@ -18,6 +18,8 @@ import Projects from './components/tj/projects/Projects.vue';
 
 //Matt
 import Matt from './components/matt/Matt.vue';
+import MattOurDesigners from './components/matt/MattOurDesigners.vue'
+import MattProfile from './components/matt/MattProfile.vue'
 
 //Lyndon
 import Lyndon from './components/lyndon/Lyndon.vue';
@@ -39,6 +41,8 @@ const routes = [
   { name: 'projects', path: '/projects', component: Projects, props: true  },
   //Matt's Routes
   { path: '/matt', component: Matt, name: 'matt', props: true},
+  { path: '/MattOurDesigners', component: MattOurDesigners, name: 'OurDesigners', props: true},
+  { path: '/MattProfile', component: MattProfile, name: 'MattProfile', props: true},
   //Lyndon's Routes
   { path: '/lyndon', component: Lyndon },
   { path: "/lyndon-designers", component: LyndonDesigners },
