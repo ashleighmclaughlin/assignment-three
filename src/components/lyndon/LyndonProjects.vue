@@ -56,7 +56,7 @@
 <script>
 import LyndonHeader from "./layout/LyndonHeader.vue";
 import LyndonFooter from "./layout/LyndonFooter.vue";
-import LyndonContent from "./LyndonContent.vue";
+// import LyndonContent from "./LyndonContent.vue";
 import moment from "moment";
 export default {
   name: "Projects",
@@ -73,12 +73,9 @@ export default {
     };
   },
   created: function() {
-    console.log("params", this.$route.params);
+   
     if (this.$route.params.userId) {
-      // console.log(
-      //   "something",
-      //   "https://behance-mock-api.glitch.me/api/users/a4d57bd1-a9b9-4c6c-af55-767537bab564/projects"
-      // );
+     
       this.$http
         .get(
           "https://behance-mock-api.glitch.me/api/users/" +
@@ -89,7 +86,7 @@ export default {
         .then(
           response => {
             this.projects = response.body.projects;
-            console.log("data", response);
+
           }
           // response => {
           //   console.log("error callback");
@@ -111,7 +108,6 @@ export default {
         name: "ProjectDetails",
         params: { projectId: projectId }
       });
-      //  console.log(project.id)
     }
   }
 };

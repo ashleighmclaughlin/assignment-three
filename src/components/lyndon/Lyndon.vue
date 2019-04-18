@@ -113,7 +113,7 @@ export default {
       this.currentTab = selectedTab;
     },
     navigateTo: function(userId) {
-      this.$router.push({ name: "projects", params: { userId: userId } });
+      this.$router.push({ name: "lyndon-projects", params: { userId: userId } });
     }
   }
 };
