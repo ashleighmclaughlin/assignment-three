@@ -2,16 +2,16 @@
 <div> 
   <header class="hero">
         <nav>
-          <router-link v-bind:to="'./'"><img class="logo" src="./images/TTAMLogo.png"></router-link>
+          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogoWhite.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
-            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
+            <li><router-link to="./MattOurDesigners">Our Designers</router-link></li>
           </ul>
         </nav>
       </header>  
-  <Designers v-bind:users="users"/>   
-  <MyFooter />
+  <MattDesigners v-bind:users="users"/>   
+  <MattMyFooter />
 </div>
   
 
@@ -20,8 +20,8 @@
 
 <script>
 // import MyHeader from "./MyHeader"
-import MyFooter from "./MyFooter"
-import Designers from "./Designers"
+import MattMyFooter from "./MattMyFooter"
+import MattDesigners from "./MattDesigners"
 
 
 
@@ -29,8 +29,8 @@ export default {
   name: "OurDesigners",
   components: {
     // MyHeader,
-    MyFooter,
-    Designers
+    MattMyFooter,
+    MattDesigners
   },
   data: function() {
     return {
@@ -50,55 +50,11 @@ export default {
 </script>
 
 <style scoped>
-.col-sm {
-     font-size: 30px;
-     display: flex;  
-     margin: 0 auto;
-}
-
-.designers img {
- height: 200px;
- width: 50%;
- padding-bottom: 10px;
- border-radius: 5%
-}
-
-.designer {
-  padding: 0 20px;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.title {
-  margin-top: 100px;
-  margin-bottom: 35px;
-  font-size: 60px;
-  text-align: center;
-}
-
-.line {
-  display: block;
-    width: 80px;
-    height: 3px;
-    background: #f1cd8f;
-    margin: 10px auto;
-    text-align: center;
-}
-
-.designers h3 {
-  border-bottom: 5px;
-}
-
-.row {
-  margin: 0;
-  padding: 70px;
-  justify-content: center;
-  
-}
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 
 .hero{
-  background-image: url(./images/ProjectImage2.jpg);
+  background-image: url(./MattImages/ProjectImage2.jpg);
   height: 50vh;
   background-size: cover;
   background-position: center;
@@ -130,11 +86,16 @@ li {
 .logo {
   height: 80px;
   width: 55px;
+  color: white;
 }
 
 .headerText {
   Padding: 300px;
   font-size: 100px;
+  color: white
+}
+
+a {
   color: white
 }
 

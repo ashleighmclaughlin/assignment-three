@@ -6,8 +6,8 @@
       <div class="row">
       <div class="col-sm">
         <div class="designer" v-for="user in users" v-bind:key="user.id">
-          <img v-bind:src="user.images['115']">
-          <h3>{{ user.first_name + " " + user.last_name}}</h3>
+          <img v-bind:src="user.images['115']"  @click="navigateTo(user.id);">
+          <h3>{{ user.first_name + " " + user.last_name}}</h3>  
           <h5> {{user.occupation}}</h5>
         </div>
       </div>
@@ -23,15 +23,28 @@
 <script>
 
 export default {
-  name: "FeaturedDesigners",
+  name: "MattFeaturedDesigners",
   components: {
   },
-  props: ['users']
+  props: ['users'],
+  methods: {
+      navigateTo: function(userId) {
+        this.$router.push({
+          name: "MattProfile",
+          params: {
+            userId: userId
+          }
+        });
+      }
+  }
 };
 
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Cardo');
+
 .col-sm {
      font-size: 30px;
      display: flex;  
@@ -51,6 +64,7 @@ export default {
   margin-bottom: 35px;
   font-size: 60px;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .line {
@@ -62,10 +76,6 @@ export default {
     text-align: center;
 }
 
-.designers h3 {
-  border-bottom: 5px;
-}
-
 .row {
   margin: 0;
   padding: 70px;
@@ -74,13 +84,15 @@ export default {
 }
 
 .featuredDesigners img {
- height: 500px;
- width: 80%;
+ height: 300px;
+ /* width: 35%; */
  padding-bottom: 10px;
+ border-radius: 50%
 }
 
-.featuredDesigners h3 {
+.featuredDesigners h3, h5 {
   border-bottom: 5px;
+   font-family: 'Cardo', serif;
 }
 
 </style>
