@@ -31,7 +31,6 @@
             <h2>Lyndon Fox</h2>
           </router-link>
         </div>
-
       </div>
       <MyFooter />
     </div>
