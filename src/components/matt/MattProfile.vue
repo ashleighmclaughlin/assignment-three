@@ -12,7 +12,6 @@
      </header>
 
      <MattBio :userdata="userdata"/>
-     <MattProjects />
      <MattMyFooter />
    </div> 
    </template>
@@ -21,14 +20,12 @@
 <script>
 import MattBio from "./MattBio"
 import MattMyFooter from "./MattMyFooter"
-import MattProjects from "./MattProjects"
 
 export default {
  name: "MattProfile",
  components: {
    MattBio,
-   MattMyFooter,
-   MattProjects
+   MattMyFooter
  },
 
 data: function() {

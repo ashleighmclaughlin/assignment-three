@@ -7,6 +7,11 @@
         <div>
         <span>{{ userdata.user.city }}, </span>
         <span>{{ userdata.user.country }}</span>
+        <div class='stats'>
+          <h5>Followers: {{ userdata.user.stats.followers }}</h5>
+          <h5>Following: {{ userdata.user.stats.following }}</h5>
+          <h5>Views: {{ userdata.user.stats.views }}</h5>
+        </div>
         </div>
         </div>
     </div>
@@ -34,5 +39,14 @@ img {
  /* width: 35%; */
  margin-top: 20px;
  border-radius: 50%
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.stats h5 {
+  padding: 10px;
 }
 </style>
