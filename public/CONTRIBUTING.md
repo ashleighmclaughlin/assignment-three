@@ -2,9 +2,6 @@ This guide will maintain our styling standards for our Data Visualisation projec
 
 We appreciate anyone who is taking the time to read our contributing file -  we look forward to seeing your contributions and feedback.
 
-
-
-
 # General
  
 * Prefer single quotes over double quotes

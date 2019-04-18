@@ -2,11 +2,11 @@
     <div>
       <header class="hero">
         <nav>
-          <router-link v-bind:to="'./'"><img class="logo" src="./images/TTAMLogo.png"></router-link>
+          <router-link v-bind:to="'./'"><img class="logo" src="./MattImages/TTAMLogo.png"></router-link>
           <ul>
             <li><router-link to="./Matt">Home</router-link></li>
             <li>|</li>
-            <li><router-link to="./OurDesigners">Our Designers</router-link></li>
+            <li><router-link to="./MattOurDesigners">Our Designers</router-link></li>
           </ul>
         </nav>
         <h1 class="headerText">TTAM Designs</h1>
@@ -18,7 +18,7 @@
 <script>
 
 export default {
-  name: "MyHeader",
+  name: "MattMyHeader",
   components: {
   }
 };
@@ -26,9 +26,11 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 .hero{
-  background-image: url(./images/heroImage.jpg);
+  background-image: url(./MattImages/blur-cellphone-close-up-196644.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -55,6 +57,7 @@ li {
   padding: 25px 5px;
   color: white;
   font-size: 30px;
+  font-family: 'Lato', sans-serif;
 }
 
 .logo {
@@ -63,10 +66,14 @@ li {
 }
 
 .headerText {
-  Padding: 300px;
-  font-size: 100px;
-  color: white
+  Padding: 200px;
+  font-size: 200px;
+  color: black;
+  font-family: 'Just Another Hand', cursive;
+  font-weight: lighter
 }
 
-
+a {
+  color: black
+}
 </style>
