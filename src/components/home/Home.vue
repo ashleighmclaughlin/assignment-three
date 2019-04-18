@@ -81,6 +81,7 @@ export default {
   .home-page{
     background-color: #ffffff;
     background-image: url('https://www.transparenttextures.com/patterns/inflicted.png');
+    background-attachment: fixed;
     margin-bottom: 0px;
 
   }
