@@ -12,7 +12,7 @@
       >Home</router-link>|
       <router-link
         class="my-links"
-        v-bind:to="'/Designers'"
+        v-bind:to="'/Lyndon-Designers'"
       >Design</router-link>|
     </div>
     <header>

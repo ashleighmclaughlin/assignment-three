@@ -1,9 +1,7 @@
-
 <template>
   <div class="bd-div">
 
     <app-header class="main-image-2" />
-    <router-link to="/lyndon"><button id="back-btn"><i class="fas fa-long-arrow-alt-left"></i></button></router-link>
     <div class="logo-box">
       <img
         class="logo"
@@ -19,42 +17,33 @@
         :key="project.id"
       >
 
-        <div class="row">
-          <div class="col-md">
-
-            <h2>
-              {{ projects.id.name }}</h2>
-            <p>Created on: {{projects.id.created_on | moment}}</p>
-            <p>Published on: {{ projects.id.published_on | moment}}</p>
-            <p>Modified on: {{projects.id.modified_on | moment}}</p>
-            <p>Skills: {{ projects.id.fields}}</p>
+        <div class="row text-box">
+          <div class="col-md text-title">
+            <h2>{{project.name}}</h2>
+            <p>Created on: {{project.created_on | moment}}</p>
+            <p>Published on: {{project.published_on | moment}}</p>
 
             <div> <img
-                class="artist-img"
+                @click="navigateTo(project.id)"
+                :src="project.covers['230']"
                 alt="covers"
-                :src="project.id.covers['230']"
-              ></div>
+              >
+
+            </div>
 
             <div class="flex-container">
               <div>
-
-                <p><i class="far fa-eye"> </i>Views: {{ project.stats.views}}</p>
+                <p><i class="far fa-eye"></i> Views: {{project.stats.views}}</p>
               </div>
               <div>
-
-                <p> <i class="far fa-thumbs-up"> </i>Appreciations: {{project.stats.appreciations}}</p>
+                <p><i class="far fa-thumbs-up"></i> Appreciations: {{project.stats.appreciations}}</p>
               </div>
               <div>
-
-                <p> <i class="far fa-comment"> </i> Comments: {{project.stats.comments}}</p>
+                <p><i class="far fa-comment"></i> Comments: {{project.stats.comments}}</p>
               </div>
+
             </div>
             <hr class="hr">
-            <!-- <div> <img
-                class="artist-img"
-                :src="project.modules.sizes['1400']"
-              ></div> -->
-
           </div>
         </div>
 
@@ -77,50 +66,16 @@ export default {
   },
   data() {
     return {
-      projects: [],
-      projectId: [],
-      project: {}
+      projects: []
     };
   },
-
-  //  created: function() {
-  //   console.log("params", this.$route.params);
-  //   if (this.$route.params.userId) {
-  //     console.log(
-  //       "something",
-  //       "https://behance-mock-api.glitch.me/api/projects/"
-  //     );
-  //     this.$http
-  //       .get(
-  //         "https://behance-mock-api.glitch.me/api/projects/" + projectId)
-
-  //       .then(
-  //         response => {
-  //           this.projects = response.body.projects;
-  //           console.log("data", response);
-  //         },
-  //         response => {
-  //           console.log('error callback')
-  //         }
-  //       );
-  //   }
-  // },
   created: function() {
-    this.$http;
-    console.log("params", this.$route.params);
-    if (this.$route.params.projectId) {
-      this.$http
-        .get(
-          "https://behance-mock-api.glitch.me/api/projects/" +
-            this.$route.params.projectId +
-            "/projects"
-        )
-        .then(function(data) {
-          this.projectId = data.body.projectId;
-        });
-    }
+    this.$http
+      .get("https://behance-mock-api.glitch.me/api/projects")
+      .then(function(data) {
+        this.projects = data.body.projects;
+      });
   },
-
   filters: {
     moment: function(timestamp) {
       //timestamp is returned from the mock API as a string, whereas it should be
@@ -150,55 +105,47 @@ h1 {
   text-align: center;
   font-size: 3em;
 }
+i {
+  color: rgb(254, 195, 58);
+  font-size: 40px;
+}
+i:hover {
+  text-shadow: 0 0 25px rgb(138, 88, 0), 0 0 5px rgb(28, 24, 20);
+}
 .bd-div {
   background-color: rgb(255, 241, 216);
+}
+.text-title {
+  text-align: center;
 }
 .our-designer {
   padding: 50px 0 20px 0;
   color: rgb(0, 0, 0);
   font-family: "Heebo", sans-serif;
   font-weight: bold;
-  margin-top: 20px;
-}
-.logo {
-  border: none;
-  margin-top: 30px;
-  width: 30%;
-  box-shadow: none;
-  background: none;
-}
-.logo-box {
   text-align: center;
+}
+.text-box {
+  margin: 0 auto;
+  width: 1200px;
+  /* background: rgb(255, 241, 216); */
 }
 h2 {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-family: "Arimo", sans-serif;
   color: rgb(254, 195, 58);
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 45px;
 }
 p {
-  color: rgb(55, 38, 0);
-  text-align: center;
-}
-.artist-img {
-  margin: 0 auto;
-  text-align: center;
-}
-img {
-  width: 50%;
-  height: 50%;
-  box-shadow: 0 0 8px rgb(0, 0, 0);
-  padding: 10px;
-  background: rgb(213, 188, 142);
-}
-.far {
+  color: rgb(113, 79, 0);
+  font-family: "Arimo", sans-serif;
+  font-weight: lighter;
   padding: 20px;
+  font-size: 20px;
 }
 .hr {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .flex-container {
   height: 60px;
@@ -217,19 +164,23 @@ img {
   position: absolute;
   left: 20px;
 }
-i {
-  color: rgb(254, 195, 58);
-  font-size: 40px;
+img {
+  width: 550px;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
+  padding: 10px;
+  background: rgb(213, 188, 142);
 }
-i:hover {
-  text-shadow: 0 0 25px rgb(138, 88, 0), 0 0 5px rgb(28, 24, 20);
+.far {
+  padding: 20px;
 }
-.text-box {
-  margin: 0 auto;
-  width: 1200px;
-  /* background: rgb(255, 241, 216); */
+.logo {
+  border: none;
+  margin-top: 40px;
+  width: 40%;
+  box-shadow: none;
+  background: none;
 }
-.text-title {
+.logo-box {
   text-align: center;
 }
 @media only screen and (max-width: 1980px) {
@@ -268,22 +219,6 @@ i:hover {
   }
   .hey {
     width: 500px;
-  }
-  .artist-img {
-    height: 120%;
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 1100px) {
-  .main-image {
-    width: 100%;
-    height: 540px;
-  }
-  .artist-img {
-    height: 100%;
-    margin: 0 auto;
-    text-align: center;
   }
 }
 </style>
