@@ -16,7 +16,6 @@
       <h2>{{project.name}}</h2>
       <p>Created on: {{project.created_on | moment}}</p>
       <div
-       
         v-for="modules in project.modules"
         v-bind:key="modules.sizes.max_1240"
       >
