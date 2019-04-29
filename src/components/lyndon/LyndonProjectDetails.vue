@@ -16,12 +16,12 @@
       <h2>{{project.name}}</h2>
       <p>Created on: {{project.created_on | moment}}</p>
       <div
-        class="single-project-images margin15"
-        v-for="image in project.modules"
-        v-bind:key="image.sizes.max_1240"
+       
+        v-for="modules in project.modules"
+        v-bind:key="modules.sizes.max_1240"
       >
-        <img v-bind:src="image.sizes.max_1240">
-        <div class="row project-stats">
+        <img v-bind:src="modules.sizes.max_1240">
+        <div class="row">
           <div class="col-sm">
             <h2>
               <i class="far fa-eye"></i>
