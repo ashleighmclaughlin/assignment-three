@@ -17,7 +17,7 @@
         :key="user.id"
       >
 
-        <div class="row">
+        <div class="row box">
           <div class="col-md">
 
             <h2>
