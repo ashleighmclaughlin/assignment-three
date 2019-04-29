@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div id="tabs" class="container">
-  
-      <div class="tabs">
-        <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Projects</a>
-        <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">About Me</a>
+    <div id='tabs' class='container'>
+      <div class='tabs'>
+        <a v-on:click='activetab=1' v-bind:class='[ activetab === 1 ? "active" : "" ]'>Projects</a>
+        <a v-on:click='activetab=2' v-bind:class='[ activetab === 2 ? "active" : "" ]'>About Me</a>
       </div>
   
-      <div class="content">
-        <div v-if="activetab === 1" class="tabcontent">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm img-border" v-for="project in projectdata.projects" v-bind:key="project.id">
-                <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> -->
-                <div data-toggle="modal" data-target="#exampleModal" class="hovereffect">
-                  <img class="img-responsive" :src="project.covers['230']" :alt="project.name">
-                  <div data-toggle="modal" data-target="#exampleModal" class="overlay" v-on:click="projectIdChanged(project.id)">
+      <div class='content'>
+        <div v-if='activetab === 1' class='tabcontent'>
+          <div class='img-container'>
+            <div class='row'>
+              <div class='col-sm img-border' v-for='project in projectdata.projects' v-bind:key='project.id'>
+                <div data-toggle='modal' data-target='#exampleModal' class='hovereffect'>
+                  <img class='img-responsive' :src='project.covers["808"]' :alt='project.name'>
+                  <div data-toggle='modal' data-target='#exampleModal' class='overlay' v-on:click='projectIdChanged(project.id)'>
                     <h5>{{ project.name }}</h5>
                   </div>
                 </div>
@@ -23,78 +21,69 @@
             </div>
           </div>
         </div>
-        <div v-if="activetab === 2" class="tabcontent">
-          <div class="row about-me">
-            <div class="col-8">
-              <img class="user-icon" v-if="userdata.user.images['138']" :src="userdata.user.images['138']">
+        <div v-if='activetab === 2' class='tabcontent'>
+          <div class='row about-me'>
+            <div class='col col-right' v-if='userdata.user'>
+              <img class='user-icon' :src='userdata.user.images["138"]'>
             </div>
-            <div class="col-4">
+            <div class='col'>
               <h4>About</h4>
-              <p>{{ userdata.user.display_name }}</p>
-  
+              <p>How's it going, my name is <span>{{ userdata.user.first_name }}</span> and I'm a designer from <span>{{ userdata.user.city }}. I started working for Nooble Creative 2 years ago and it's
+  been amazing!! </span>
+              </p>
               <h4>Fields</h4>
               <p>
-              <span>{{ userdata.user.fields['0'] }}, </span>
-              <span>{{ userdata.user.fields['1'] }}, </span>
-              <span>{{ userdata.user.fields['2'] }} </span>
-              <span>{{ userdata.user.fields['3'] }} </span>
+                <span>{{ userdata.user.fields['0'] }}, </span>
+                <span>{{ userdata.user.fields['1'] }}, </span>
+                <span>{{ userdata.user.fields['2'] }} </span>
+                <span>{{ userdata.user.fields['3'] }} </span>
               </p>
   
               <h4>Socials</h4>
-              <!-- <p>{{ userdata.user.social_links }}</p> -->
-              <!-- <p>{{ userdata.user.social_links.url['0'] }}</p> -->
+              <p>{{ }}</p>
+              <a v-if='userdata.user.social_links["0"].url' :href='userdata.user.social_links["0"].url'>
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+              <a :href='userdata.user.url'>
+                <i class="fab fa-behance-square fa-2x"></i>
+              </a>
             </div>
           </div>
-  
         </div>
       </div>
-  
     </div>
   
-    <ProjectModal :projectId="projectId" :userdata="userdata" />
+    <TjProjectModal :projectId='projectId' :userdata='userdata' />
+    <TjMyFooter />
   
   </div>
 </template>
 
 <script>
-  import ProjectModal from "./ProjectModal";
-  import $ from "jquery";
+  import TjProjectModal from './TjProjectModal';
+  import TjMyFooter from '../designers/TjMyFooter';
   
   export default {
-    name: "ProjectList",
-    // el: "#tabs",
-    props: ["projectdata", "userdata"],
+    name: 'TjProjectList',
+  
     data: function() {
       return {
-        projectId: "",
+        projectId: '',
         activetab: 1
       }
     },
+    components: {
+      TjProjectModal,
+      TjMyFooter
+    },
+    props: ['projectdata', 'userdata'],
     methods: {
       mouseOver: function() {
         this.active = !this.active;
-        this.getFields();
       },
       projectIdChanged: function(projectId) {
-        //  console.log("Change")
         this.projectId = projectId;
       },
-      getFields: function() {
-        let that = this;
-        let test = this.projectdata.project.modules;
-        that.images = [];
-        $.each(test, function(i, image) {
-          that.images.push(image.src);
-        });
-      }
-    },
-    components: {
-      ProjectModal
-    },
-    watch: {
-      projectId: function(val) {
-        this.getProject(val);
-      }
     }
   };
 </script>
@@ -102,25 +91,23 @@
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:300,300i,400,600');
-  .router-link-active {
-    font-weight: 400;
-  }
   
-  .container {
-    margin-top: 70px;
-  }
+  /* About Me Styles */
   
   .user-icon {
     border-radius: 10px;
     width: 200px;
   }
   
+  
+  /* Project Styles */
+  
   .img-border img {
     border-radius: 10px;
   }
   
-  .website {
-    text-decoration: underline;
+  i {
+    width: 40px;
   }
   
   .stats div {
@@ -135,52 +122,31 @@
     padding-top: 50px;
   }
   
-  .col-4 {
+  .col {
     text-align: left;
   }
   
-  /*
-                              * https://imgur.com/a/5nDMmmB  Link to Image
-                              */
-  
-  /* .landing {
-    background-image: url("https://imgur.com/clOcGTs.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 25vh;
+  .col-right {
+    text-align: right;
   }
-   */
+  
   .logo-img {
-    height: 60px;
-  }
-  
-  .navbar {
-    background-color: transparent !important;
-    color: #ffffff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 2;
+    width: 60px;
   }
   
   
-  /* RESET */
-  
-  
-  /* * {
-                      box-sizing: border-box;
-                      margin: 0;
-                      padding: 0;
-                    } */
+  /*
+  * https://codepen.io/mburridge/pen/WgXrvG  Link to tabs
+  */
   
   .container {
-    max-width: 620px;
-    min-width: 420px;
-    margin: 40px auto;
+    margin-top: 20px;
     font-size: 0.9em;
     color: #888;
+  }
+  
+  .img-container {
+    margin: 40px auto;
   }
   
   
@@ -198,21 +164,13 @@
   }
   
   .tabs a {
-    /* float: left; */
     cursor: pointer;
     padding: 12px 24px;
     transition: background-color 0.2s;
-    /* border: 1px solid #ccc; */
     border-right: none;
     background-color: #f1f1f1;
-    /* border-radius: 10px 10px 0 0; */
     font-weight: bold;
   }
-  
-  
-  /* .tabs a:last-child {
-              border-right: 1px solid #ccc;
-            } */
   
   
   /* Change background color of tabs on hover */
@@ -234,14 +192,6 @@
   
   
   /* Style the tab content */
-  
-  
-  /* .tabcontent {
-                        padding: 30px;
-                        border: 1px solid #ccc;
-                        border-radius: 10px;
-                      box-shadow: 3px 3px 6px #e1e1e1
-                    } */
   
   .hovereffect {
     width: 100%;
@@ -270,7 +220,7 @@
   .overlay h5 {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
   }
   
   .hovereffect img {
